@@ -5,7 +5,7 @@ import Map from "../components/contact/contactMap.jsx";
 
 export default function Contactpage() {
     return (
-        <main className="bg-black text-white">
+        <main className="bg-white text-black">
             <Contact />
             <Map />
         </main>
