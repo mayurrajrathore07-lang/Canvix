@@ -6,7 +6,7 @@ import ProjectLetsTalk from "../components/get.jsx";
 
 export default function Project() {
     return (
-        <main className="bg-black text-white">
+        <main className="bg-white text-black">
             <ProjectHero />
             <ProjectProject />
             <ProjectLetsTalk />
