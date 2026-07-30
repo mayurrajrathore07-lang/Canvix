@@ -45,37 +45,37 @@ function ProjectProject() {
     return (
         <section className="bg-white py-12 px-4 sm:px-6">
             <div className="max-w-6xl mx-auto">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {allProjectsData.map((item) => (
-                        <div key={item.id} className="group flex flex-col">
+                        <div key={item.id} className="flex flex-col">
                             {/* Card Image Box */}
-                            <div className="relative overflow-hidden rounded-2xl md:rounded-3xl aspect-[1.4/1] bg-zinc-100 shadow-sm">
+                            <div className="relative w-full h-72 sm:h-80 rounded-2xl md:rounded-3xl overflow-hidden bg-gray-100 mb-3">
                                 <img
                                     src={item.image}
                                     alt={item.title}
-                                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                    className="w-full h-full object-cover"
                                 />
 
-                                {/* Floating Icon Overlay if present or hover */}
+                                {/* Arrow icon overlay if item has arrow */}
                                 {item.hasArrow && (
-                                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black/80 text-white flex items-center justify-center shadow-lg transition-transform group-hover:scale-110">
-                                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M7 17L17 7M17 7H7M17 7V17" />
-                                        </svg>
+                                    <div className="absolute inset-0 flex items-center justify-center bg-black/20">
+                                        <div className="w-12 h-12 rounded-full bg-black text-white flex items-center justify-center text-lg font-bold">
+                                            ↗
+                                        </div>
                                     </div>
                                 )}
 
-                                <Link to={`/projects/${item.id}`} className="absolute inset-0 z-10" aria-label={item.title} />
+                                <Link to={`/projects/${item.id}`} className="absolute inset-0" aria-label={item.title} />
                             </div>
 
-                            {/* Text Info */}
-                            <div className="pt-4 pb-2">
-                                <h3 className="text-xl md:text-2xl font-serif font-bold text-gray-900 group-hover:text-gray-600 transition duration-300">
+                            {/* Title & Category */}
+                            <div>
+                                <h3 className="text-xl md:text-2xl font-serif font-bold text-black">
                                     <Link to={`/projects/${item.id}`}>
                                         {item.title}
                                     </Link>
                                 </h3>
-                                <p className="text-gray-500 text-sm font-sans mt-1">
+                                <p className="text-gray-500 text-sm mt-1">
                                     {item.category}
                                 </p>
                             </div>
@@ -88,4 +88,5 @@ function ProjectProject() {
 }
 
 export default ProjectProject;
+
 
