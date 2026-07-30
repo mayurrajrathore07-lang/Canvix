@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import ProjectDetailsHero from "../components/project details/project-details-hero.jsx";
 import ProjectDetailsDescription from "../components/project details/project-details-discription.jsx";
 import ProjectDetailsRecent from "../components/project details/project-details-recent.jsx";
-import ProjectLetsTalk from "../components/project/project-lets-talk.jsx";
+import ProjectLetsTalk from "../components/get.jsx";
 import { allProjectsData } from "../components/project/project-project.jsx";
 
 export default function Projectdetails() {

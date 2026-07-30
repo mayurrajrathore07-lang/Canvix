@@ -8,7 +8,7 @@ function About() {
         <section className="bg-black py-20 px-6">
             <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
 
-                {/* Left Images */}
+
                 <div className="relative w-full lg:w-1/2 flex justify-center min-h-[450px]">
                     <img
                         src={aboutImg}
