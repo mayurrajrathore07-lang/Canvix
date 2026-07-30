@@ -1,3 +1,5 @@
+import React from "react";
+
 function Navbar() {
     return (
         <nav className="container mx-auto flex items-center justify-between py-6">
