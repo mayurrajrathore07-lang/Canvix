@@ -1,39 +1,62 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
-function AboutHero() {
+const heroImg = "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80";
+
+const AboutHero = () => {
     return (
-        <section className="bg-black py-20 px-6 border-b border-zinc-800">
-            <div className="max-w-5xl mx-auto text-center">
-                <span className="text-cyan-400 font-semibold uppercase tracking-widest text-sm block mb-4">
-                    Who We Are
-                </span>
+        <section className="bg-black text-white py-16">
+            <div className="max-w-7xl mx-auto bg-[#111] rounded-3xl px-8 md:px-16 py-14">
+                <div className="grid lg:grid-cols-2 gap-12 items-center">
+                    {/* Left */}
+                    <div>
+                        <p className="text-gray-400 mb-5">
+                            Pleasure and so read the was hope.
+                        </p>
 
-                <h1 className="text-4xl sm:text-6xl font-extrabold text-white leading-tight mb-6">
-                    We are digital strategists, creators & design pioneers
-                </h1>
+                        <h1 className="text-5xl md:text-7xl font-bold leading-tight">
+                            Ready to take <br />
+                            <span className="text-cyan-400">your business</span>
+                            <br />
+                            to the next level?
+                        </h1>
 
-                <p className="text-gray-400 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed mb-10">
-                    Founded with a passion for craftsmanship and innovation, Canvix bridges design and technology to deliver transformative digital experiences for brands worldwide.
-                </p>
+                        <p className="text-gray-400 mt-8 max-w-md">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            Voluptatibus, laboriosam. Lorem ipsum dolor sit amet.
+                        </p>
 
-                <div className="flex justify-center items-center gap-4">
-                    <Link
-                        to="/contact"
-                        className="bg-cyan-400 text-black px-8 py-3.5 rounded-full font-bold hover:bg-white transition duration-300"
-                    >
-                        Work With Us
-                    </Link>
-                    <Link
-                        to="/projects"
-                        className="border border-zinc-700 text-white px-8 py-3.5 rounded-full font-semibold hover:bg-zinc-800 transition duration-300"
-                    >
-                        Our Work
-                    </Link>
+                        <div className="flex items-center gap-4 mt-10">
+                            <img
+                                src="https://i.pravatar.cc/80"
+                                alt=""
+                                className="w-14 h-14 rounded-full"
+                            />
+
+                            <div>
+                                <h4 className="font-semibold">Rated 4.9/5 stars</h4>
+                                <p className="text-yellow-400 text-lg">★★★★★</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Right */}
+                    <div className="relative flex justify-center items-center h-[550px]">
+                        {/* Background Cards */}
+                        <div className="absolute w-[420px] h-[520px] rounded-3xl bg-white/10 -left-2 -top-2"></div>
+
+                        <div className="absolute w-[420px] h-[520px] rounded-3xl bg-white/15 left-8 top-8"></div>
+
+                        {/* Main Image */}
+                        <img
+                            src={heroImg}
+                            alt=""
+                            className="relative w-[420px] h-[520px] object-cover rounded-3xl"
+                        />
+                    </div>
                 </div>
             </div>
         </section>
     );
-}
+};
 
 export default AboutHero;
