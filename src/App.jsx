@@ -1,22 +1,22 @@
-import React from 'react';
-import Navbar from "./components/navbar";
-import Hero from './components/Hero';
-import Services from './components/Services';
-import About from './components/About';
-import Projects from './components/Projects';
-import Testimonial from './components/Testimonial';
-import Footer from './components/Footer';
+import React from "react";
+import Home from "./pages/Home.jsx";
+import Aboutus from "./pages/Aboutus.jsx";
+import Project from "./pages/Project.jsx";
+import Projectdetails from "./pages/Projectdetails.jsx";
+import Contactpage from "./pages/Contactpage.jsx";
+
+
+
 
 export default function App() {
   return (
     <div className="bg-black text-white min-h-screen">
-      <Navbar />
-      <Hero />
-      <Services />
-      <About />
-      <Projects />
-      <Testimonial />
-      <Footer />
+      <Home />
+      <aboutus />
+      <Project />
+      <project-details />
+      <contactpage />
+
     </div>
   );
 }
