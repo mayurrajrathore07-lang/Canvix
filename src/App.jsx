@@ -3,6 +3,7 @@ import Navbar from './components/navbar';
 import Hero from './components/home/hero';
 import Services from './components/home/service';
 import About from './components/home/about';
+import Projects from './components/home/projects';
 import Testimonial from './components/home/testimonial';
 import Footer from './components/footer';
 
@@ -13,6 +14,7 @@ export default function App() {
       <Hero />
       <Services />
       <About />
+      <Projects />
       <Testimonial />
       <Footer />
     </div>
