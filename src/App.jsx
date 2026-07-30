@@ -1,10 +1,10 @@
 import React from 'react';
 import Navbar from './components/navbar';
-import Hero from './components/home/hero';
-import Services from './components/home/service';
-import About from './components/home/about';
-import Projects from './components/home/projects';
-import Testimonial from './components/home/testimonial';
+import Hero from './components/hero';
+import Services from './components/service';
+import About from './components/about';
+import Projects from './components/projects';
+import Testimonial from './components/testimonial';
 import Footer from './components/footer';
 
 export default function App() {
