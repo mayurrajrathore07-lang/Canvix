@@ -2,57 +2,67 @@ import React from "react";
 
 function ProjectDetailsHero({ project }) {
     const defaultData = {
-        title: "Web UI Design System",
-        category: "Creative UI/UX Design",
-        client: "Fintech Core Inc.",
-        year: "2025",
-        services: "UI/UX Architecture, Design Systems, Prototyping",
-        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
+        title: "To design Digital Strategy",
+        category: "Cloud solution",
+        client: "BrightMedia Solutions",
+        date: "August 23, 2023",
+        location: "489 Depot Road Midland",
+        image: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1400&q=80",
     };
 
-    const current = project || defaultData;
+    const current = project ? { ...defaultData, ...project } : defaultData;
 
     return (
-        <section className="bg-black py-16 px-6 border-b border-zinc-800">
+        <section className="bg-white pt-6 pb-8 px-4 sm:px-6 md:px-8">
             <div className="max-w-6xl mx-auto">
-                <span className="text-cyan-400 font-semibold uppercase tracking-widest text-sm block mb-3">
-                    Project Case Study
-                </span>
-
-                <h1 className="text-4xl sm:text-6xl font-extrabold text-white leading-tight mb-8">
-                    {current.title}
-                </h1>
-
-                {/* Metadata Grid */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 bg-zinc-950 border border-zinc-800 rounded-3xl p-6 sm:p-8 mb-12">
-                    <div>
-                        <span className="text-gray-500 text-xs font-semibold uppercase block mb-1">Client</span>
-                        <span className="text-white font-bold text-base md:text-lg">{current.client || "Fintech Core"}</span>
-                    </div>
-
-                    <div>
-                        <span className="text-gray-500 text-xs font-semibold uppercase block mb-1">Category</span>
-                        <span className="text-cyan-400 font-bold text-base md:text-lg">{current.category}</span>
-                    </div>
-
-                    <div>
-                        <span className="text-gray-500 text-xs font-semibold uppercase block mb-1">Year</span>
-                        <span className="text-white font-bold text-base md:text-lg">{current.year || "2025"}</span>
-                    </div>
-
-                    <div>
-                        <span className="text-gray-500 text-xs font-semibold uppercase block mb-1">Services</span>
-                        <span className="text-white font-bold text-base md:text-lg">{current.services || "Design & Tech"}</span>
-                    </div>
+                {/* Hero Main Image Container */}
+                <div className="relative w-full h-[320px] sm:h-[450px] md:h-[520px] rounded-3xl md:rounded-[36px] overflow-hidden bg-zinc-900 shadow-sm">
+                    <img
+                        src={current.image || defaultData.image}
+                        alt={current.title || "Project Image"}
+                        className="w-full h-full object-cover object-center"
+                    />
                 </div>
 
-                {/* Hero Image */}
-                <div className="rounded-3xl overflow-hidden border border-zinc-800 shadow-2xl h-[350px] sm:h-[500px]">
-                    <img
-                        src={current.image}
-                        alt={current.title}
-                        className="w-full h-full object-cover"
-                    />
+                {/* Overlapping Metadata Pills Bar */}
+                <div className="max-w-4xl mx-auto -mt-8 sm:-mt-12 relative z-10 px-2 sm:px-4">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
+                        <div className="bg-[#0e0e0e] text-white rounded-2xl p-4 sm:py-4 sm:px-5 flex flex-col justify-center shadow-lg border border-zinc-800">
+                            <span className="text-xs sm:text-sm font-bold text-white mb-1">
+                                Category :
+                            </span>
+                            <span className="text-xs sm:text-sm text-gray-300 font-light truncate">
+                                {current.category || "Cloud solution"}
+                            </span>
+                        </div>
+
+                        <div className="bg-[#0e0e0e] text-white rounded-2xl p-4 sm:py-4 sm:px-5 flex flex-col justify-center shadow-lg border border-zinc-800">
+                            <span className="text-xs sm:text-sm font-bold text-white mb-1">
+                                Client :
+                            </span>
+                            <span className="text-xs sm:text-sm text-gray-300 font-light truncate">
+                                {current.client || "BrightMedia Solutions"}
+                            </span>
+                        </div>
+
+                        <div className="bg-[#0e0e0e] text-white rounded-2xl p-4 sm:py-4 sm:px-5 flex flex-col justify-center shadow-lg border border-zinc-800">
+                            <span className="text-xs sm:text-sm font-bold text-white mb-1">
+                                Date :
+                            </span>
+                            <span className="text-xs sm:text-sm text-gray-300 font-light truncate">
+                                {current.date || "August 23, 2023"}
+                            </span>
+                        </div>
+
+                        <div className="bg-[#0e0e0e] text-white rounded-2xl p-4 sm:py-4 sm:px-5 flex flex-col justify-center shadow-lg border border-zinc-800">
+                            <span className="text-xs sm:text-sm font-bold text-white mb-1">
+                                Location:
+                            </span>
+                            <span className="text-xs sm:text-sm text-gray-300 font-light truncate">
+                                {current.location || "489 Depot Road Midland"}
+                            </span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -60,3 +70,4 @@ function ProjectDetailsHero({ project }) {
 }
 
 export default ProjectDetailsHero;
+

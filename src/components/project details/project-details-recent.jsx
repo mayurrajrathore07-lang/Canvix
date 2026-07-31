@@ -1,54 +1,58 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { allProjectsData } from "../project/project-project";
+
+const recentProjectsList = [
+    {
+        id: "1",
+        image: "https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&w=800&q=80",
+        title: "Web UI design",
+        category: "Creative UI design",
+    },
+    {
+        id: "2",
+        image: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80",
+        title: "To design Digital Strategy",
+        category: "Social Media Marketing",
+    },
+    {
+        id: "4",
+        image: "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=800&q=80",
+        title: "UI Design",
+        category: "Creative Rebranding for logo",
+    },
+];
 
 function ProjectDetailsRecent({ currentId }) {
-    const recentProjects = allProjectsData
-        .filter((p) => p.id !== currentId)
-        .slice(0, 2);
-
     return (
-        <section className="bg-zinc-950 py-20 px-6 border-t border-zinc-800">
+        <section className="bg-white py-14 md:py-20 px-4 sm:px-6 md:px-8 text-black border-t border-gray-100">
             <div className="max-w-6xl mx-auto">
-                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-12">
-                    <div>
-                        <span className="text-cyan-400 font-semibold uppercase tracking-widest text-xs block mb-2">
-                            Explore More
-                        </span>
-                        <h2 className="text-3xl font-bold text-white">Recent Projects</h2>
-                    </div>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-gray-900 text-center mb-10 md:mb-14">
+                    Recent Projects
+                </h2>
 
-                    <Link
-                        to="/projects"
-                        className="mt-4 sm:mt-0 text-cyan-400 font-semibold hover:underline flex items-center gap-2"
-                    >
-                        View All Projects →
-                    </Link>
-                </div>
-
-                <div className="grid md:grid-cols-2 gap-8">
-                    {recentProjects.map((item) => (
-                        <div key={item.id} className="group bg-black border border-zinc-800 rounded-3xl overflow-hidden">
-                            <div className="relative h-64 overflow-hidden">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+                    {recentProjectsList.map((item) => (
+                        <div key={item.id} className="flex flex-col group">
+                            {/* Card Image Box */}
+                            <div className="relative w-full h-64 sm:h-72 rounded-2xl md:rounded-3xl overflow-hidden bg-gray-100 mb-4 shadow-sm">
                                 <img
                                     src={item.image}
                                     alt={item.title}
-                                    className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                                 />
+                                <Link to={`/projects/${item.id}`} className="absolute inset-0" aria-label={item.title} />
                             </div>
-                            <div className="p-8">
-                                <span className="text-cyan-400 text-xs font-semibold uppercase tracking-wider block mb-2">
-                                    {item.category}
-                                </span>
-                                <h3 className="text-2xl font-bold text-white group-hover:text-cyan-400 transition mb-4">
-                                    <Link to={`/projects/${item.id}`}>{item.title}</Link>
+
+                            {/* Card Title & Category */}
+                            <div>
+                                <h3 className="text-lg sm:text-xl font-bold text-gray-900 group-hover:text-gray-700 transition">
+                                    <Link to={`/projects/${item.id}`}>
+                                        {item.title}
+                                    </Link>
                                 </h3>
-                                <Link
-                                    to={`/projects/${item.id}`}
-                                    className="text-white font-semibold hover:text-cyan-400 transition inline-flex items-center gap-2 text-sm"
-                                >
-                                    Read Case Study →
-                                </Link>
+                                <p className="text-xs sm:text-sm text-gray-500 mt-1">
+                                    {item.category}
+                                </p>
                             </div>
                         </div>
                     ))}
@@ -59,3 +63,4 @@ function ProjectDetailsRecent({ currentId }) {
 }
 
 export default ProjectDetailsRecent;
+
