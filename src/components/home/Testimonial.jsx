@@ -43,7 +43,7 @@ function Testimonial() {
     const current = testimonialsData[currentIndex];
 
     return (
-        <section className="py-20 px-6 bg-black">
+        <section className="py-20 px-6 bg-white">
             <div className="max-w-5xl mx-auto bg-zinc-900 border border-zinc-800 rounded-3xl p-8 sm:p-14 text-center relative overflow-hidden shadow-2xl">
                 <div className="absolute top-6 left-6 text-cyan-400/20 text-6xl">
                     <FaQuoteLeft />

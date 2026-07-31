@@ -30,7 +30,7 @@ function Projects() {
     ];
 
     return (
-        <section className="bg-black py-20 px-6">
+        <section className="bg-white py-20 px-6">
             <div className="max-w-7xl mx-auto">
                 {/* Heading */}
                 <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-16">

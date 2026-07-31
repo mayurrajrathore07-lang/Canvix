@@ -37,7 +37,7 @@ function Services() {
     ];
 
     return (
-        <section className="bg-black py-20 px-6">
+        <section className="bg-white py-20 px-6">
             <div className="max-w-7xl mx-auto">
                 <p className="text-center text-cyan-400 text-lg font-semibold uppercase tracking-wider">
                     Our Services
@@ -51,14 +51,11 @@ function Services() {
                     {services.map((item, index) => (
                         <div
                             key={index}
-                            className={`rounded-3xl p-8 lg:p-10 transition duration-300 hover:-translate-y-2 border border-zinc-800 ${
-                                item.dark ? "bg-zinc-900 text-white" : "bg-zinc-950 text-white"
-                            }`}
+                            className="rounded-3xl p-8 lg:p-10 transition-all duration-300 hover:-translate-y-2 border border-black bg-white text-black hover:bg-black hover:text-white"
                         >
                             <div
-                                className={`w-14 h-14 rounded-2xl flex items-center justify-center text-2xl mb-8 ${
-                                    item.dark ? "bg-cyan-400 text-black" : "bg-zinc-800 text-cyan-400"
-                                }`}
+                                className={`w-14 h-14 rounded-2xl flex items-center justify-center text-2xl mb-8 ${item.dark ? "bg-cyan-400 text-black" : "bg-zinc-800 text-cyan-400"
+                                    }`}
                             >
                                 {item.icon}
                             </div>

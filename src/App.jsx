@@ -23,7 +23,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <div className="bg-white text-black min-h-screen flex flex-col justify-between selection:bg-black selection:text-white">
+      <div className="text-black min-h-screen flex flex-col justify-between selection:bg-black selection:text-white pl-4 sm:pl-6">
         <Navbar />
         <div className="flex-grow">
           <Routes>

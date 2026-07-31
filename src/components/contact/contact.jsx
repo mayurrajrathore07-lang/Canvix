@@ -32,54 +32,54 @@ function Contact() {
     return (
         <section className="max-w-7xl mx-auto px-6 py-16 md:py-24">
             <div className="grid lg:grid-cols-2 gap-16 items-start">
-                {/* Left Side */}
+
                 <div>
                     <span className="text-cyan-400 text-sm font-semibold uppercase tracking-widest block mb-3">
                         Get In Touch
                     </span>
-                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
-                        Let's talk about your next big project
+                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-black mb-6 typography-h2-64">
+                        Let's talk
                     </h1>
 
-                    <p className="text-gray-400 text-base md:text-lg leading-relaxed mb-10">
+                    <p className="text-black-400 typography-h2-64 leading-relaxed mb-10 font-bold">
                         We collaborate with creators, entrepreneurs, and visionary brands. Have a project in mind? Reach out to us today!
                     </p>
 
                     <hr className="border-zinc-800 mb-10" />
 
-                    {/* Email */}
+
                     <div className="flex items-center gap-5 mb-8">
                         <div className="w-14 h-14 rounded-2xl bg-zinc-900 border border-zinc-800 text-cyan-400 flex items-center justify-center text-xl shrink-0">
                             <FaEnvelope />
                         </div>
 
                         <div>
-                            <h3 className="font-semibold text-lg text-white">Our email</h3>
-                            <p className="text-gray-400 text-sm md:text-base">hello@canvix agency.com</p>
+                            <h3 className="font-semibold text-lg text-black font-bold typography-h2-64" >Our email</h3>
+                            <p className="text-black-400 text-sm md:text-base font-bold typography-h2-64">hello@canvix agency.com</p>
                         </div>
                     </div>
 
-                    {/* Phone */}
+
                     <div className="flex items-center gap-5 mb-8">
                         <div className="w-14 h-14 rounded-2xl bg-zinc-900 border border-zinc-800 text-cyan-400 flex items-center justify-center text-xl shrink-0">
                             <FaPhoneAlt />
                         </div>
 
                         <div>
-                            <h3 className="font-semibold text-lg text-white">Call us</h3>
-                            <p className="text-gray-400 text-sm md:text-base">+1 (234) 567-8902</p>
+                            <h3 className="font-semibold text-lg text-black font-bold typography-h2-64" >Call us</h3>
+                            <p className="text-black-400 text-sm md:text-base font-bold typography-h2-64">9999999999</p>
                         </div>
                     </div>
 
-                    {/* Address */}
+
                     <div className="flex items-center gap-5 mb-10">
                         <div className="w-14 h-14 rounded-2xl bg-zinc-900 border border-zinc-800 text-cyan-400 flex items-center justify-center text-xl shrink-0">
                             <FaMapMarkerAlt />
                         </div>
 
                         <div>
-                            <h3 className="font-semibold text-lg text-white">Visit Us</h3>
-                            <p className="text-gray-400 text-sm md:text-base">119 Tanglewood Lane Gulfport, MS 39503</p>
+                            <h3 className="font-semibold text-lg text-black font-bold typography-h2-64" >Visit Us</h3>
+                            <p className="text-black-400 text-sm md:text-base font-bold typography-h2-64">SBR Ahmedabad, Gujarat, India</p>
                         </div>
                     </div>
 
@@ -192,7 +192,7 @@ function Contact() {
 
                         <button
                             type="submit"
-                            className="w-full bg-cyan-400 text-black font-semibold px-8 py-4 rounded-xl hover:bg-white transition duration-300 shadow-lg"
+                            className="w-full bg-white text-black font-semibold px-8 py-4 rounded-xl hover:bg-cyan-400 transition duration-300 shadow-lg"
                         >
                             Submit Now
                         </button>
