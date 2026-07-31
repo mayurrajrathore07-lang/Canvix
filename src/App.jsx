@@ -34,6 +34,7 @@ export default function App() {
             <Route path="/project-details" element={<Projectdetails />} />
             <Route path="/contact" element={<Contactpage />} />
             <Route path="*" element={<Home />} />
+
           </Routes>
         </div>
         <Footer />
