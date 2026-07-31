@@ -32,7 +32,8 @@ function Process() {
     return (
         <section className="bg-white py-20 px-6 text-zinc-900">
             <div className="max-w-7xl mx-auto">
-                {/* Section Subtitle & Title */}
+
+
                 <div className="text-center mb-16">
                     <p className="text-cyan-400 text-lg font-semibold tracking-wide mb-2">
                         Process
@@ -75,4 +76,4 @@ function Process() {
     );
 }
 
-export default Process;
+export default Process;

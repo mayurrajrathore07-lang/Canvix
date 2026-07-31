@@ -100,7 +100,9 @@ function Contact() {
                     </div>
                 </div>
 
-                {/* Right Side - Form */}
+
+
+
                 <div className="bg-zinc-950 border border-zinc-800 rounded-3xl p-8 sm:p-12 shadow-2xl">
                     <h2 className="text-2xl font-bold text-white mb-6">Send Us a Message</h2>
 

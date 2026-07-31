@@ -43,10 +43,10 @@ export const allProjectsData = [
 
 function ProjectProject() {
     return (
-        /* Container section with simple white background and responsive padding */
+
         <section className="bg-white py-12 px-4 sm:px-6">
             <div className="max-w-6xl mx-auto">
-                {/* 2-Column Responsive Grid Layout */}
+
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {allProjectsData.map((item) => (
                         <div key={item.id} className="flex flex-col">
