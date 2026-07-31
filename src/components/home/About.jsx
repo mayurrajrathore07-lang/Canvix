@@ -35,7 +35,7 @@ function About() {
                         About Us
                     </p>
 
-                    <h2 className="text-white text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                    <h2 className="text-white text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6 typography-h2-64">
                         The core mission behind all our work
                     </h2>
 
