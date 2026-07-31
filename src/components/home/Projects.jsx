@@ -6,7 +6,7 @@ function Projects() {
     const projects = [
         {
             id: "1",
-            image: "https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=800&q=80",
+            image: "https://mir-s3-cdn-cf.behance.net/projects/404/058974234960045.Y3JvcCw4OTQsNzAwLDIsMA.png",
             title: "Web UI design",
             category: "Creative / Art direction",
         },
