@@ -62,8 +62,8 @@ function Services() {
                         >
                             <div
                                 className={`w-12 h-12 rounded-full flex items-center justify-center text-lg mb-8 ${item.dark
-                                    ? "bg-white text-black hover:text-white hover:bg-black"
-                                    : "bg-white text-black shadow-sm hover:text-white hover:bg-black"
+                                    ? "bg-black text-black hover:text-white hover:bg-black"
+                                    : "bg-black text-white shadow-sm hover:text-black hover:bg-white"
                                     }`}
                             >
                                 {item.icon}
