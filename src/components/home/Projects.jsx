@@ -33,7 +33,7 @@ function Projects() {
     return (
         <section className="bg-[#f8f9fa] py-24 px-6 md:px-12 text-[#111111]">
             <div className="max-w-7xl mx-auto">
-                {/* Header */}
+
                 <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-14">
                     <h2 className="text-3xl sm:text-5xl font-serif font-bold text-[#111111]">
                         Recent Showcase
@@ -50,7 +50,7 @@ function Projects() {
                     </Link>
                 </div>
 
-                {/* Grid of Projects */}
+
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                     {projects.map((item) => (
                         <div key={item.id} className="group cursor-pointer">

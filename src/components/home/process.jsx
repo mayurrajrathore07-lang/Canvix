@@ -50,7 +50,6 @@ function Process() {
                             className="bg-[#f8f9fa] border border-gray-200/80 rounded-2xl p-6 sm:p-8 flex flex-col justify-between hover:shadow-md transition-shadow"
                         >
                             <div>
-                                {/* Header: Icon circle + Title */}
                                 <div className="flex items-center gap-3.5 mb-6">
                                     <div className="w-10 h-10 bg-[#111111] rounded-full flex items-center justify-center shrink-0 shadow-sm">
                                         {step.icon}
@@ -58,7 +57,6 @@ function Process() {
                                     <h3 className="text-xl font-bold text-[#111111]">{step.title}</h3>
                                 </div>
 
-                                {/* Description */}
                                 <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
                                     {step.desc}
                                 </p>

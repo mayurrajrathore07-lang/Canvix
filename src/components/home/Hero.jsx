@@ -7,7 +7,6 @@ const heroImg = "https://images.unsplash.com/photo-1522071820081-009f0129c71c?au
 function Hero() {
     return (
         <section className="bg-[#0c0d0e] text-white py-16 md:py-24 px-6 md:px-12 relative overflow-hidden">
-            {/* Top-Left Decorative Dot Matrix Grid */}
             <div className="absolute top-8 left-6 opacity-20 pointer-events-none">
                 <div className="grid grid-cols-6 gap-2">
                     {Array.from({ length: 24 }).map((_, i) => (
@@ -18,7 +17,6 @@ function Hero() {
 
             <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
 
-                {/* Left Content (7 cols) */}
                 <div className="lg:col-span-7 space-y-8 z-10">
                     <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-serif leading-[1.15] tracking-tight">
                         Ready to take your{" "}
@@ -32,7 +30,6 @@ function Hero() {
                         Our team creates engaging content strategies to build authority and drive organic traffic, turning visionary ideas into scalable enterprise success.
                     </p>
 
-                    {/* CTA Button */}
                     <div>
                         <Link
                             to="/contact"
@@ -45,7 +42,6 @@ function Hero() {
                         </Link>
                     </div>
 
-                    {/* Trusted By Logos */}
                     <div className="pt-6 border-t border-white/10 space-y-4">
                         <p className="text-[#30B5AA] text-xs font-semibold uppercase tracking-wider">
                             Trusted by leading companies
@@ -67,20 +63,15 @@ function Hero() {
                     </div>
                 </div>
 
-                {/* Right Hero Graphic with Circular Concentric Rings (5 cols) */}
                 <div className="lg:col-span-5 flex justify-center lg:justify-end relative">
                     <div className="relative w-[340px] h-[340px] sm:w-[440px] sm:h-[440px] md:w-[480px] md:h-[480px] flex items-center justify-center">
 
-                        {/* Outer Solid Circle */}
                         <div className="absolute inset-0 rounded-full border border-white/10"></div>
 
-                        {/* Inner Dashed Ring */}
                         <div className="absolute inset-4 sm:inset-6 rounded-full border border-dashed border-[#30B5AA]/30"></div>
 
-                        {/* Small accent dot on orbit */}
                         <div className="absolute top-3 right-12 w-3 h-3 bg-[#30B5AA] rounded-full shadow-[0_0_12px_#30B5AA]"></div>
 
-                        {/* Central Circular Image Frame */}
                         <div className="w-[260px] h-[260px] sm:w-[350px] sm:h-[350px] md:w-[380px] md:h-[380px] rounded-full overflow-hidden border-4 border-white/10 shadow-2xl relative group">
                             <img
                                 src={heroImg}

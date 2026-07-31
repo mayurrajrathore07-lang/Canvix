@@ -7,10 +7,10 @@ function Footer() {
         <footer className="bg-[#0c0d0e] text-gray-400 pt-16 pb-10 border-t border-white/10 font-sans">
             <div className="max-w-6xl mx-auto px-6 sm:px-8">
 
-                {/* Main Grid */}
+
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-16 border-b border-white/10">
 
-                    {/* Col 1: Brand Info (4 cols) */}
+
                     <div className="md:col-span-4 space-y-4">
                         <Link to="/" className="text-2xl font-bold text-white flex items-center gap-2.5">
                             <div className="w-8 h-8 rounded-full bg-white text-black flex items-center justify-center shadow-sm">
@@ -26,7 +26,7 @@ function Footer() {
                         </p>
                     </div>
 
-                    {/* Col 2: Pages (2.5 cols) */}
+
                     <div className="md:col-span-2 space-y-4">
                         <h4 className="text-xs font-bold text-white uppercase tracking-wider">
                             Pages
@@ -41,7 +41,7 @@ function Footer() {
                         </ul>
                     </div>
 
-                    {/* Col 3: Utility Pages (2.5 cols) */}
+
                     <div className="md:col-span-2 space-y-4">
                         <h4 className="text-xs font-bold text-white uppercase tracking-wider">
                             Utility Pages
@@ -57,7 +57,7 @@ function Footer() {
                         </ul>
                     </div>
 
-                    {/* Col 4: Subscribe (4 cols) */}
+
                     <div className="md:col-span-4 space-y-4">
                         <h4 className="text-xs font-bold text-white uppercase tracking-wider">
                             Subscribe
@@ -80,7 +80,7 @@ function Footer() {
 
                 </div>
 
-                {/* Bottom Row */}
+
                 <div className="pt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 items-center text-xs text-gray-400">
                     <div>
                         <span className="font-bold text-white block mb-0.5">Copyright by</span>
