@@ -61,7 +61,7 @@ function Footer() {
                     <div className="md:col-span-4 space-y-4">
                         <h4 className="text-xs font-bold text-white uppercase tracking-wider">
                             Subscribe
-                        </h4>
+                        </h4>1
 
                         <form onSubmit={(e) => e.preventDefault()} className="flex items-center bg-white rounded-full p-1 max-w-md shadow-sm">
                             <input
@@ -89,12 +89,12 @@ function Footer() {
 
                     <div>
                         <span className="font-bold text-white block mb-0.5">Contact Us</span>
-                        <span>99999999</span>
+                        <span>9999999999</span>
                     </div>
 
                     <div>
                         <span className="font-bold text-white block mb-0.5">Address</span>
-                        <span>SBR Ahmedabad gujrat</span>
+                        <span>SBR Ahmedabad</span>
                     </div>
 
                     <div className="flex gap-2.5 sm:justify-end">
