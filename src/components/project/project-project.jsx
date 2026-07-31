@@ -43,34 +43,37 @@ export const allProjectsData = [
 
 function ProjectProject() {
     return (
+        /* Container section with simple white background and responsive padding */
         <section className="bg-white py-12 px-4 sm:px-6">
             <div className="max-w-6xl mx-auto">
+                {/* 2-Column Responsive Grid Layout */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {allProjectsData.map((item) => (
                         <div key={item.id} className="flex flex-col">
-                            {/* Card Image Box */}
+                            {/* Card Image Box with rounded corners and fixed responsive height */}
                             <div className="relative w-full h-72 sm:h-80 rounded-2xl md:rounded-3xl overflow-hidden bg-gray-100 mb-3">
                                 <img
                                     src={item.image}
                                     alt={item.title}
-                                    className="w-full h-full object-cover"
+                                    className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                                 />
 
-                                {/* Arrow icon overlay if item has arrow */}
+                                {/* Arrow icon overlay for featured items */}
                                 {item.hasArrow && (
-                                    <div className="absolute inset-0 flex items-center justify-center bg-black/20">
-                                        <div className="w-12 h-12 rounded-full bg-black text-white flex items-center justify-center text-lg font-bold">
+                                    <div className="absolute inset-0 flex items-center justify-center">
+                                        <div className="w-12 h-12 rounded-full bg-black text-white flex items-center justify-center text-lg font-bold shadow-md">
                                             ↗
                                         </div>
                                     </div>
                                 )}
 
+                                {/* Clickable overlay link */}
                                 <Link to={`/projects/${item.id}`} className="absolute inset-0" aria-label={item.title} />
                             </div>
 
-                            {/* Title & Category */}
+                            {/* Project Title and Category */}
                             <div>
-                                <h3 className="text-xl md:text-2xl font-serif font-bold text-black">
+                                <h3 className="text-xl md:text-2xl font-bold text-gray-900 hover:text-gray-700 transition">
                                     <Link to={`/projects/${item.id}`}>
                                         {item.title}
                                     </Link>
