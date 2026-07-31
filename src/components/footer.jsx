@@ -4,8 +4,8 @@ import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 
 function Footer() {
     return (
-        <footer className="bg-[#0c0d0e] text-gray-400 pt-20 pb-10 border-t border-white/10 font-sans">
-            <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <footer className="bg-[#0c0d0e] text-gray-400 pt-16 pb-10 border-t border-white/10 font-sans">
+            <div className="max-w-6xl mx-auto px-6 sm:px-8">
 
                 {/* Main Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-16 border-b border-white/10">
@@ -13,10 +13,12 @@ function Footer() {
                     {/* Col 1: Brand Info (4 cols) */}
                     <div className="md:col-span-4 space-y-4">
                         <Link to="/" className="text-2xl font-bold text-white flex items-center gap-2.5">
-                            <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-black font-extrabold text-sm">
-                                C
+                            <div className="w-8 h-8 rounded-full bg-white text-black flex items-center justify-center shadow-sm">
+                                <svg className="w-4 h-4 text-black fill-none stroke-current stroke-2" viewBox="0 0 24 24">
+                                    <path d="M12 3a9 9 0 0 1 9 9c0 4.97-4.03 9-9 9a9 9 0 0 1-9-9c0-3.31 2.69-6 6-6s6 2.69 6 6-2.69 4-4 4-4-1.79-4-4" strokeLinecap="round" />
+                                </svg>
                             </div>
-                            <span className="font-semibold text-xl text-white">Canvix</span>
+                            <span className="font-semibold text-xl text-white tracking-tight">Canvix</span>
                         </Link>
 
                         <p className="text-gray-400 text-xs sm:text-sm leading-relaxed max-w-sm">

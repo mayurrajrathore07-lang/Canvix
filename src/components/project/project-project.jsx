@@ -73,7 +73,7 @@ function ProjectProject() {
 
                             {/* Project Title and Category */}
                             <div>
-                                <h3 className="text-xl md:text-2xl font-bold text-gray-900 hover:text-gray-700 transition">
+                                <h3 className="text-xl md:text-2xl font-serif font-bold text-gray-900 hover:text-gray-700 transition">
                                     <Link to={`/projects/${item.id}`}>
                                         {item.title}
                                     </Link>

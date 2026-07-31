@@ -13,30 +13,32 @@ function Navbar() {
           : "text-gray-400 hover:text-white transition";
 
     return (
-        <nav className="sticky top-0 z-50 bg-[#0c0d0e]/90 backdrop-blur-md border-b border-white/10 text-white">
-            <div className="max-w-7xl mx-auto px-6 sm:px-10 flex items-center justify-between py-5">
+        <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 text-black">
+            <div className="max-w-6xl mx-auto px-6 sm:px-8 flex items-center justify-between py-4">
                 {/* Logo */}
-                <Link to="/" className="text-2xl font-bold tracking-tight text-white flex items-center gap-2.5">
-                    <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-black font-extrabold text-sm">
-                        C
+                <Link to="/" className="text-2xl font-bold tracking-tight text-black flex items-center gap-2.5">
+                    <div className="w-8 h-8 rounded-full bg-black text-white flex items-center justify-center shadow-sm">
+                        <svg className="w-4 h-4 text-white fill-none stroke-current stroke-2" viewBox="0 0 24 24">
+                            <path d="M12 3a9 9 0 0 1 9 9c0 4.97-4.03 9-9 9a9 9 0 0 1-9-9c0-3.31 2.69-6 6-6s6 2.69 6 6-2.69 4-4 4-4-1.79-4-4" strokeLinecap="round" />
+                        </svg>
                     </div>
-                    <span className="font-semibold text-xl">Canvix</span>
+                    <span className="font-semibold text-xl tracking-tight text-black">Canvix</span>
                 </Link>
 
                 {/* Desktop Menu */}
-                <ul className="hidden md:flex items-center gap-10 text-sm font-medium">
+                <ul className="hidden md:flex items-center gap-8 text-sm font-medium">
                     <li>
-                        <NavLink to="/" className={navLinkClass}>
+                        <NavLink to="/" className={({ isActive }) => isActive ? "text-black font-semibold" : "text-gray-600 hover:text-black transition"}>
                             Home
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink to="/about" className={navLinkClass}>
+                        <NavLink to="/about" className={({ isActive }) => isActive ? "text-black font-semibold" : "text-gray-600 hover:text-black transition"}>
                             About
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink to="/contact" className={navLinkClass}>
+                        <NavLink to="/contact" className={({ isActive }) => isActive ? "text-black font-semibold" : "text-gray-600 hover:text-black transition"}>
                             Contact Us
                         </NavLink>
                     </li>
@@ -45,7 +47,7 @@ function Navbar() {
                 {/* Get in touch button */}
                 <Link
                     to="/contact"
-                    className="hidden md:inline-block bg-white text-black px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold hover:bg-[#2dd4bf] hover:text-black transition duration-300 shadow-sm"
+                    className="hidden md:inline-block bg-black text-white px-5 py-2 rounded-full text-xs font-semibold hover:bg-gray-800 transition duration-300 shadow-sm"
                 >
                     Get in touch
                 </Link>
@@ -53,7 +55,7 @@ function Navbar() {
                 {/* Mobile Hamburger */}
                 <button
                     onClick={toggleMenu}
-                    className="md:hidden text-2xl text-white focus:outline-none"
+                    className="md:hidden text-xl text-black focus:outline-none"
                     aria-label="Toggle menu"
                 >
                     {isOpen ? <FaTimes /> : <FaBars />}
@@ -62,12 +64,12 @@ function Navbar() {
 
             {/* Mobile Dropdown */}
             {isOpen && (
-                <div className="md:hidden bg-[#0c0d0e] border-b border-white/10 px-6 py-6 space-y-4 text-white">
+                <div className="md:hidden bg-white border-b border-gray-100 px-6 py-4 space-y-3 text-black">
                     <NavLink
                         to="/"
                         onClick={() => setIsOpen(false)}
                         className={({ isActive }) =>
-                            `block py-2 ${isActive ? "text-white font-semibold" : "text-gray-400 hover:text-white"}`
+                            `block py-1.5 ${isActive ? "text-black font-semibold" : "text-gray-600 hover:text-black"}`
                         }
                     >
                         Home
@@ -76,7 +78,7 @@ function Navbar() {
                         to="/about"
                         onClick={() => setIsOpen(false)}
                         className={({ isActive }) =>
-                            `block py-2 ${isActive ? "text-white font-semibold" : "text-gray-400 hover:text-white"}`
+                            `block py-1.5 ${isActive ? "text-black font-semibold" : "text-gray-600 hover:text-black"}`
                         }
                     >
                         About
@@ -85,7 +87,7 @@ function Navbar() {
                         to="/projects"
                         onClick={() => setIsOpen(false)}
                         className={({ isActive }) =>
-                            `block py-2 ${isActive ? "text-white font-semibold" : "text-gray-400 hover:text-white"}`
+                            `block py-1.5 ${isActive ? "text-black font-semibold" : "text-gray-600 hover:text-black"}`
                         }
                     >
                         Portfolio
@@ -94,7 +96,7 @@ function Navbar() {
                         to="/contact"
                         onClick={() => setIsOpen(false)}
                         className={({ isActive }) =>
-                            `block py-2 ${isActive ? "text-white font-semibold" : "text-gray-400 hover:text-white"}`
+                            `block py-1.5 ${isActive ? "text-black font-semibold" : "text-gray-600 hover:text-black"}`
                         }
                     >
                         Contact Us
@@ -102,7 +104,7 @@ function Navbar() {
                     <Link
                         to="/contact"
                         onClick={() => setIsOpen(false)}
-                        className="block text-center bg-white text-black px-6 py-3 rounded-full font-semibold hover:bg-[#2dd4bf] transition"
+                        className="block text-center bg-black text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-gray-800 transition"
                     >
                         Get in touch
                     </Link>

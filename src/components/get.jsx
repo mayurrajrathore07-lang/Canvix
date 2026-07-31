@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const ProjectLetsTalk = () => {
     return (
-        <section className="bg-white py-8 px-4 sm:px-6 m-20">
+        <section className="bg-white py-8 px-4 sm:px-6">
             <div className="max-w-6xl mx-auto">
                 <div className="relative overflow-hidden bg-[#242424] rounded-3xl py-14 px-6 text-center shadow-lg">
 
