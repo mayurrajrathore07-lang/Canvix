@@ -6,7 +6,7 @@ const ProjectLetsTalk = () => {
         <section className="bg-white py-8 px-4 sm:px-6 m-20">
             <div className="max-w-6xl mx-auto">
                 <div className="relative overflow-hidden bg-[#242424] rounded-3xl py-14 px-6 text-center shadow-lg">
-                    {/* Background Waves */}
+
                     <svg
                         className="absolute inset-0 h-full w-full opacity-30 pointer-events-none"
                         viewBox="0 0 1440 320"
