@@ -32,7 +32,6 @@ function Contact() {
     return (
         <section className="max-w-7xl mx-auto px-6 py-16 md:py-24">
             <div className="grid lg:grid-cols-2 gap-16 items-start">
-
                 <div>
                     <span className="text-cyan-400 text-sm font-semibold uppercase tracking-widest block mb-3">
                         Get In Touch

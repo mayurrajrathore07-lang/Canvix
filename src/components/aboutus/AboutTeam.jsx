@@ -26,7 +26,7 @@ const teamMembers = [
 function AboutTeam() {
     return (
         <section className="bg-black py-20 px-6">
-            <div className="max-w-7xl mx-auto">
+            <div className="max-w-7xl mx-auto " >
                 <div className="text-center mb-16">
                     <span className="text-cyan-400 font-semibold uppercase tracking-widest text-xs block mb-2">
                         Our Leadership
