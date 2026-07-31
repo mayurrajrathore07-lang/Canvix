@@ -1,12 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 @import "tailwindcss";
+
+:root {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.font-serif {
+  font-family: 'DM Serif Display', serif;
+}
 
 html,
 body,
 #root {
   margin: 0;
   padding: 0;
-  height: 100%;
+  min-height: 100%;
   width: 100%;
-  background-color: white;
-  text-transform: capitalize;
+  background-color: #0c0d0e;
+  color: #ffffff;
+  scroll-behavior: smooth;
 }

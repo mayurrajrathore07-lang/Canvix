@@ -8,7 +8,7 @@ import Testimonial from "../components/home/Testimonial.jsx";
 
 export default function Home() {
     return (
-        <main className="bg-black text-white">
+        <main className="bg-[#0c0d0e] text-white min-h-screen">
             <Hero />
             <Services />
             <About />
@@ -18,3 +18,4 @@ export default function Home() {
         </main>
     );
 }
+

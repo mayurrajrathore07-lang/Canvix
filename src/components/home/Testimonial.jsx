@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import { FaChevronLeft, FaChevronRight, FaQuoteLeft } from "react-icons/fa";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const testimonialsData = [
     {
         id: 1,
         profile: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80",
-        quote: "“Be genuine in your assessment, and provide constructive feedback to benefit both potential customers and the company providing the product or service.”",
+        quote: "“Be accurate in your assessment, and provide constructive feedback to benefit both potential customers and the company providing top services.”",
         name: "Jacqueline Miller",
-        role: "CEO of Eduport",
+        role: "CEO of Company",
     },
     {
         id: 2,
@@ -43,44 +43,55 @@ function Testimonial() {
     const current = testimonialsData[currentIndex];
 
     return (
-        <section className="py-20 px-6 bg-white">
-            <div className="max-w-5xl mx-auto bg-zinc-900 border border-zinc-800 rounded-3xl p-8 sm:p-14 text-center relative overflow-hidden shadow-2xl">
-                <div className="absolute top-6 left-6 text-cyan-400/20 text-6xl">
-                    <FaQuoteLeft />
+        <section className="py-20 px-6 md:px-12 bg-[#f8f9fa] text-[#111111]">
+            <div className="max-w-4xl mx-auto bg-[#f0f2f5] rounded-3xl p-8 sm:p-14 text-center shadow-sm relative border border-gray-200/50">
+
+                {/* Avatar */}
+                <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden mx-auto mb-6 shadow-md border-2 border-white">
+                    <img
+                        src={current.profile}
+                        alt={current.name}
+                        className="w-full h-full object-cover"
+                    />
                 </div>
 
-                <img
-                    src={current.profile}
-                    alt={current.name}
-                    className="w-24 h-24 rounded-full object-cover mx-auto mb-8 border-2 border-cyan-400 p-1"
-                />
-
-                <p className="max-w-3xl mx-auto text-xl sm:text-2xl lg:text-3xl font-semibold text-white leading-snug mb-8">
+                {/* Quote Text */}
+                <p className="max-w-3xl mx-auto text-base sm:text-lg lg:text-xl font-serif font-bold text-[#111111] leading-relaxed mb-6">
                     {current.quote}
                 </p>
 
-                <h3 className="text-xl font-bold text-cyan-400">{current.name}</h3>
-                <p className="text-gray-400 text-sm mt-1 mb-8">{current.role}</p>
+                {/* Name & Role */}
+                <h3 className="text-base sm:text-lg font-bold text-[#111111]">{current.name}</h3>
+                <p className="text-gray-500 text-xs sm:text-sm mt-0.5 mb-8">{current.role}</p>
 
-                <div className="flex justify-center items-center gap-4">
+                {/* Controls */}
+                <div className="flex justify-center items-center gap-3">
                     <button
                         onClick={handlePrev}
                         aria-label="Previous Testimonial"
-                        className="w-12 h-12 rounded-full border border-zinc-700 bg-zinc-800 text-white flex items-center justify-center hover:bg-cyan-400 hover:text-black hover:border-cyan-400 transition"
+                        className="w-10 h-10 rounded-full bg-[#111111] text-white flex items-center justify-center hover:bg-[#30B5AA] transition shadow-sm"
                     >
-                        <FaChevronLeft />
+                        <FaChevronLeft className="w-3.5 h-3.5" />
                     </button>
 
-                    <span className="text-xs text-gray-500 font-mono">
-                        {currentIndex + 1} / {testimonialsData.length}
-                    </span>
+                    <div className="flex items-center gap-1.5 px-2">
+                        {testimonialsData.map((_, idx) => (
+                            <div
+                                key={idx}
+                                onClick={() => setCurrentIndex(idx)}
+                                className={`h-2 rounded-full cursor-pointer transition-all duration-300 ${
+                                    idx === currentIndex ? "w-6 bg-[#111111]" : "w-2 bg-gray-300 hover:bg-gray-400"
+                                }`}
+                            ></div>
+                        ))}
+                    </div>
 
                     <button
                         onClick={handleNext}
                         aria-label="Next Testimonial"
-                        className="w-12 h-12 rounded-full border border-zinc-700 bg-zinc-800 text-white flex items-center justify-center hover:bg-cyan-400 hover:text-black hover:border-cyan-400 transition"
+                        className="w-10 h-10 rounded-full bg-[#111111] text-white flex items-center justify-center hover:bg-[#30B5AA] transition shadow-sm"
                     >
-                        <FaChevronRight />
+                        <FaChevronRight className="w-3.5 h-3.5" />
                     </button>
                 </div>
             </div>
