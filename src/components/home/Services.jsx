@@ -7,12 +7,14 @@ function Services() {
             title: "Content Marketing",
             desc: "Our team creates engaging content strategies to build authority and drive organic traffic.",
             icon: <FaPenNib />,
-            dark: true,
+
         },
         {
             title: "Graphic Design",
             desc: "Creative visuals tailored to reflect your brand's unique identity.",
             icon: <FaBezierCurve />,
+
+
         },
         {
             title: "Digital Marketing",
@@ -53,18 +55,16 @@ function Services() {
                     {services.map((item, index) => (
                         <div
                             key={index}
-                            className={`rounded-2xl p-8 lg:p-10 transition-all duration-300 ${
-                                item.dark
-                                    ? "bg-[#0c0d0e] text-white shadow-xl"
-                                    : "bg-[#f0f2f5] text-[#111111] hover:shadow-lg hover:-translate-y-1"
-                            }`}
+                            className={`rounded-2xl p-8 lg:p-10 transition-all duration-300 hover:bg-black cursor-pointer ${item.dark
+                                ? "bg-[#0c0d0e] text-white shadow-xl hover:bg-white hover:text-black"
+                                : "bg-[#f0f2f5] text-[#111111] hover:shadow-lg hover:-translate-y-1 hover:text-black"
+                                }`}
                         >
                             <div
-                                className={`w-12 h-12 rounded-full flex items-center justify-center text-lg mb-8 ${
-                                    item.dark
-                                        ? "bg-white text-black"
-                                        : "bg-white text-black shadow-sm"
-                                }`}
+                                className={`w-12 h-12 rounded-full flex items-center justify-center text-lg mb-8 ${item.dark
+                                    ? "bg-white text-black hover:text-white hover:bg-black"
+                                    : "bg-white text-black shadow-sm hover:text-white hover:bg-black"
+                                    }`}
                             >
                                 {item.icon}
                             </div>

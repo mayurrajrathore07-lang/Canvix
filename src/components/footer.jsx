@@ -84,17 +84,17 @@ function Footer() {
                 <div className="pt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 items-center text-xs text-gray-400">
                     <div>
                         <span className="font-bold text-white block mb-0.5">Copyright by</span>
-                        <span>Designed by Iconica.com</span>
+                        <span>Designed by Identity hub.</span>
                     </div>
 
                     <div>
                         <span className="font-bold text-white block mb-0.5">Contact Us</span>
-                        <span>+0 12 457 4576</span>
+                        <span>99999999</span>
                     </div>
 
                     <div>
                         <span className="font-bold text-white block mb-0.5">Address</span>
-                        <span>119 Tanglewood Lane Gulfport, MS 39503</span>
+                        <span>SBR Ahmedabad gujrat</span>
                     </div>
 
                     <div className="flex gap-2.5 sm:justify-end">

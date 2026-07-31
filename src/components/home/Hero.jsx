@@ -7,13 +7,7 @@ const heroImg = "https://images.unsplash.com/photo-1522071820081-009f0129c71c?au
 function Hero() {
     return (
         <section className="bg-[#0c0d0e] text-white py-16 md:py-24 px-6 md:px-12 relative overflow-hidden">
-            <div className="absolute top-8 left-6 opacity-20 pointer-events-none">
-                <div className="grid grid-cols-6 gap-2">
-                    {Array.from({ length: 24 }).map((_, i) => (
-                        <div key={i} className="w-1.5 h-1.5 bg-white rounded-full"></div>
-                    ))}
-                </div>
-            </div>
+
 
             <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
 
