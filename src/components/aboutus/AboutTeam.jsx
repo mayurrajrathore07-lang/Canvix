@@ -21,6 +21,12 @@ const teamMembers = [
         role: "Brand Marketing Lead",
         image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80",
     },
+
+    {
+        name: "Emma Watson",
+        role: "Brand Marketing Lead",
+        image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80",
+    }
 ];
 
 function AboutTeam() {
@@ -33,6 +39,7 @@ function AboutTeam() {
                     </span>
                     <h2 className="text-4xl font-bold text-white">Meet the Creative Minds</h2>
                 </div>
+
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                     {teamMembers.map((member, index) => (
