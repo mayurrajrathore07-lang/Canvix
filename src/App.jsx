@@ -8,7 +8,7 @@ import Project from "./pages/project.jsx";
 import Projectdetails from "./pages/Projectdetails.jsx";
 import Contactpage from "./pages/contactpage.jsx";
 
-// Scroll to top on route navigation
+
 function ScrollToTop() {
   const { pathname } = useLocation();
 
