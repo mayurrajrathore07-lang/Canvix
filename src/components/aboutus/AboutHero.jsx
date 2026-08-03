@@ -7,7 +7,7 @@ const AboutHero = () => {
         <section className="bg-black text-white py-16">
             <div className="max-w-7xl mx-auto bg-[#111] rounded-3xl px-8 md:px-16 py-14">
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
-                    {/* Left */}
+
                     <div>
                         <p className="text-gray-400 mb-5">
                             Pleasure and so read the was hope.
@@ -39,14 +39,16 @@ const AboutHero = () => {
                         </div>
                     </div>
 
-                    {/* Right */}
+
                     <div className="relative flex justify-center items-center h-[550px]">
-                        {/* Background Cards */}
+
+
                         <div className="absolute w-[420px] h-[520px] rounded-3xl bg-white/10 -left-2 -top-2"></div>
 
                         <div className="absolute w-[420px] h-[520px] rounded-3xl bg-white/15 left-8 top-8"></div>
 
-                        {/* Main Image */}
+
+
                         <img
                             src={heroImg}
                             alt=""
