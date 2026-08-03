@@ -57,6 +57,18 @@ function Contact() {
                             <h3 className="font-semibold text-lg text-black font-bold typography-h2-64" >Our email</h3>
                             <p className="text-black-400 text-sm md:text-base font-bold typography-h2-64">hello@canvix agency.com</p>
                         </div>
+
+                        <div>
+                            <h3 className="font-semibold text-lg text-cyan font-bold typography-h2-64 hover:text-white hover:underline">our contact no.</h3>
+                            <p className="font-semibold text-lg text-black font-bold typography-h2-64">+91 9876543210</p>
+                        </div>
+
+                        <div>
+                            <h4 className="font-semibold text-lg text-cyan font-bold "> connect with  us</h4>
+                            <p className="font-semibold text-lg text-black font-bold hover: cyan"><a href="mailto:hellow@[EMAIL_ADDRESS]">hellow@canvix agency.com</a> </p>
+                        </div>
+
+
                     </div>
 
 
@@ -86,6 +98,8 @@ function Contact() {
                     <hr className="border-zinc-800 mb-8" />
 
                     <div className="flex gap-4">
+
+
                         <a href="https://facebook.com" target="_blank" rel="noreferrer" className="w-12 h-12 rounded-full bg-zinc-900 border border-zinc-800 text-white flex items-center justify-center hover:bg-cyan-400 hover:text-black transition">
                             <FaFacebookF />
                         </a>
