@@ -63,12 +63,6 @@ function Contact() {
                             <p className="font-semibold text-lg text-black font-bold typography-h2-64">+91 9876543210</p>
                         </div>
 
-                        <div>
-                            <h4 className="font-semibold text-lg text-cyan font-bold "> connect with  us</h4>
-                            <p className="font-semibold text-lg text-black font-bold hover: cyan"><a href="mailto:hellow@[EMAIL_ADDRESS]">hellow@canvix agency.com</a> </p>
-                        </div>
-
-
                     </div>
 
 
