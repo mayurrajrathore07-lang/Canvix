@@ -60,6 +60,7 @@ function Contact() {
 
                         <div>
                             <h3 className="font-semibold text-lg text-cyan font-bold typography-h2-64 hover:text-white hover:underline">our contact no.</h3>
+                            <p className="font-semibold text-lg text-cyan font-bold typography-h2-64 hover:text-white hover:underline"></p>
                             <p className="font-semibold text-lg text-black font-bold typography-h2-64">+91 9876543210</p>
                         </div>
 
