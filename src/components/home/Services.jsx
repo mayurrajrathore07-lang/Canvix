@@ -43,7 +43,7 @@ function Services() {
             <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-16">
                     <p className="text-[#30B5AA] text-sm font-semibold uppercase tracking-wider mb-3">
-                        Our Services
+                        our Services
                     </p>
 
                     <h2 className="text-4xl sm:text-5xl font-serif font-bold text-[#111111]">
