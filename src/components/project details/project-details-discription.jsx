@@ -29,7 +29,6 @@ function ProjectDetailsDescription({ project }) {
                     </p>
                 </div>
 
-
                 <div>
                     <h2 className="text-lg sm:text-xl md:text-2xl font-serif font-bold text-gray-900 mb-4">
                         02. The Solution
