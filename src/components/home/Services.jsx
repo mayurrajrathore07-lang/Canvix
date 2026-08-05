@@ -47,7 +47,7 @@ function Services() {
                     </p>
 
                     <h2 className="text-4xl sm:text-5xl font-serif font-bold text-[#111111]">
-                        High-impact services <br className="hidden sm:inline" /> for your business
+                        High-impact services <br className="hidden sm:inline" /> for your business and jobs
                     </h2>
                 </div>
 
