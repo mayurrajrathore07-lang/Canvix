@@ -126,6 +126,7 @@ function Contact() {
                                 <label className="block text-gray-300 text-sm font-medium mb-2">
                                     First name
                                 </label>
+
                                 <input
                                     type="text"
                                     name="firstName"

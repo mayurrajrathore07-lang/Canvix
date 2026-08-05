@@ -34,7 +34,7 @@ const AboutHero = () => {
 
                             <div>
                                 <h4 className="font-semibold">Rated 4.9/5 stars</h4>
-                                <p className="text-yellow-400 text-lg">★★★★★</p>
+                                <p className="text-yellow-400 text-lg hover:text-blue-400">★★★★★</p>
                             </div>
                         </div>
                     </div>
