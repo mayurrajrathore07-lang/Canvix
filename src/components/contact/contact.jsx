@@ -86,7 +86,7 @@ function Contact() {
 
                         <div>
                             <h3 className="font-semibold text-lg text-black font-bold typography-h2-64" >Visit Us</h3>
-                            <p className="text-black-400 text-sm md:text-base font-bold typography-h2-64">SBR Ahmedabad, Gujarat, India</p>
+                            <p className="text-black-400 text-sm md:text-base font-bold typography-h2-64">SBR ahmedabad, india </p>
                         </div>
                     </div>
 
