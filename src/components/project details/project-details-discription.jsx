@@ -19,7 +19,7 @@ function ProjectDetailsDescription({ project }) {
         <section className="bg-white py-12 md:py-16 px-4 sm:px-6 md:px-8 text-black">
             <div className="max-w-4xl mx-auto space-y-12 sm:space-y-14">
 
-                {/* 01. The Challenge */}
+
                 <div>
                     <h2 className="text-lg sm:text-xl md:text-2xl font-serif font-bold text-gray-900 mb-4">
                         01. The Challenge
@@ -29,7 +29,7 @@ function ProjectDetailsDescription({ project }) {
                     </p>
                 </div>
 
-                {/* 02. The Solution */}
+
                 <div>
                     <h2 className="text-lg sm:text-xl md:text-2xl font-serif font-bold text-gray-900 mb-4">
                         02. The Solution
