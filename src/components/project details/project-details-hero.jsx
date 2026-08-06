@@ -15,7 +15,8 @@ function ProjectDetailsHero({ project }) {
     return (
         <section className="bg-white pt-6 pb-8 px-4 sm:px-6 md:px-8">
             <div className="max-w-6xl mx-auto">
-                {/* Hero Main Image Container */}
+
+
                 <div className="relative w-full h-[320px] sm:h-[450px] md:h-[520px] rounded-3xl md:rounded-[36px] overflow-hidden bg-zinc-900 shadow-sm">
                     <img
                         src={current.image || defaultData.image}
@@ -24,7 +25,7 @@ function ProjectDetailsHero({ project }) {
                     />
                 </div>
 
-                {/* Overlapping Metadata Pills Bar */}
+
                 <div className="max-w-4xl mx-auto -mt-8 sm:-mt-12 relative z-10 px-2 sm:px-4">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
                         <div className="bg-[#0e0e0e] text-white rounded-2xl p-4 sm:py-4 sm:px-5 flex flex-col justify-center shadow-lg border border-zinc-800">

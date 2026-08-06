@@ -33,7 +33,8 @@ function ProjectDetailsRecent({ currentId }) {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
                     {recentProjectsList.map((item) => (
                         <div key={item.id} className="flex flex-col group">
-                            {/* Card Image Box */}
+
+
                             <div className="relative w-full h-64 sm:h-72 rounded-2xl md:rounded-3xl overflow-hidden bg-gray-100 mb-4 shadow-sm">
                                 <img
                                     src={item.image}
@@ -43,7 +44,6 @@ function ProjectDetailsRecent({ currentId }) {
                                 <Link to={`/projects/${item.id}`} className="absolute inset-0" aria-label={item.title} />
                             </div>
 
-                            {/* Card Title & Category */}
                             <div>
                                 <h3 className="text-lg sm:text-xl font-bold text-gray-900 group-hover:text-gray-700 transition">
                                     <Link to={`/projects/${item.id}`}>

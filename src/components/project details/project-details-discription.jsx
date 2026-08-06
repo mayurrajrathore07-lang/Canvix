@@ -45,7 +45,9 @@ function ProjectDetailsDescription({ project }) {
                     </ul>
                 </div>
 
-                {/* 03. The Result */}
+
+
+
                 <div>
                     <h2 className="text-lg sm:text-xl md:text-2xl font-serif font-bold text-gray-900 mb-4">
                         03. The Result
@@ -58,7 +60,8 @@ function ProjectDetailsDescription({ project }) {
                     </p>
                 </div>
 
-                {/* 3 Gallery Images Grid */}
+
+
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-4">
                     {galleryImages.map((imgUrl, i) => (
                         <div
