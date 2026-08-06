@@ -124,7 +124,7 @@ function Contact() {
                         <div className="grid md:grid-cols-2 gap-6">
                             <div>
                                 <label className="block text-gray-300 text-sm font-medium mb-2">
-                                    First name
+                                    First name ..
                                 </label>
 
                                 <input
