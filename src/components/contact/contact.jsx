@@ -112,7 +112,7 @@ function Contact() {
 
 
                 <div className="bg-zinc-950 border border-zinc-800 rounded-3xl p-8 sm:p-12 shadow-2xl">
-                    <h2 className="text-2xl font-bold text-white mb-6">Send Us a Message</h2>
+                    <h2 className="text-2xl font-bold text-white mb-6">Send Us a Message...</h2>
 
                     {submitted && (
                         <div className="bg-cyan-950 border border-cyan-500 text-cyan-200 px-4 py-3 rounded-xl mb-6 text-sm">
