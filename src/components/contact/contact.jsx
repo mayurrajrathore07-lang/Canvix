@@ -89,10 +89,6 @@ function Contact() {
                             <p className="text-black-400 text-sm md:text-base font-bold typography-h2-64">SBR ahmedabad, india </p>
                         </div>
 
-                        <div>
-                            <h3>social media</h3>
-                            <p className="text-black-400 text-sm md:text-base font-bold typography-h2-64">find us on social media platforms</p  >
-                        </div>
                     </div>
 
                     <hr className="border-zinc-800 mb-8" />
