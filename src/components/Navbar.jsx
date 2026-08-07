@@ -9,13 +9,14 @@ function Navbar() {
 
     const navLinkClass = ({ isActive }) =>
         isActive
-          ? "text-white font-medium transition"
-          : "text-gray-400 hover:text-white transition";
+            ? "text-white font-medium transition"
+            : "text-gray-400 hover:text-white transition";
 
     return (
         <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 text-black">
             <div className="max-w-6xl mx-auto px-6 sm:px-8 flex items-center justify-between py-4">
-                {/* Logo */}
+
+
                 <Link to="/" className="text-2xl font-bold tracking-tight text-black flex items-center gap-2.5">
                     <div className="w-8 h-8 rounded-full bg-black text-white flex items-center justify-center shadow-sm">
                         <svg className="w-4 h-4 text-white fill-none stroke-current stroke-2" viewBox="0 0 24 24">
@@ -25,7 +26,7 @@ function Navbar() {
                     <span className="font-semibold text-xl tracking-tight text-black">Canvix</span>
                 </Link>
 
-                {/* Desktop Menu */}
+
                 <ul className="hidden md:flex items-center gap-8 text-sm font-medium">
                     <li>
                         <NavLink to="/" className={({ isActive }) => isActive ? "text-black font-semibold" : "text-gray-600 hover:text-black transition"}>
@@ -44,7 +45,8 @@ function Navbar() {
                     </li>
                 </ul>
 
-                {/* Get in touch button */}
+
+
                 <Link
                     to="/contact"
                     className="hidden md:inline-block bg-black text-white px-5 py-2 rounded-full text-xs font-semibold hover:bg-gray-800 transition duration-300 shadow-sm"
@@ -52,7 +54,6 @@ function Navbar() {
                     Get in touch
                 </Link>
 
-                {/* Mobile Hamburger */}
                 <button
                     onClick={toggleMenu}
                     className="md:hidden text-xl text-black focus:outline-none"
@@ -62,7 +63,6 @@ function Navbar() {
                 </button>
             </div>
 
-            {/* Mobile Dropdown */}
             {isOpen && (
                 <div className="md:hidden bg-white border-b border-gray-100 px-6 py-4 space-y-3 text-black">
                     <NavLink
