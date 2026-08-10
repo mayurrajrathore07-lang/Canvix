@@ -34,7 +34,7 @@ function ProjectDetailsDescription({ project }) {
                         02. The Solution
                     </h2>
                     <p className="text-xs sm:text-sm text-gray-600 leading-relaxed mb-4">
-                        Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
+                        Temporibus autem quibusdam  aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
                     </p>
                     <ul className="space-y-2 text-xs sm:text-sm text-gray-600 pl-1">
                         {listItems.map((item, idx) => (
