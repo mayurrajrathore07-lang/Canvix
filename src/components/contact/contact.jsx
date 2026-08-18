@@ -11,6 +11,7 @@ import {
 
 function Contact() {
     const [submitted, setSubmitted] = useState(false);
+    const [errorMessage, setErrorMessage] = useState("");
     const [formData, setFormData] = useState({
         firstName: "",
         lastName: "",
@@ -23,10 +24,38 @@ function Contact() {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        setSubmitted(true);
-        setTimeout(() => setSubmitted(false), 5000);
+        setSubmitted(false);
+        setErrorMessage("");
+
+        try {
+            const response = await fetch("/api/contact", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData),
+            });
+
+            const result = await response.json();
+
+            if (!response.ok) {
+                throw new Error(result.message || "Something went wrong while sending your message.");
+            }
+
+            setSubmitted(true);
+            setFormData({
+                firstName: "",
+                lastName: "",
+                email: "",
+                phone: "",
+                message: "",
+            });
+            setTimeout(() => setSubmitted(false), 5000);
+        } catch (error) {
+            setErrorMessage(error.message || "Unable to send your message right now.");
+        }
     };
 
     return (
@@ -109,6 +138,12 @@ function Contact() {
                     {submitted && (
                         <div className="bg-cyan-950 border border-cyan-500 text-cyan-200 px-4 py-3 rounded-xl mb-6 text-sm">
                             Thank you! Your message has been sent successfully. We'll get back to you shortly.
+                        </div>
+                    )}
+
+                    {errorMessage && (
+                        <div className="bg-red-950 border border-red-500 text-red-200 px-4 py-3 rounded-xl mb-6 text-sm">
+                            {errorMessage}
                         </div>
                     )}
 
