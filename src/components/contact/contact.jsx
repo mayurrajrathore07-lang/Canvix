@@ -52,20 +52,11 @@ function Contact() {
                         <div className="w-14 h-14 rounded-2xl bg-zinc-900 border border-zinc-800 text-cyan-400 flex items-center justify-center text-xl shrink-0">
                             <FaEnvelope />
                         </div>
-                        ``
                         <div>
                             <h3 className="font-semibold text-lg text-black font-bold typography-h2-64">Our email</h3>
-                            <p className="text-black-400 text-sm md:text-base font-bold typography-h2-64">hello@canvix agency.com</p>
+                            <p className="text-black-400 text-sm md:text-base font-bold typography-h2-64">hello@canvix.agency.com</p>
                         </div>
-
-                        <div>
-                            <h3 className="font-semibold text-lg text-cyan font-bold typography-h2-64 hover:text-white hover:underline">our contact no.</h3>
-                            <p className="font-semibold text-lg text-cyan font-bold typography-h2-64 hover:text-white hover:underline"></p>
-                            <p className="font-semibold text-lg text-black font-bold typography-h2-64">+91 9876543210</p>
-                        </div>
-
                     </div>
-
 
                     <div className="flex items-center gap-5 mb-8">
                         <div className="w-14 h-14 rounded-2xl bg-zinc-900 border border-zinc-800 text-cyan-400 flex items-center justify-center text-xl shrink-0">
