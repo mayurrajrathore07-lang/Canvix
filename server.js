@@ -26,12 +26,28 @@ async function ensureStorageFile() {
 
 async function readMessages() {
   const fileContent = await fs.readFile(DATA_FILE, "utf8");
-  return JSON.parse(fileContent);
+  const parsed = JSON.parse(fileContent);
+  return Array.isArray(parsed) ? parsed : [];
 }
 
 async function writeMessages(messages) {
   await fs.writeFile(DATA_FILE, JSON.stringify(messages, null, 2), "utf8");
 }
+
+app.use((err, req, res, next) => {
+  if (err instanceof SyntaxError && err.status === 400 && "body" in err) {
+    return res.status(400).json({
+      success: false,
+      message: "Invalid JSON payload.",
+    });
+  }
+
+  console.error("Unhandled server error:", err);
+  return res.status(500).json({
+    success: false,
+    message: "Internal server error.",
+  });
+});
 
 app.post("/api/contact", async (req, res) => {
   const { firstName, lastName, email, phone, message } = req.body || {};
