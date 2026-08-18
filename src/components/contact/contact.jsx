@@ -54,7 +54,7 @@ function Contact() {
                         </div>
                         ``
                         <div>
-                            <h3 className="font-semibold text-lg text-black font-bold typography-h2-64" >Our email</h3>
+                            <h3 className="font-semibold text-lg text-black font-bold typography-h2-64">Our email</h3>
                             <p className="text-black-400 text-sm md:text-base font-bold typography-h2-64">hello@canvix agency.com</p>
                         </div>
 
