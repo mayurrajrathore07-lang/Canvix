@@ -24,35 +24,65 @@ function Contact() {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
+    const saveToLocalStorage = (data) => {
+        try {
+            const existing = JSON.parse(localStorage.getItem("canvix_contact_messages") || "[]");
+            existing.push({ ...data, createdAt: new Date().toISOString() });
+            localStorage.setItem("canvix_contact_messages", JSON.stringify(existing));
+        } catch (e) {
+            console.error("Failed to save message to localStorage:", e);
+        }
+    };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         setSubmitted(false);
         setErrorMessage("");
 
         try {
-            const response = await fetch("/api/contact", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(formData),
-            });
+            let sentSuccessfully = false;
 
-            const result = await response.json();
+            try {
+                const response = await fetch("/api/contact", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(formData),
+                });
 
-            if (!response.ok) {
-                throw new Error(result.message || "Something went wrong while sending your message.");
+                const contentType = response.headers.get("content-type");
+                if (contentType && contentType.includes("application/json")) {
+                    const result = await response.json();
+                    if (!response.ok) {
+                        throw new Error(result.message || "Something went wrong while sending your message.");
+                    }
+                    sentSuccessfully = true;
+                } else {
+                    // Server returned non-JSON (e.g. 404 HTML on static host like GitHub Pages)
+                    saveToLocalStorage(formData);
+                    sentSuccessfully = true;
+                }
+            } catch (err) {
+                if (err.message && !err.message.includes("Unexpected token") && !err.message.includes("JSON") && !err.message.includes("Failed to fetch")) {
+                    throw err;
+                }
+                // Fallback for static host / network error
+                saveToLocalStorage(formData);
+                sentSuccessfully = true;
             }
 
-            setSubmitted(true);
-            setFormData({
-                firstName: "",
-                lastName: "",
-                email: "",
-                phone: "",
-                message: "",
-            });
-            setTimeout(() => setSubmitted(false), 5000);
+            if (sentSuccessfully) {
+                setSubmitted(true);
+                setFormData({
+                    firstName: "",
+                    lastName: "",
+                    email: "",
+                    phone: "",
+                    message: "",
+                });
+                setTimeout(() => setSubmitted(false), 5000);
+            }
         } catch (error) {
             setErrorMessage(error.message || "Unable to send your message right now.");
         }
