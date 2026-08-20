@@ -100,7 +100,7 @@ function Contact() {
                         Let's talk
                     </h1>
 
-                    <p className="text-black-400 typography-h2-64 leading-relaxed mb-10 font-bold">
+                    <p className="text-gray-600 typography-h2-64 leading-relaxed mb-10 font-bold">
                         We collaborate with creators, entrepreneurs, and visionary brands. Have a project in mind? Reach out to us today!
                     </p>
 
@@ -113,7 +113,7 @@ function Contact() {
                         </div>
                         <div>
                             <h3 className="font-semibold text-lg text-black font-bold typography-h2-64">Our email</h3>
-                            <p className="text-black-400 text-sm md:text-base font-bold typography-h2-64">hello@canvix.agency.com</p>
+                            <p className="text-gray-600 text-sm md:text-base font-bold typography-h2-64">hello@canvix.agency.com</p>
                         </div>
                     </div>
 
@@ -124,7 +124,7 @@ function Contact() {
 
                         <div>
                             <h3 className="font-semibold text-lg text-black font-bold typography-h2-64" >Call us</h3>
-                            <p className="text-black-400 text-sm md:text-base font-bold typography-h2-64">9999999999</p>
+                            <p className="text-gray-600 text-sm md:text-base font-bold typography-h2-64">9999999999</p>
                         </div>
                     </div>
 
@@ -136,7 +136,7 @@ function Contact() {
 
                         <div>
                             <h3 className="font-semibold text-lg text-black font-bold typography-h2-64" >Visit Us</h3>
-                            <p className="text-black-400 text-sm md:text-base font-bold typography-h2-64">SBR ahmedabad, india </p>
+                            <p className="text-gray-600 text-sm md:text-base font-bold typography-h2-64">SBR ahmedabad, india </p>
                         </div>
 
                     </div>
