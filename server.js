@@ -104,7 +104,17 @@ app.get("/api/messages", async (_, res) => {
 
 await ensureStorageFile();
 
-app.listen(PORT, () => {
+const server = app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
   console.log(`Saved contact messages: ${DATA_FILE}`);
 });
+
+server.on("error", (err) => {
+  if (err.code === "EADDRINUSE") {
+    console.error(`Port ${PORT} is already in use. Please close the process using port ${PORT} or restart.`);
+  } else {
+    console.error("Server startup error:", err);
+  }
+  process.exit(1);
+});
+
