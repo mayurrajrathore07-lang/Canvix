@@ -30,34 +30,32 @@ function Process() {
     ];
 
     return (
-        <section className="bg-white py-24 px-6 md:px-12 text-[#111111]">
+        <section className="bg-[#0c0d0e] py-24 px-6 md:px-12 text-white">
             <div className="max-w-7xl mx-auto">
-
                 <div className="text-center mb-16">
                     <p className="text-[#30B5AA] text-sm font-semibold uppercase tracking-wider mb-3">
                         Process
                     </p>
-                    <h2 className="text-4xl sm:text-5xl font-serif font-bold text-[#111111]">
+                    <h2 className="text-4xl sm:text-5xl font-serif font-bold text-white">
                         Process that moves <br className="hidden sm:inline" /> things forward
                     </h2>
                 </div>
-
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {steps.map((step) => (
                         <div
                             key={step.id}
-                            className="bg-[#f8f9fa] border border-gray-200/80 rounded-2xl p-6 sm:p-8 flex flex-col justify-between hover:shadow-md transition-shadow"
+                            className="bg-[#141518] border border-white/10 rounded-2xl p-6 sm:p-8 flex flex-col justify-between hover:border-[#30B5AA]/40 transition-all duration-300 shadow-md group"
                         >
                             <div>
                                 <div className="flex items-center gap-3.5 mb-6">
-                                    <div className="w-10 h-10 bg-[#111111] rounded-full flex items-center justify-center shrink-0 shadow-sm">
+                                    <div className="w-10 h-10 bg-[#30B5AA] text-black rounded-full flex items-center justify-center shrink-0 shadow-sm font-bold">
                                         {step.icon}
                                     </div>
-                                    <h3 className="text-xl font-bold text-[#111111]">{step.title}</h3>
+                                    <h3 className="text-xl font-bold text-white group-hover:text-[#30B5AA] transition-colors">{step.title}</h3>
                                 </div>
 
-                                <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
+                                <p className="text-gray-400 text-xs sm:text-sm leading-relaxed">
                                     {step.desc}
                                 </p>
                             </div>

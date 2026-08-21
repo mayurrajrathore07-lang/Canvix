@@ -45,11 +45,11 @@ function Testimonial() {
     const current = testimonialsData[currentIndex];
 
     return (
-        <section className="py-20 px-6 md:px-12 bg-[#f8f9fa] text-[#111111]">
-            <div className="max-w-4xl mx-auto bg-[#f0f2f5] rounded-3xl p-8 sm:p-14 text-center shadow-sm relative border border-gray-200/50">
+        <section className="py-20 px-6 md:px-12 bg-[#0c0d0e] text-white">
+            <div className="max-w-4xl mx-auto bg-[#141518] rounded-3xl p-8 sm:p-14 text-center shadow-xl relative border border-white/10">
 
                 {/* Avatar */}
-                <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden mx-auto mb-6 shadow-md border-2 border-white">
+                <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden mx-auto mb-6 shadow-md border-2 border-[#30B5AA]">
                     <img
                         src={current.profile}
                         alt={current.name}
@@ -58,20 +58,20 @@ function Testimonial() {
                 </div>
 
                 {/* Quote Text */}
-                <p className="max-w-3xl mx-auto text-base sm:text-lg lg:text-xl font-serif font-bold text-[#111111] leading-relaxed mb-6">
+                <p className="max-w-3xl mx-auto text-base sm:text-lg lg:text-xl font-serif font-bold text-white leading-relaxed mb-6">
                     {current.quote}
                 </p>
 
                 {/* Name & Role */}
-                <h3 className="text-base sm:text-lg font-bold text-[#111111]">{current.name}</h3>
-                <p className="text-gray-500 text-xs sm:text-sm mt-0.5 mb-8">{current.role}</p>
+                <h3 className="text-base sm:text-lg font-bold text-[#30B5AA]">{current.name}</h3>
+                <p className="text-gray-400 text-xs sm:text-sm mt-0.5 mb-8">{current.role}</p>
 
                 {/* Controls */}
                 <div className="flex justify-center items-center gap-3">
                     <button
                         onClick={handlePrev}
                         aria-label="Previous Testimonial"
-                        className="w-10 h-10 rounded-full bg-[#111111] text-white flex items-center justify-center hover:bg-[#30B5AA] transition shadow-sm"
+                        className="w-10 h-10 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-[#30B5AA] hover:text-black transition shadow-sm"
                     >
                         <FaChevronLeft className="w-3.5 h-3.5" />
                     </button>
@@ -82,7 +82,7 @@ function Testimonial() {
                                 key={idx}
                                 onClick={() => setCurrentIndex(idx)}
                                 className={`h-2 rounded-full cursor-pointer transition-all duration-300 ${
-                                    idx === currentIndex ? "w-6 bg-[#111111]" : "w-2 bg-gray-300 hover:bg-gray-400"
+                                    idx === currentIndex ? "w-6 bg-[#30B5AA]" : "w-2 bg-gray-600 hover:bg-gray-400"
                                 }`}
                             ></div>
                         ))}
@@ -91,7 +91,7 @@ function Testimonial() {
                     <button
                         onClick={handleNext}
                         aria-label="Next Testimonial"
-                        className="w-10 h-10 rounded-full bg-[#111111] text-white flex items-center justify-center hover:bg-[#30B5AA] transition shadow-sm"
+                        className="w-10 h-10 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-[#30B5AA] hover:text-black transition shadow-sm"
                     >
                         <FaChevronRight className="w-3.5 h-3.5" />
                     </button>

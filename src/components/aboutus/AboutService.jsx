@@ -23,18 +23,18 @@ const servicesData = [
 
 function AboutService() {
     return (
-        <section className="bg-white text-black py-16 md:py-24 px-6">
+        <section className="bg-[#0c0d0e] text-white py-16 md:py-24 px-6">
             <div className="max-w-7xl mx-auto">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 text-center">
                     {servicesData.map((item, index) => (
-                        <div key={index} className="flex flex-col items-center">
-                            <h2 className="text-4xl md:text-5xl font-black text-black mb-3 tracking-tight">
+                        <div key={index} className="flex flex-col items-center bg-[#141518] border border-white/10 p-8 rounded-3xl shadow-lg">
+                            <h2 className="text-4xl md:text-5xl font-black text-[#30B5AA] mb-3 tracking-tight">
                                 {item.number}
                             </h2>
-                            <h3 className="text-xl md:text-2xl font-bold text-black mb-4 font-serif">
+                            <h3 className="text-xl md:text-2xl font-bold text-white mb-4 font-serif">
                                 {item.title}
                             </h3>
-                            <p className="text-gray-600 text-sm md:text-base leading-relaxed max-w-sm">
+                            <p className="text-gray-400 text-sm md:text-base leading-relaxed max-w-sm">
                                 {item.description}
                             </p>
                         </div>
