@@ -1,14 +1,18 @@
+"use client";
+
 import React, { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
+    const pathname = usePathname();
 
     const toggleMenu = () => setIsOpen(!isOpen);
 
-    const navLinkClass = ({ isActive }) =>
-        isActive
+    const navLinkClass = (href) =>
+        pathname === href
             ? "text-white font-medium transition"
             : "text-gray-400 hover:text-white transition";
 
@@ -29,19 +33,19 @@ function Navbar() {
 
                 <ul className="hidden md:flex items-center gap-8 text-sm font-medium">
                     <li>
-                        <NavLink to="/" className={({ isActive }) => isActive ? "text-black font-semibold" : "text-gray-600 hover:text-black transition"}>
+                        <Link href="/" className={navLinkClass("/") ? "text-black font-semibold" : "text-gray-600 hover:text-black transition"}>
                             Home
-                        </NavLink>
+                        </Link>
                     </li>
                     <li>
-                        <NavLink to="/about" className={({ isActive }) => isActive ? "text-black font-semibold" : "text-gray-600 hover:text-black transition"}>
+                        <Link href="/about" className={navLinkClass("/about") ? "text-black font-semibold" : "text-gray-600 hover:text-black transition"}>
                             About
-                        </NavLink>
+                        </Link>
                     </li>
                     <li>
-                        <NavLink to="/contact" className={({ isActive }) => isActive ? "text-black font-semibold" : "text-gray-600 hover:text-black transition"}>
+                        <Link href="/contact" className={navLinkClass("/contact") ? "text-black font-semibold" : "text-gray-600 hover:text-black transition"}>
                             Contact Us
-                        </NavLink>
+                        </Link>
                     </li>
                 </ul>
 
@@ -65,42 +69,34 @@ function Navbar() {
 
             {isOpen && (
                 <div className="md:hidden bg-white border-b border-gray-100 px-6 py-4 space-y-3 text-black">
-                    <NavLink
-                        to="/"
+                    <Link
+                        href="/"
                         onClick={() => setIsOpen(false)}
-                        className={({ isActive }) =>
-                            `block py-1.5 ${isActive ? "text-black font-semibold" : "text-gray-600 hover:text-black"}`
-                        }
+                        className={`block py-1.5 ${navLinkClass("/") ? "text-black font-semibold" : "text-gray-600 hover:text-black"}`}
                     >
                         Home
-                    </NavLink>
-                    <NavLink
-                        to="/about"
+                    </Link>
+                    <Link
+                        href="/about"
                         onClick={() => setIsOpen(false)}
-                        className={({ isActive }) =>
-                            `block py-1.5 ${isActive ? "text-black font-semibold" : "text-gray-600 hover:text-black"}`
-                        }
+                        className={`block py-1.5 ${navLinkClass("/about") ? "text-black font-semibold" : "text-gray-600 hover:text-black"}`}
                     >
                         About
-                    </NavLink>
-                    <NavLink
-                        to="/projects"
+                    </Link>
+                    <Link
+                        href="/projects"
                         onClick={() => setIsOpen(false)}
-                        className={({ isActive }) =>
-                            `block py-1.5 ${isActive ? "text-black font-semibold" : "text-gray-600 hover:text-black"}`
-                        }
+                        className={`block py-1.5 ${navLinkClass("/projects") ? "text-black font-semibold" : "text-gray-600 hover:text-black"}`}
                     >
                         Portfolio
-                    </NavLink>
-                    <NavLink
-                        to="/contact"
+                    </Link>
+                    <Link
+                        href="/contact"
                         onClick={() => setIsOpen(false)}
-                        className={({ isActive }) =>
-                            `block py-1.5 ${isActive ? "text-black font-semibold" : "text-gray-600 hover:text-black"}`
-                        }
+                        className={`block py-1.5 ${navLinkClass("/contact") ? "text-black font-semibold" : "text-gray-600 hover:text-black"}`}
                     >
                         Contact Us
-                    </NavLink>
+                    </Link>
                     <Link
                         to="/contact"
                         onClick={() => setIsOpen(false)}
