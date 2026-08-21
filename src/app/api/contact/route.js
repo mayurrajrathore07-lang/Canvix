@@ -1,33 +1,9 @@
 import { NextResponse } from "next/server";
-import fs from "fs/promises";
-import path from "path";
-
-const DATA_DIR = path.join(process.cwd(), "data");
-const DATA_FILE = path.join(DATA_DIR, "contactMessages.json");
-
-async function ensureStorageFile() {
-  await fs.mkdir(DATA_DIR, { recursive: true });
-  try {
-    const fileContent = await fs.readFile(DATA_FILE, "utf8");
-    JSON.parse(fileContent);
-  } catch {
-    await fs.writeFile(DATA_FILE, "[]", "utf8");
-  }
-}
-
-async function readMessages() {
-  await ensureStorageFile();
-  const fileContent = await fs.readFile(DATA_FILE, "utf8");
-  const parsed = JSON.parse(fileContent);
-  return Array.isArray(parsed) ? parsed : [];
-}
-
-async function writeMessages(messages) {
-  await fs.writeFile(DATA_FILE, JSON.stringify(messages, null, 2), "utf8");
-}
+import { neon } from "@neondatabase/serverless";
 
 export async function POST(request) {
   try {
+    const sql = neon(process.env.DATABASE_URL);
     const body = await request.json();
     const { firstName, lastName, email, phone, message } = body || {};
 
@@ -38,25 +14,26 @@ export async function POST(request) {
       );
     }
 
-    const contactMessage = {
-      firstName,
-      lastName,
-      email,
-      phone: phone || "",
-      message,
-      createdAt: new Date().toISOString(),
-    };
-
-    const messages = await readMessages();
-    messages.push(contactMessage);
-    await writeMessages(messages);
+    const result = await sql`
+      INSERT INTO contact_messages (first_name, last_name, email, phone, message, created_at)
+      VALUES (
+        ${firstName},
+        ${lastName},
+        ${email},
+        ${phone || ""},
+        ${message},
+        ${new Date().toISOString()}
+      )
+      RETURNING *
+    `;
 
     return NextResponse.json({
       success: true,
       message: "Contact form submitted successfully.",
-      data: contactMessage,
+      data: result[0],
     });
   } catch (error) {
+    console.error("Contact POST error:", error);
     return NextResponse.json(
       { success: false, message: error.message || "Error processing request" },
       { status: 500 }
