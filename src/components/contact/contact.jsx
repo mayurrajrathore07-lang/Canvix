@@ -37,7 +37,9 @@ function Contact() {
     };
 
     const handleSubmit = async (e) => {
-        e.preventDefault();
+        if (e && typeof e.preventDefault === "function") {
+            e.preventDefault();
+        }
         setSubmitted(false);
         setErrorMessage("");
 
@@ -57,17 +59,22 @@ function Contact() {
                 if (contentType && contentType.includes("application/json")) {
                     const result = await response.json();
                     if (!response.ok) {
-                        throw new Error(result.message || "Something went wrong while sending your message.");
+                        setErrorMessage(result.message || "Something went wrong while sending your message.");
+                        return;
                     }
                     sentSuccessfully = true;
+                } else if (response.ok) {
+                    sentSuccessfully = true;
                 } else {
-                    // Server returned non-JSON (e.g. 404 HTML on static host like GitHub Pages)
+                    // Server returned non-200 non-JSON (e.g. 404 HTML on static host like GitHub Pages)
                     saveToLocalStorage(formData);
                     sentSuccessfully = true;
                 }
             } catch (err) {
-                if (err.message && !err.message.includes("Unexpected token") && !err.message.includes("JSON") && !err.message.includes("Failed to fetch")) {
-                    throw err;
+                const msg = err instanceof Error ? err.message : (typeof err === "string" ? err : "");
+                if (msg && !msg.includes("Unexpected token") && !msg.includes("JSON") && !msg.includes("Failed to fetch") && !msg.includes("NetworkError")) {
+                    setErrorMessage(msg);
+                    return;
                 }
                 // Fallback for static host / network error
                 saveToLocalStorage(formData);
@@ -86,7 +93,10 @@ function Contact() {
                 setTimeout(() => setSubmitted(false), 5000);
             }
         } catch (error) {
-            setErrorMessage(error.message || "Unable to send your message right now.");
+            const fallbackMsg = error instanceof Error 
+                ? error.message 
+                : (typeof error === "string" ? error : "Unable to send your message right now.");
+            setErrorMessage(fallbackMsg);
         }
     };
 
