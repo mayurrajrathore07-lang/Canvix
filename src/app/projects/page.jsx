@@ -1,5 +1,5 @@
-import ProjectHero from "../../src/components/project/project-hero.jsx";
-import ProjectProject from "../../src/components/project/project-project.jsx";
+import ProjectHero from "@/components/project/project-hero.jsx";
+import ProjectProject from "@/components/project/project-project.jsx";
 
 export default function Page() {
   return (

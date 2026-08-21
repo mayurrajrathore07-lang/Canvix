@@ -1,5 +1,5 @@
-import Contact from "../../src/components/contact/contact.jsx";
-import ContactMap from "../../src/components/contact/contactMap.jsx";
+import Contact from "@/components/contact/contact.jsx";
+import ContactMap from "@/components/contact/contactMap.jsx";
 
 export default function Page() {
   return (

@@ -1,7 +1,8 @@
+import { NextResponse } from "next/server";
 import fs from "fs/promises";
 import path from "path";
 
-const DATA_DIR = path.join("/tmp", "data");
+const DATA_DIR = path.join(process.cwd(), "data");
 const DATA_FILE = path.join(DATA_DIR, "contactMessages.json");
 
 async function ensureStorageFile() {
@@ -25,44 +26,40 @@ async function writeMessages(messages) {
   await fs.writeFile(DATA_FILE, JSON.stringify(messages, null, 2), "utf8");
 }
 
-export default async function handler(req, res) {
-  if (req.method !== "POST") {
-    return res.status(405).json({ success: false, message: "Method not allowed" });
-  }
-
-  const { firstName, lastName, email, phone, message } = req.body || {};
-
-  if (!firstName || !lastName || !email || !message) {
-    return res.status(400).json({
-      success: false,
-      message: "First name, last name, email, and message are required.",
-    });
-  }
-
-  const contactMessage = {
-    firstName,
-    lastName,
-    email,
-    phone: phone || "",
-    message,
-    createdAt: new Date().toISOString(),
-  };
-
+export async function POST(request) {
   try {
+    const body = await request.json();
+    const { firstName, lastName, email, phone, message } = body || {};
+
+    if (!firstName || !lastName || !email || !message) {
+      return NextResponse.json(
+        { success: false, message: "First name, last name, email, and message are required." },
+        { status: 400 }
+      );
+    }
+
+    const contactMessage = {
+      firstName,
+      lastName,
+      email,
+      phone: phone || "",
+      message,
+      createdAt: new Date().toISOString(),
+    };
+
     const messages = await readMessages();
     messages.push(contactMessage);
     await writeMessages(messages);
 
-    return res.status(200).json({
+    return NextResponse.json({
       success: true,
       message: "Contact form submitted successfully.",
       data: contactMessage,
     });
   } catch (error) {
-    return res.status(200).json({
-      success: true,
-      message: "Contact form submitted successfully.",
-      data: contactMessage,
-    });
+    return NextResponse.json(
+      { success: false, message: error.message || "Error processing request" },
+      { status: 500 }
+    );
   }
 }

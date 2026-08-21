@@ -1,6 +1,6 @@
-import Navbar from "../src/components/Navbar.jsx";
-import Footer from "../src/components/Footer.jsx";
-import "../src/index.css";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import "@/index.css";
 
 export const dynamic = "force-dynamic";
 
