@@ -44,38 +44,41 @@ export const allProjectsData = [
 function ProjectProject() {
     return (
 
-        <section className="bg-[#0c0d0e] py-12 px-4 sm:px-6">
+        <section className="bg-white py-12 px-4 sm:px-6">
             <div className="max-w-6xl mx-auto">
+
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {allProjectsData.map((item) => (
-                        <div key={item.id} className="flex flex-col group">
-                            {/* Card Image Box */}
-                            <div className="relative w-full h-72 sm:h-80 rounded-2xl md:rounded-3xl overflow-hidden bg-zinc-900 mb-4 border border-white/10 shadow-lg">
+                        <div key={item.id} className="flex flex-col">
+                            {/* Card Image Box with rounded corners and fixed responsive height */}
+                            <div className="relative w-full h-72 sm:h-80 rounded-2xl md:rounded-3xl overflow-hidden bg-gray-100 mb-3">
                                 <img
                                     src={item.image}
                                     alt={item.title}
-                                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                    className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                                 />
 
+                                {/* Arrow icon overlay for featured items */}
                                 {item.hasArrow && (
-                                    <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                                        <div className="w-12 h-12 rounded-full bg-[#30B5AA] text-black flex items-center justify-center text-lg font-bold shadow-md">
+                                    <div className="absolute inset-0 flex items-center justify-center">
+                                        <div className="w-12 h-12 rounded-full bg-black text-white flex items-center justify-center text-lg font-bold shadow-md">
                                             ↗
                                         </div>
                                     </div>
                                 )}
 
+                                {/* Clickable overlay link */}
                                 <Link href={`/projects/${item.id}`} className="absolute inset-0" aria-label={item.title} />
                             </div>
 
                             {/* Project Title and Category */}
                             <div>
-                                <h3 className="text-xl md:text-2xl font-serif font-bold text-white group-hover:text-[#30B5AA] transition-colors">
+                                <h3 className="text-xl md:text-2xl font-serif font-bold text-gray-900 hover:text-gray-700 transition">
                                     <Link href={`/projects/${item.id}`}>
                                         {item.title}
                                     </Link>
                                 </h3>
-                                <p className="text-gray-400 text-sm mt-1">
+                                <p className="text-gray-500 text-sm mt-1">
                                     {item.category}
                                 </p>
                             </div>

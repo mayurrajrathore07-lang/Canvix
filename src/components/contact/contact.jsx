@@ -105,64 +105,69 @@ function Contact() {
             <div className="grid lg:grid-cols-2 gap-16 items-start">
 
                 <div>
-                    <span className="text-[#30B5AA] text-sm font-semibold uppercase tracking-widest block mb-3">
+                    <span className="text-cyan-400 text-sm font-semibold uppercase tracking-widest block mb-3">
                         Get In Touch
                     </span>
-                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-white mb-6">
+                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-black mb-6 typography-h2-64">
                         Let's talk
                     </h1>
 
-                    <p className="text-gray-400 text-base leading-relaxed mb-10">
+                    <p className="text-gray-600 typography-h2-64 leading-relaxed mb-10 font-bold">
                         We collaborate with creators, entrepreneurs, and visionary brands. Have a project in mind? Reach out to us today!
                     </p>
 
                     <hr className="border-zinc-800 mb-10" />
 
+
                     <div className="flex items-center gap-5 mb-8">
-                        <div className="w-14 h-14 rounded-2xl bg-zinc-900 border border-zinc-800 text-[#30B5AA] flex items-center justify-center text-xl shrink-0">
+                        <div className="w-14 h-14 rounded-2xl bg-zinc-900 border border-zinc-800 text-cyan-400 flex items-center justify-center text-xl shrink-0">
                             <FaEnvelope />
                         </div>
                         <div>
-                            <h3 className="font-semibold text-lg text-white">Our email</h3>
-                            <p className="text-gray-400 text-sm md:text-base">hello@canvix.agency.com</p>
+                            <h3 className="font-semibold text-lg text-black font-bold typography-h2-64">Our email</h3>
+                            <p className="text-gray-600 text-sm md:text-base font-bold typography-h2-64">hello@canvix.agency.com</p>
                         </div>
                     </div>
 
                     <div className="flex items-center gap-5 mb-8">
-                        <div className="w-14 h-14 rounded-2xl bg-zinc-900 border border-zinc-800 text-[#30B5AA] flex items-center justify-center text-xl shrink-0">
+                        <div className="w-14 h-14 rounded-2xl bg-zinc-900 border border-zinc-800 text-cyan-400 flex items-center justify-center text-xl shrink-0">
                             <FaPhoneAlt />
                         </div>
 
                         <div>
-                            <h3 className="font-semibold text-lg text-white">Call us</h3>
-                            <p className="text-gray-400 text-sm md:text-base">9999999999</p>
+                            <h3 className="font-semibold text-lg text-black font-bold typography-h2-64" >Call us</h3>
+                            <p className="text-gray-600 text-sm md:text-base font-bold typography-h2-64">9999999999</p>
                         </div>
                     </div>
 
+
                     <div className="flex items-center gap-5 mb-10">
-                        <div className="w-14 h-14 rounded-2xl bg-zinc-900 border border-zinc-800 text-[#30B5AA] flex items-center justify-center text-xl shrink-0">
+                        <div className="w-14 h-14 rounded-2xl bg-zinc-900 border border-zinc-800 text-cyan-400 flex items-center justify-center text-xl shrink-0">
                             <FaMapMarkerAlt />
                         </div>
 
                         <div>
-                            <h3 className="font-semibold text-lg text-white">Visit Us</h3>
-                            <p className="text-gray-400 text-sm md:text-base">SBR Ahmedabad, India</p>
+                            <h3 className="font-semibold text-lg text-black font-bold typography-h2-64" >Visit Us</h3>
+                            <p className="text-gray-600 text-sm md:text-base font-bold typography-h2-64">SBR ahmedabad, india </p>
                         </div>
+
                     </div>
 
                     <hr className="border-zinc-800 mb-8" />
 
                     <div className="flex gap-4">
-                        <a href="https://facebook.com" target="_blank" rel="noreferrer" className="w-12 h-12 rounded-full bg-zinc-900 border border-zinc-800 text-white flex items-center justify-center hover:bg-[#30B5AA] hover:text-black transition">
+
+
+                        <a href="https://facebook.com" target="_blank" rel="noreferrer" className="w-12 h-12 rounded-full bg-zinc-900 border border-zinc-800 text-white flex items-center justify-center hover:bg-cyan-400 hover:text-black transition">
                             <FaFacebookF />
                         </a>
-                        <a href="https://twitter.com" target="_blank" rel="noreferrer" className="w-12 h-12 rounded-full bg-zinc-900 border border-zinc-800 text-white flex items-center justify-center hover:bg-[#30B5AA] hover:text-black transition">
+                        <a href="https://twitter.com" target="_blank" rel="noreferrer" className="w-12 h-12 rounded-full bg-zinc-900 border border-zinc-800 text-white flex items-center justify-center hover:bg-cyan-400 hover:text-black transition">
                             <FaTwitter />
                         </a>
-                        <a href="https://instagram.com" target="_blank" rel="noreferrer" className="w-12 h-12 rounded-full bg-zinc-900 border border-zinc-800 text-white flex items-center justify-center hover:bg-[#30B5AA] hover:text-black transition">
+                        <a href="https://instagram.com" target="_blank" rel="noreferrer" className="w-12 h-12 rounded-full bg-zinc-900 border border-zinc-800 text-white flex items-center justify-center hover:bg-cyan-400 hover:text-black transition">
                             <FaInstagram />
                         </a>
-                        <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="w-12 h-12 rounded-full bg-zinc-900 border border-zinc-800 text-white flex items-center justify-center hover:bg-[#30B5AA] hover:text-black transition">
+                        <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="w-12 h-12 rounded-full bg-zinc-900 border border-zinc-800 text-white flex items-center justify-center hover:bg-cyan-400 hover:text-black transition">
                             <FaLinkedinIn />
                         </a>
                     </div>

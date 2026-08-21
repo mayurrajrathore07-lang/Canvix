@@ -30,7 +30,7 @@ function AboutTeam() {
         <section className="bg-black py-20 px-6 mb-20">
             <div className="max-w-5xl mx-auto " >
                 <div className="text-center mb-16">
-                    <span className="text-[#30B5AA] font-semibold uppercase tracking-widest text-xs block mb-2">
+                    <span className="text-cyan-400 font-semibold uppercase tracking-widest text-xs block mb-2 font-size: 5rem">
                         Our Leadership
                     </span>
                     <h2 className="text-4xl font-bold text-white ">Meet the Creative Minds</h2>

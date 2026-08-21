@@ -13,7 +13,7 @@ function ProjectDetailsHero({ project }) {
     const current = project ? { ...defaultData, ...project } : defaultData;
 
     return (
-        <section className="bg-[#0c0d0e] pt-6 pb-8 px-4 sm:px-6 md:px-8">
+        <section className="bg-white pt-6 pb-8 px-4 sm:px-6 md:px-8">
             <div className="max-w-6xl mx-auto">
 
 

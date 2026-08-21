@@ -5,9 +5,9 @@ import Link from "next/link";
 
 const ProjectLetsTalk = () => {
     return (
-        <section className="bg-[#0c0d0e] py-12 px-4 sm:px-6">
+        <section className="bg-white py-8 px-4 sm:px-6">
             <div className="max-w-6xl mx-auto">
-                <div className="relative overflow-hidden bg-[#18191c] border border-white/10 rounded-3xl py-14 px-6 text-center shadow-xl">
+                <div className="relative overflow-hidden bg-[#242424] rounded-3xl py-14 px-6 text-center shadow-lg">
 
                     <svg
                         className="absolute inset-0 h-full w-full opacity-30 pointer-events-none"

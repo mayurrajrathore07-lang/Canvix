@@ -54,7 +54,7 @@ function Footer() {
                             <li><a href="#instruction" className="hover:text-white transition">Instruction</a></li>
                             <li><a href="#license" className="hover:text-white transition">License</a></li>
                             <li><a href="#changelog" className="hover:text-white transition">Changelog</a></li>
-                            <li><Link href="/404" className="hover:text-white transition">Error 404</Link></li>
+                            <li><a href="#404" className="hover:text-white transition">Error 404</a></li>
                             <li><a href="#password" className="hover:text-white transition">Password Protected</a></li>
                         </ul>
                     </div>
@@ -63,7 +63,7 @@ function Footer() {
                     <div className="md:col-span-4 space-y-4">
                         <h4 className="text-xs font-bold text-white uppercase tracking-wider">
                             Subscribe
-                        </h4>
+                        </h4>1
 
                         <form onSubmit={(e) => e.preventDefault()} className="flex items-center bg-white rounded-full p-1 max-w-md shadow-sm">
                             <input
