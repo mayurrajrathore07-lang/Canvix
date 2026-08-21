@@ -21,7 +21,7 @@ function Navbar() {
             <div className="max-w-6xl mx-auto px-6 sm:px-8 flex items-center justify-between py-4">
 
 
-                <Link to="/" className="text-2xl font-bold tracking-tight text-black flex items-center gap-2.5">
+                <Link href="/" className="text-2xl font-bold tracking-tight text-black flex items-center gap-2.5">
                     <div className="w-8 h-8 rounded-full bg-black text-white flex items-center justify-center shadow-sm">
                         <svg className="w-4 h-4 text-white fill-none stroke-current stroke-2" viewBox="0 0 24 24">
                             <path d="M12 3a9 9 0 0 1 9 9c0 4.97-4.03 9-9 9a9 9 0 0 1-9-9c0-3.31 2.69-6 6-6s6 2.69 6 6-2.69 4-4 4-4-1.79-4-4" strokeLinecap="round" />
@@ -52,7 +52,7 @@ function Navbar() {
 
 
                 <Link
-                    to="/contact"
+                    href="/contact"
                     className="hidden md:inline-block bg-black text-white px-5 py-2 rounded-full text-xs font-semibold hover:bg-gray-800 transition duration-300 shadow-sm"
                 >
                     Get in touch
@@ -98,7 +98,7 @@ function Navbar() {
                         Contact Us
                     </Link>
                     <Link
-                        to="/contact"
+                        href="/contact"
                         onClick={() => setIsOpen(false)}
                         className="block text-center bg-black text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-gray-800 transition"
                     >

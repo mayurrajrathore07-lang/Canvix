@@ -68,13 +68,13 @@ function ProjectProject() {
                                 )}
 
                                 {/* Clickable overlay link */}
-                                <Link to={`/projects/${item.id}`} className="absolute inset-0" aria-label={item.title} />
+                                <Link href={`/projects/${item.id}`} className="absolute inset-0" aria-label={item.title} />
                             </div>
 
                             {/* Project Title and Category */}
                             <div>
                                 <h3 className="text-xl md:text-2xl font-serif font-bold text-gray-900 hover:text-gray-700 transition">
-                                    <Link to={`/projects/${item.id}`}>
+                                    <Link href={`/projects/${item.id}`}>
                                         {item.title}
                                     </Link>
                                 </h3>

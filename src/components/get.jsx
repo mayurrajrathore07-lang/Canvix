@@ -32,7 +32,7 @@ const ProjectLetsTalk = () => {
                         </h2>
 
                         <Link
-                            to="/contact"
+                            href="/contact"
                             className="inline-block rounded-full border border-white/50 bg-transparent px-7 py-2.5 text-sm font-medium text-white transition hover:bg-white hover:text-black"
                         >
                             Get in touch

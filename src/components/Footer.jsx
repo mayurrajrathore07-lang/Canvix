@@ -14,7 +14,7 @@ function Footer() {
 
 
                     <div className="md:col-span-4 space-y-4">
-                        <Link to="/" className="text-2xl font-bold text-white flex items-center gap-2.5">
+                        <Link href="/" className="text-2xl font-bold text-white flex items-center gap-2.5">
                             <div className="w-8 h-8 rounded-full bg-white text-black flex items-center justify-center shadow-sm">
                                 <svg className="w-4 h-4 text-black fill-none stroke-current stroke-2" viewBox="0 0 24 24">
                                     <path d="M12 3a9 9 0 0 1 9 9c0 4.97-4.03 9-9 9a9 9 0 0 1-9-9c0-3.31 2.69-6 6-6s6 2.69 6 6-2.69 4-4 4-4-1.79-4-4" strokeLinecap="round" />
@@ -35,11 +35,11 @@ function Footer() {
                         </h4>
 
                         <ul className="space-y-2.5 text-xs">
-                            <li><Link to="/" className="hover:text-white transition">Home</Link></li>
-                            <li><Link to="/about" className="hover:text-white transition">About</Link></li>
-                            <li><Link to="/contact" className="hover:text-white transition">Contact Us</Link></li>
-                            <li><Link to="/projects" className="hover:text-white transition">Portfolio</Link></li>
-                            <li><Link to="/projects/1" className="hover:text-white transition">Portfolio Single</Link></li>
+                            <li><Link href="/" className="hover:text-white transition">Home</Link></li>
+                            <li><Link href="/about" className="hover:text-white transition">About</Link></li>
+                            <li><Link href="/contact" className="hover:text-white transition">Contact Us</Link></li>
+                            <li><Link href="/projects" className="hover:text-white transition">Portfolio</Link></li>
+                            <li><Link href="/projects/1" className="hover:text-white transition">Portfolio Single</Link></li>
                         </ul>
                     </div>
 

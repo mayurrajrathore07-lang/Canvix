@@ -41,7 +41,7 @@ function Projects() {
                     </h2>
 
                     <Link
-                        to="/projects"
+                        href="/projects"
                         className="mt-4 sm:mt-0 inline-flex items-center gap-3 bg-[#18191c] hover:bg-black text-white px-6 py-3 rounded-full text-xs sm:text-sm font-semibold transition duration-300 shadow-md group"
                     >
                         <span className="w-6 h-6 rounded-full bg-white text-black group-hover:bg-cyan-400 flex items-center justify-center text-[10px] transition">
@@ -64,7 +64,7 @@ function Projects() {
                             </div>
 
                             <h3 className="text-xl sm:text-2xl font-serif font-bold text-[#111111] group-hover:text-[#30B5AA] transition-colors">
-                                <Link to={`/projects/${item.id}`}>{item.title}</Link>
+                                <Link href={`/projects/${item.id}`}>{item.title}</Link>
                             </h3>
 
                             <p className="text-gray-500 text-xs sm:text-sm mt-1">{item.category}</p>

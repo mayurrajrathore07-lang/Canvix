@@ -77,7 +77,7 @@ function About() {
                     {/* CTA Button */}
                     <div className="pt-2">
                         <Link
-                            to="/contact"
+                            href="/contact"
                             className="inline-flex items-center gap-3 bg-[#18191c] hover:bg-white hover:text-black text-white border border-white/10 px-7 py-3.5 rounded-full transition-all duration-300 group shadow-lg"
                         >
                             <span className="w-8 h-8 rounded-full bg-white text-black group-hover:bg-black group-hover:text-white flex items-center justify-center text-xs transition duration-300">

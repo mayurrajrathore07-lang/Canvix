@@ -41,12 +41,12 @@ function ProjectDetailsRecent({ currentId }) {
                                     alt={item.title}
                                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                                 />
-                                <Link to={`/projects/${item.id}`} className="absolute inset-0" aria-label={item.title} />
+                                <Link href={`/projects/${item.id}`} className="absolute inset-0" aria-label={item.title} />
                             </div>
 
                             <div>
                                 <h3 className="text-lg sm:text-xl font-bold text-gray-900 group-hover:text-gray-700 transition">
-                                    <Link to={`/projects/${item.id}`}>
+                                    <Link href={`/projects/${item.id}`}>
                                         {item.title}
                                     </Link>
                                 </h3>
