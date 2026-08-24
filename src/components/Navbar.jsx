@@ -33,39 +33,75 @@ function Navbar() {
 
                 <ul className="hidden md:flex items-center gap-8 text-sm font-medium">
                     <li>
-                        <Link href="/" className={pathname === "/" ? "text-black font-semibold" : "text-gray-600 hover:text-black transition"}>
+                        <Link
+                            href="/"
+                            className={
+                                pathname === "/"
+                                    ? "text-[#6E56CF] font-semibold relative py-1 after:absolute after:-bottom-2 after:left-1/2 after:-translate-x-1/2 after:w-7 after:h-[3px] after:bg-[#6E56CF] after:rounded-full"
+                                    : "text-gray-600 hover:text-black transition py-1"
+                            }
+                        >
                             Home
                         </Link>
                     </li>
                     <li>
-                        <Link href="/services" className={pathname === "/services" ? "text-black font-semibold" : "text-gray-600 hover:text-black transition"}>
+                        <Link
+                            href="/services"
+                            className={
+                                pathname === "/services"
+                                    ? "text-[#6E56CF] font-semibold relative py-1 after:absolute after:-bottom-2 after:left-1/2 after:-translate-x-1/2 after:w-7 after:h-[3px] after:bg-[#6E56CF] after:rounded-full"
+                                    : "text-gray-600 hover:text-black transition py-1"
+                            }
+                        >
                             Services
                         </Link>
                     </li>
                     <li>
-                        <Link href="/about" className={pathname === "/about" ? "text-black font-semibold" : "text-gray-600 hover:text-black transition"}>
+                        <Link
+                            href="/about"
+                            className={
+                                pathname === "/about"
+                                    ? "text-[#6E56CF] font-semibold relative py-1 after:absolute after:-bottom-2 after:left-1/2 after:-translate-x-1/2 after:w-7 after:h-[3px] after:bg-[#6E56CF] after:rounded-full"
+                                    : "text-gray-600 hover:text-black transition py-1"
+                            }
+                        >
                             About
                         </Link>
                     </li>
                     <li>
-                        <Link href="/projects" className={pathname.startsWith("/projects") ? "text-black font-semibold" : "text-gray-600 hover:text-black transition"}>
+                        <Link
+                            href="/projects"
+                            className={
+                                pathname.startsWith("/projects")
+                                    ? "text-[#6E56CF] font-semibold relative py-1 after:absolute after:-bottom-2 after:left-1/2 after:-translate-x-1/2 after:w-7 after:h-[3px] after:bg-[#6E56CF] after:rounded-full"
+                                    : "text-gray-600 hover:text-black transition py-1"
+                            }
+                        >
                             Portfolio
                         </Link>
                     </li>
                     <li>
-                        <Link href="/contact" className={pathname === "/contact" ? "text-black font-semibold" : "text-gray-600 hover:text-black transition"}>
+                        <Link
+                            href="/contact"
+                            className={
+                                pathname === "/contact"
+                                    ? "text-[#6E56CF] font-semibold relative py-1 after:absolute after:-bottom-2 after:left-1/2 after:-translate-x-1/2 after:w-7 after:h-[3px] after:bg-[#6E56CF] after:rounded-full"
+                                    : "text-gray-600 hover:text-black transition py-1"
+                            }
+                        >
                             Contact Us
                         </Link>
                     </li>
                 </ul>
 
-
-
                 <Link
                     href="/contact"
-                    className="hidden md:inline-block bg-black text-white px-5 py-2 rounded-full text-xs font-semibold hover:bg-gray-800 transition duration-300 shadow-sm"
+                    className="hidden md:inline-flex items-center gap-2 bg-[#0B0F19] hover:bg-[#1E1B4B] text-white px-5 py-2.5 rounded-full text-xs font-semibold transition duration-300 shadow-sm group"
                 >
-                    Get in touch
+                    <span>Get in touch</span>
+                    <svg className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                    </svg>
                 </Link>
 
                 <button

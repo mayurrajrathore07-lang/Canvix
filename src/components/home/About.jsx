@@ -74,7 +74,6 @@ function About() {
                         </div>
                     </div>
 
-                    {/* CTA Button */}
                     <div className="pt-2">
                         <Link
                             href="/contact"

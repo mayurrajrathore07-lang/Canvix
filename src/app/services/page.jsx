@@ -3,50 +3,51 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import {
-    FaPenNib,
-    FaBezierCurve,
-    FaBullseye,
-    FaDesktop,
-    FaLightbulb,
-    FaHeart,
     FaBrain,
     FaCloud,
+    FaShieldAlt,
+    FaCode,
     FaUserTie,
     FaGraduationCap,
+    FaBullseye,
+    FaBezierCurve,
+    FaPenNib,
     FaChartLine,
+    FaLightbulb,
     FaBriefcase,
-    FaShieldAlt,
-    FaMobileAlt,
-    FaDatabase,
-    FaCheck,
-    FaArrowRight,
-    FaArrowDown,
-    FaArrowUp,
-    FaTools,
-    FaLayerGroup,
-    FaRocket,
-    FaHeadset,
-    FaSyncAlt,
     FaSearch,
+    FaTimes,
+    FaComments,
+    FaArrowRight,
+    FaCheck,
+    FaTools,
+    FaRocket,
+    FaLayerGroup,
+    FaSyncAlt,
+    FaHeadset,
 } from "react-icons/fa";
 
 const allServicesDetail = [
     {
         id: "ai-machine-learning",
         title: "AI & Machine Learning Engineering",
-        category: "IT & Technology",
-        tag: "Next-Gen AI",
+        category: "IT & TECHNOLOGY",
+        tag: "NEXT-GEN AI",
         icon: <FaBrain />,
+        theme: {
+            iconBg: "bg-[#2E1065]/60",
+            iconBorder: "border-[#6E56CF]/40",
+            iconColor: "text-[#A78BFA]",
+            accent: "#6E56CF",
+        },
         tagline: "Custom generative AI, predictive models, and autonomous intelligent workflows",
         description:
             "Harness the power of enterprise artificial intelligence to automate repetitive tasks, extract high-value insights from unstructured data, and build conversational AI agents customized on your proprietary corporate knowledge.",
         deliverables: [
             "Custom LLM fine-tuning & RAG architectures",
             "Predictive analytics & forecasting engines",
-            "Computer vision & document OCR pipelines",
-            "Intelligent workflow automation & agentic bots",
-            "Real-time fraud & anomaly detection models",
-            "Enterprise AI governance & data privacy compliance",
+            "AI agent development & automation",
+            "NLP, Computer Vision & Deep Learning solutions",
         ],
         tools: ["PyTorch", "TensorFlow", "OpenAI", "LangChain", "HuggingFace", "Python", "Pinecone", "AWS Bedrock"],
         benefits: "Up to 65% faster operational cycle times and predictive data accuracy exceeding 94%.",
@@ -54,221 +55,265 @@ const allServicesDetail = [
     {
         id: "it-cloud-infrastructure",
         title: "IT Infrastructure, Cloud & DevOps",
-        category: "IT & Technology",
-        tag: "Cloud & Dev",
+        category: "IT & TECHNOLOGY",
+        tag: "CLOUD & DEV",
         icon: <FaCloud />,
+        theme: {
+            iconBg: "bg-[#0C4A6E]/60",
+            iconBorder: "border-[#38BDF8]/40",
+            iconColor: "text-[#38BDF8]",
+            accent: "#38BDF8",
+        },
         tagline: "Enterprise cloud migrations, multi-cloud management, and automated CI/CD pipelines",
         description:
             "Design, migrate, and maintain ultra-reliable cloud architectures built for zero-downtime scalability, military-grade cybersecurity, and automated infrastructure-as-code.",
         deliverables: [
             "AWS, Azure, and Google Cloud multi-cloud setups",
             "Kubernetes container orchestration & microservices",
-            "Automated CI/CD pipelines (GitHub Actions, GitLab, Jenkins)",
-            "Terraform & Ansible Infrastructure as Code (IaC)",
-            "24/7 SIEM threat monitoring & SOC2 compliance",
-            "Cloud cost optimization & FinOps audits",
+            "Automated CI/CD pipelines/GitHub Actions",
+            "Terraform & Ansible infrastructure as code",
         ],
         tools: ["AWS", "Microsoft Azure", "Google Cloud", "Kubernetes", "Docker", "Terraform", "Datadog", "Cloudflare"],
         benefits: "99.99% system uptime, zero-downtime deployments, and up to 35% reduction in cloud hosting bills.",
     },
     {
+        id: "cybersecurity-compliance",
+        title: "Cybersecurity & Risk Compliance",
+        category: "IT & TECHNOLOGY",
+        tag: "SECURITY",
+        icon: <FaShieldAlt />,
+        theme: {
+            iconBg: "bg-[#064E3B]/60",
+            iconBorder: "border-[#34D399]/40",
+            iconColor: "text-[#34D399]",
+            accent: "#34D399",
+        },
+        tagline: "Proactive threat detection, SOC2/ISO compliance, and zero-trust security architecture",
+        description:
+            "Protect enterprise digital assets with round-the-clock SIEM threat monitoring, penetration testing, automated vulnerability patching, and strict regulatory compliance management.",
+        deliverables: [
+            "Zero-Trust architecture & network defense",
+            "SOC2 Type II, ISO27001 & HIPAA compliance",
+            "Penetration testing & vulnerability audits",
+            "24/7 SIEM monitoring & incident response",
+        ],
+        tools: ["CrowdStrike", "Palo Alto Networks", "Splunk", "Vanta", "Wireshark", "Metasploit", "Cloudflare Zero Trust"],
+        benefits: "100% compliance audit readiness and proactive prevention against enterprise cyber attacks.",
+    },
+    {
+        id: "custom-software-dev",
+        title: "Custom Software & Mobile Development",
+        category: "IT & TECHNOLOGY",
+        tag: "DEVELOPMENT",
+        icon: <FaCode />,
+        theme: {
+            iconBg: "bg-[#431407]/60",
+            iconBorder: "border-[#FB923C]/40",
+            iconColor: "text-[#FB923C]",
+            accent: "#FB923C",
+        },
+        tagline: "High-performance web apps, cross-platform mobile apps, and microservice APIs",
+        description:
+            "Engineer resilient, scalable applications using Next.js, React Native, Node.js, and GraphQL. Built for sub-second response times, zero-downtime releases, and high-concurrency enterprise scale.",
+        deliverables: [
+            "Full-stack web applications & enterprise portals",
+            "iOS & Android mobile apps (React Native/Flutter)",
+            "Scalable RESTful & GraphQL API microservices",
+            "Headless CMS & high-throughput e-commerce",
+        ],
+        tools: ["Next.js", "React Native", "Node.js", "TypeScript", "PostgreSQL", "GraphQL", "Redis", "TailwindCSS"],
+        benefits: "Sub-second loading times, 100/100 Lighthouse performance, and seamless multi-platform user experiences.",
+    },
+    {
         id: "staffing-recruitment",
         title: "Staffing & Executive Tech Recruitment",
-        category: "Staffing & Careers",
-        tag: "Talent Solutions",
+        category: "STAFFING & CAREERS",
+        tag: "TALENT SOLUTIONS",
         icon: <FaUserTie />,
-        tagline: "Connecting high-growth tech companies with the top 1% vetted engineering & leadership talent",
+        theme: {
+            iconBg: "bg-[#1E1B4B]/60",
+            iconBorder: "border-[#818CF8]/40",
+            iconColor: "text-[#818CF8]",
+            accent: "#818CF8",
+        },
+        tagline: "Connecting high-growth tech companies with top 1% vetted engineering talent",
         description:
-            "Overcome hiring bottlenecks with our specialized technical staffing solutions. We rigorously vet software engineers, cloud architects, product managers, and executive leaders to build winning distributed teams.",
+            "Overcome hiring bottlenecks with specialized technical staffing solutions. We rigorously vet software engineers, cloud architects, product leaders, and executives for remote and on-site roles.",
         deliverables: [
             "Direct-hire executive & tech search",
-            "Contract-to-hire & flexible project staffing",
+            "Contract-to-hire & flexible team augmentation",
             "Dedicated offshore & nearshore engineering squads",
-            "5-stage technical & culture-fit vetting",
             "Global payroll & compliance management (EOR/PEO)",
-            "Guaranteed 60-day candidate replacement warranty",
         ],
         tools: ["LinkedIn Recruiter", "Greenhouse", "Lever", "HackerRank", "CodeSignal", "Deel", "Rippling"],
-        benefits: "Average hiring time slashed from 60 days to 7 days, with a 96% candidate retention rate.",
+        benefits: "Average hiring turnaround slashed from 60 days to 7 days with a 96% retention rate.",
     },
     {
-        id: "career-services",
-        title: "Career Services & Professional Coaching",
-        category: "Staffing & Careers",
-        tag: "Mentorship",
+        id: "career-coaching",
+        title: "Career Services & Executive Coaching",
+        category: "STAFFING & CAREERS",
+        tag: "MENTORSHIP",
         icon: <FaGraduationCap />,
-        tagline: "Empowering tech professionals with executive coaching, resume engineering, and interview mastery",
+        theme: {
+            iconBg: "bg-[#4C1D95]/60",
+            iconBorder: "border-[#C084FC]/40",
+            iconColor: "text-[#C084FC]",
+            accent: "#C084FC",
+        },
+        tagline: "1-on-1 technical career coaching, ATS resume optimization, and interview prep",
         description:
-            "Equip candidates and internal employees with the skills required to thrive in modern tech ecosystems. We offer customized 1-on-1 career coaching, technical interview prep, and corporate upskilling programs.",
+            "Equip candidates and corporate teams with skills required to excel in modern tech ecosystems. We deliver customized executive coaching, system design prep, and salary negotiation strategies.",
         deliverables: [
-            "ATS-optimized technical resume & portfolio engineering",
+            "ATS-optimized technical resume engineering",
             "System design & live coding mock interviews",
             "Executive salary & equity negotiation coaching",
-            "Corporate leadership & technical upskilling workshops",
-            "Career transition programs for AI & Cloud disciplines",
-            "Personal branding & LinkedIn authority mastery",
+            "Corporate technical leadership workshops",
         ],
-        tools: ["Figma Portfolio Suites", "LeetCode System Prep", "Jobscan", "Loom", "Miro", "Notion Hubs"],
-        benefits: "Over 88% of coached professionals land top-tier tech offers with an average 32% compensation jump.",
-    },
-    {
-        id: "web-design",
-        title: "Modern Web & Mobile App Engineering",
-        category: "IT & Technology",
-        tag: "Engineering",
-        icon: <FaDesktop />,
-        tagline: "High-performance, modern web applications and mobile apps engineered for conversion",
-        description:
-            "From high-throughput Next.js portals to cross-platform mobile apps, we engineer robust digital products with intuitive UI/UX, lightning-fast response times, and bulletproof responsive architecture.",
-        deliverables: [
-            "Fullstack Next.js, React, Node.js & TypeScript apps",
-            "Native & cross-platform mobile apps (Flutter, React Native)",
-            "Headless CMS, E-Commerce & GraphQL integrations",
-            "Core Web Vitals & sub-second performance optimization",
-            "RESTful & gRPC backend microservices architectures",
-            "Progressive Web Apps (PWA) with offline support",
-        ],
-        tools: ["Next.js", "React", "Node.js", "TypeScript", "TailwindCSS", "PostgreSQL", "Flutter", "GraphQL"],
-        benefits: "Sub-second load times, 100/100 Core Web Vitals, and seamless multi-device user engagement.",
+        tools: ["Figma Portfolios", "LeetCode System Prep", "Jobscan", "Loom", "Miro", "Notion Hubs"],
+        benefits: "Over 88% of coached professionals land top-tier tech offers with an average 32% compensation increase.",
     },
     {
         id: "digital-marketing",
         title: "Digital Marketing & Growth Strategy",
-        category: "Marketing & Creative",
-        tag: "Performance",
+        category: "MARKETING & CREATIVE",
+        tag: "PERFORMANCE",
         icon: <FaBullseye />,
-        tagline: "Data-driven performance marketing campaigns that maximize customer acquisition and ROI",
+        theme: {
+            iconBg: "bg-[#831843]/60",
+            iconBorder: "border-[#F472B6]/40",
+            iconColor: "text-[#F472B6]",
+            accent: "#F472B6",
+        },
+        tagline: "Data-driven performance marketing campaigns that maximize acquisition and ROI",
         description:
-            "Drive qualified demand and measurable revenue growth through multi-channel digital marketing. We craft full-funnel strategies encompassing PPC advertising, programmatic media, and conversion rate optimization (CRO).",
+            "Drive qualified demand and measurable revenue growth through multi-channel digital marketing. We craft full-funnel strategies encompassing PPC advertising, programmatic media, and CRO.",
         deliverables: [
             "Google Ads, Meta Ads & LinkedIn performance campaigns",
             "Conversion rate optimization (CRO) & A/B testing",
-            "Multi-touch attribution modeling & analytics setup",
-            "Email marketing automation & lifecycle retention funnels",
-            "Programmatic display & retargeting networks",
-            "Weekly ROI, CAC, and LTV performance dashboards",
+            "Lifecycle email marketing & funnel automation",
+            "Multi-touch attribution & custom ROI dashboards",
         ],
         tools: ["Google Ads", "Meta Ads Manager", "Google Analytics 4", "Mixpanel", "HubSpot", "Klaviyo", "Hotjar"],
         benefits: "Average 3.8x ROAS across paid channels and 42% reduction in customer acquisition costs (CAC).",
     },
     {
-        id: "content-marketing",
-        title: "Content Marketing & SEO Authority",
-        category: "Marketing & Creative",
-        tag: "Organic Growth",
-        icon: <FaPenNib />,
-        tagline: "Authoritative technical content and SEO strategies to capture organic enterprise traffic",
+        id: "brand-identity",
+        title: "Brand Identity & Graphic Design",
+        category: "MARKETING & CREATIVE",
+        tag: "BRANDING",
+        icon: <FaBezierCurve />,
+        theme: {
+            iconBg: "bg-[#451A03]/60",
+            iconBorder: "border-[#FBBF24]/40",
+            iconColor: "text-[#FBBF24]",
+            accent: "#FBBF24",
+        },
+        tagline: "Bespoke brand guidelines, visual identity systems, and investor pitch decks",
         description:
-            "Build unstoppable search presence and industry authority. Our content strategists and technical copywriters craft thought leadership articles, case studies, whitepapers, and programmatic SEO hubs.",
+            "Elevate your company's visual communication with bespoke graphic design. We design high-converting marketing collateral, investor pitch decks, UI illustrations, and brand style guides.",
         deliverables: [
-            "Technical SEO audits & on-page search engine optimization",
-            "Comprehensive keyword gap & competitor analysis",
-            "High-impact thought leadership blog posts & whitepapers",
-            "Infographics, interactive tools & downloadable assets",
-            "High-authority white-hat backlink acquisition campaigns",
-            "Content distribution across industry networks",
+            "Primary logo, badge & icon vector suites",
+            "Comprehensive Brand Identity Book & Style Guidelines",
+            "Investor pitch decks & corporate presentations",
+            "Design system tokens for web and mobile",
+        ],
+        tools: ["Figma", "Adobe Illustrator", "Photoshop", "After Effects", "Blender", "Storybook"],
+        benefits: "Professional, investor-ready brand polish that increases sales collateral conversion by 60%.",
+    },
+    {
+        id: "content-seo",
+        title: "Content Marketing & Technical SEO",
+        category: "MARKETING & CREATIVE",
+        tag: "ORGANIC GROWTH",
+        icon: <FaPenNib />,
+        theme: {
+            iconBg: "bg-[#134E4A]/60",
+            iconBorder: "border-[#2DD4BF]/40",
+            iconColor: "text-[#2DD4BF]",
+            accent: "#2DD4BF",
+        },
+        tagline: "Authoritative technical content and SEO strategies to dominate search results",
+        description:
+            "Build unstoppable search presence and organic authority. Our content strategists and technical copywriters craft thought leadership articles, whitepapers, case studies, and programmatic SEO hubs.",
+        deliverables: [
+            "Technical SEO audits & speed optimization",
+            "Enterprise keyword gap & intent research",
+            "Thought-leadership articles & whitepapers",
+            "High-authority white-hat backlink campaigns",
         ],
         tools: ["Ahrefs", "Semrush", "SurferSEO", "Clearscope", "Google Search Console", "WordPress", "Ghost"],
-        benefits: "Consistent 200%+ organic traffic growth year-over-year and top-3 keyword rankings in high-intent queries.",
+        benefits: "Consistent 200%+ organic traffic growth year-over-year and top-3 rankings for high-intent terms.",
     },
     {
-        id: "graphic-design",
-        title: "Graphic Design & Visual Systems",
-        category: "Marketing & Creative",
-        tag: "Visual Design",
-        icon: <FaBezierCurve />,
-        tagline: "Captivating visual assets, pitch decks, and digital collateral tailored to your brand",
-        description:
-            "Elevate your company's visual communication with bespoke graphic design. We design high-converting marketing collateral, investor pitch decks, UI illustrations, and brand style guides that command attention.",
-        deliverables: [
-            "Investor pitch decks & corporate presentation decks",
-            "Marketing collateral, brochures, banners & event materials",
-            "Custom 2D/3D illustrations & iconography suites",
-            "Social media visual templates & campaign asset kits",
-            "Product packaging & merchandise design",
-            "Print-ready CMYK and high-resolution digital exports",
-        ],
-        tools: ["Figma", "Adobe Illustrator", "Photoshop", "After Effects", "Blender", "Canva Pro"],
-        benefits: "Professional, investor-ready brand polish that increases sales collateral engagement by 60%.",
-    },
-    {
-        id: "brand-identity",
-        title: "Brand Identity & Design Systems",
-        category: "Marketing & Creative",
-        tag: "Identity",
-        icon: <FaHeart />,
-        tagline: "Memorable logos, comprehensive brand guidelines, and distinctive design systems",
-        description:
-            "Craft a timeless brand identity that stands out in crowded marketplaces. We define your visual identity, typography hierarchies, color schemes, voice guidelines, and scalable design token systems.",
-        deliverables: [
-            "Primary logo, secondary marks & animated badge assets",
-            "Comprehensive Brand Identity Book & Style Guidelines",
-            "Color psychology palettes & typography hierarchies",
-            "Voice, tone & brand messaging framework",
-            "Design system tokens for web and mobile components",
-            "Trademark-ready vector asset libraries",
-        ],
-        tools: ["Figma", "Adobe Creative Cloud", "Storybook", "Zeroheight", "FontLab"],
-        benefits: "Cohesive multi-channel presence that increases brand recall and establishes immediate credibility.",
-    },
-    {
-        id: "accounting-finance",
-        title: "Accounting, Bookkeeping & Financial Advisory",
-        category: "Finance & Advisory",
-        tag: "Financial Suite",
+        id: "accounting-cfo",
+        title: "Accounting & Fractional CFO Advisory",
+        category: "FINANCE & ADVISORY",
+        tag: "FINANCIAL SUITE",
         icon: <FaChartLine />,
-        tagline: "Strategic financial modeling, tax compliance, and Fractional CFO advisory",
+        theme: {
+            iconBg: "bg-[#064E3B]/60",
+            iconBorder: "border-[#34D399]/40",
+            iconColor: "text-[#34D399]",
+            accent: "#34D399",
+        },
+        tagline: "GAAP-compliant bookkeeping, financial modeling, and Fractional CFO leadership",
         description:
-            "Gain crystal-clear visibility into your financials and maximize runway. We provide full-stack accounting services, GAAP-compliant bookkeeping, cash-flow forecasting, and strategic CFO guidance for tech enterprises.",
+            "Gain crystal-clear visibility into your financials and maximize runway. We provide full-stack accounting services, GAAP-compliant bookkeeping, cash-flow forecasting, and strategic CFO guidance.",
         deliverables: [
             "Accrual & GAAP compliant monthly bookkeeping",
             "Financial modeling, scenario analysis & runway forecasting",
-            "Fractional CFO advisory & Board of Directors reporting",
+            "Fractional CFO advisory & Board reporting",
             "Corporate tax filing & R&D tax credit maximization",
-            "Automated payroll & multi-currency billing reconciliation",
-            "Cap table management & investor due diligence preparation",
         ],
-        tools: ["QuickBooks Online", "Xero", "Carta", "Bill.com", "Expensify", "Excel Advanced Models", "Fathom"],
-        benefits: "100% audit-readiness, optimized tax credits, and clear financial visibility to raise capital confidently.",
+        tools: ["QuickBooks Online", "Xero", "Carta", "Bill.com", "Expensify", "Excel Advanced", "Fathom"],
+        benefits: "100% audit-readiness, optimized tax credits, and clear financial metrics to raise capital confidently.",
     },
     {
         id: "it-consulting",
         title: "IT Consulting & Digital Transformation",
-        category: "IT & Technology",
-        tag: "Advisory",
+        category: "IT & TECHNOLOGY",
+        tag: "ADVISORY",
         icon: <FaLightbulb />,
-        tagline: "Aligning technological architectures with core business growth and operational velocity",
+        theme: {
+            iconBg: "bg-[#713F12]/60",
+            iconBorder: "border-[#FACC15]/40",
+            iconColor: "text-[#FACC15]",
+            accent: "#FACC15",
+        },
+        tagline: "Strategic enterprise architecture reviews and legacy stack modernization",
         description:
-            "Navigate complex technological decisions with seasoned consultants. We evaluate your current software stack, identify security vulnerabilities, eliminate technical debt, and build multi-year IT roadmaps.",
+            "Navigate complex technological decisions with seasoned consultants. We evaluate software stacks, eliminate technical debt, consolidate SaaS vendors, and draft multi-year digital transformation roadmaps.",
         deliverables: [
-            "Enterprise architecture review & legacy modernization",
-            "Technical debt audits & software refactoring strategies",
-            "Vendor & SaaS stack consolidation (TCO optimization)",
-            "Disaster recovery & business continuity planning (BCP)",
-            "Cybersecurity compliance & penetration test remediation",
-            "CTO-as-a-Service & engineering leadership advisory",
+            "Enterprise architecture & legacy modernization",
+            "Technical debt audits & refactoring strategies",
+            "SaaS stack consolidation & TCO reduction",
+            "CTO-as-a-Service & engineering leadership",
         ],
         tools: ["Miro", "Lucidchart", "SonarQube", "OWASP ZAP", "AWS Well-Architected Framework", "Jira"],
         benefits: "30-50% reduction in technical debt, minimized security vulnerabilities, and unified tech stacks.",
     },
     {
         id: "business-consulting",
-        title: "Enterprise Business Consulting & Growth Strategy",
-        category: "Finance & Advisory",
-        tag: "Strategy",
+        title: "Enterprise Growth & Business Strategy",
+        category: "FINANCE & ADVISORY",
+        tag: "STRATEGY",
         icon: <FaBriefcase />,
-        tagline: "Unlocking enterprise agility, operational excellence, and scalable go-to-market execution",
+        theme: {
+            iconBg: "bg-[#1E293B]/60",
+            iconBorder: "border-[#94A3B8]/40",
+            iconColor: "text-[#94A3B8]",
+            accent: "#94A3B8",
+        },
+        tagline: "Go-to-market execution, process automation, and organizational throughput",
         description:
-            "Accelerate company valuation and market reach. We work hand-in-hand with founders, CEOs, and executive teams to optimize internal workflows, formulate go-to-market strategies, and scale organizational throughput.",
+            "Accelerate company valuation and market reach. We work hand-in-hand with founders, CEOs, and executive teams to optimize internal workflows, formulate GTM strategies, and scale organizational throughput.",
         deliverables: [
             "Go-to-Market (GTM) strategy & competitive positioning",
             "Operational process re-engineering & SOP automation",
-            "Agile transformation & cross-functional squad structuring",
-            "Post-merger integration & technology alignment",
             "Unit economics & pricing optimization models",
-            "Executive leadership coaching & KPI/OKR alignment",
+            "Agile transformation & squad structuring",
         ],
-        tools: ["Asana", "Notion", "Monday.com", "Tableau", "PowerBI", "Bain/McKinsey Frameworks"],
+        tools: ["Asana", "Notion", "Monday.com", "Tableau", "PowerBI", "McKinsey/Bain Frameworks"],
         benefits: "Streamlined operational efficiency, clear OKR accountability, and faster time-to-market for new ventures.",
     },
 ];
@@ -277,370 +322,472 @@ const processSteps = [
     {
         step: "01",
         title: "Discovery & Requirements",
-        desc: "We perform deep-dive discovery workshops to understand your technical specs, business metrics, and stakeholder goals.",
+        desc: "Deep-dive scoping workshops to align technical specifications, success metrics, and project roadmaps.",
         icon: <FaSearch />,
     },
     {
         step: "02",
         title: "Architecture & Blueprint",
-        desc: "Our architects draft detailed technical specifications, wireframes, data models, and an agile milestone roadmap.",
+        desc: "Drafting scalable system architectures, design tokens, data flow models, and sprint milestones.",
         icon: <FaLayerGroup />,
     },
     {
         step: "03",
-        title: "Agile Sprints & Delivery",
-        desc: "Cross-functional squads build deliverables in 2-week bi-weekly sprints with full transparency, staging demos, and weekly status calls.",
+        title: "Agile Execution & Delivery",
+        desc: "Cross-functional engineering squads delivering bi-weekly code releases with full staging transparency.",
         icon: <FaRocket />,
     },
     {
         step: "04",
-        title: "Quality Assurance & Security",
-        desc: "Automated regression testing, load tests, penetration audits, and SOC2/HIPAA compliance verifications before rollout.",
+        title: "QA & Security Governance",
+        desc: "Automated regression testing, SOC2/ISO audit compliance checks, and vulnerability penetration tests.",
         icon: <FaShieldAlt />,
     },
     {
         step: "05",
-        title: "Production Deployment",
-        desc: "Zero-downtime deployment pipelines, blue-green releases, and automated telemetry monitoring in live environments.",
+        title: "Zero-Downtime Launch",
+        desc: "Blue-green deployment pipelines, telemetry setup, and live performance monitoring.",
         icon: <FaSyncAlt />,
     },
     {
         step: "06",
-        title: "Continuous SLA & Optimization",
-        desc: "24/7 dedicated support, continuous feature upgrades, performance tuning, and scalable long-term partnership.",
+        title: "Continuous SLA & Scaling",
+        desc: "24/7 infrastructure support, automated security patches, and ongoing performance optimizations.",
         icon: <FaHeadset />,
     },
 ];
 
-const INITIAL_SHOW_COUNT = 6;
-
 export default function ServicesPage() {
-    const [selectedCategory, setSelectedCategory] = useState("All");
+    const [selectedCategory, setSelectedCategory] = useState("ALL");
     const [searchQuery, setSearchQuery] = useState("");
-    const [showAll, setShowAll] = useState(false);
+    const [selectedModalService, setSelectedModalService] = useState(null);
+    const [isChatOpen, setIsChatOpen] = useState(false);
 
     const categories = [
-        "All",
-        "IT & Technology",
-        "Staffing & Careers",
-        "Marketing & Creative",
-        "Finance & Advisory",
+        { label: "ALL", value: "ALL" },
+        { label: "IT & TECHNOLOGY", value: "IT & TECHNOLOGY" },
+        { label: "STAFFING & CAREERS", value: "STAFFING & CAREERS" },
+        { label: "MARKETING & CREATIVE", value: "MARKETING & CREATIVE" },
+        { label: "FINANCE & ADVISORY", value: "FINANCE & ADVISORY" },
     ];
 
     const filteredServices = allServicesDetail.filter((service) => {
         const matchesCategory =
-            selectedCategory === "All" || service.category === selectedCategory;
+            selectedCategory === "ALL" || service.category === selectedCategory;
         const matchesSearch =
             service.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
             service.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            service.tools.some((t) => t.toLowerCase().includes(searchQuery.toLowerCase()));
+            service.tagline.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            service.deliverables.some((d) => d.toLowerCase().includes(searchQuery.toLowerCase()));
         return matchesCategory && matchesSearch;
     });
 
-    const visibleServices = showAll
-        ? filteredServices
-        : filteredServices.slice(0, INITIAL_SHOW_COUNT);
-
-    const hasMore = filteredServices.length > INITIAL_SHOW_COUNT;
-
     return (
-        <main className="bg-[#f7f8fa] text-[#111] min-h-screen">
-            {/* Hero Section */}
-            <section className="py-20 md:py-28 px-6 md:px-12 relative overflow-hidden bg-gradient-to-b from-[#0e1117] via-[#151820] to-[#f7f8fa]">
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full bg-[#30B5AA]/8 blur-[120px] pointer-events-none" />
+        <main className="bg-[#FAF9FF] text-[#0B0F19] min-h-screen relative font-sans antialiased selection:bg-[#6E56CF] selection:text-white">
+            {/* Header Section matching screenshot */}
+            <section className="pt-10 pb-6 px-6 md:px-12 lg:px-16 max-w-7xl mx-auto relative">
+                {/* Background ambient lighting blobs */}
+                <div className="absolute top-0 right-10 w-[500px] h-[500px] bg-gradient-to-bl from-[#6E56CF]/10 via-[#818CF8]/5 to-transparent rounded-full blur-3xl pointer-events-none -z-10" />
+                <div className="absolute top-20 right-24 hidden lg:block opacity-25 pointer-events-none -z-10">
+                    <div className="grid grid-cols-6 gap-3">
+                        {Array.from({ length: 36 }).map((_, i) => (
+                            <div key={i} className="w-1.5 h-1.5 rounded-full bg-[#6E56CF]" />
+                        ))}
+                    </div>
+                </div>
 
-                <div className="max-w-7xl mx-auto relative z-10 text-center">
-                    <span className="inline-block bg-[#30B5AA]/10 border border-[#30B5AA]/30 text-[#30B5AA] rounded-full px-5 py-2 text-xs font-bold uppercase tracking-widest mb-6">
-                        Complete Services Suite
+                {/* Badge */}
+                <div className="mb-4">
+                    <span className="inline-block bg-[#EFEBFF] text-[#6E56CF] text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full">
+                        WHAT WE DO
                     </span>
+                </div>
 
-                    <h1 className="text-4xl sm:text-6xl lg:text-7xl font-serif font-bold text-white leading-[1.1] mb-6">
-                        Enterprise Solutions Built <br />
-                        <span className="text-[#30B5AA] font-sans font-extrabold">To Scale Your Business</span>
-                    </h1>
+                {/* Main Heading Row */}
+                <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-8">
+                    <div>
+                        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#0B0F19] tracking-tight leading-none flex flex-wrap items-baseline gap-3">
+                            <span>Available Capabilities</span>
+                            <span className="text-[#6E56CF]">({allServicesDetail.length})</span>
+                        </h1>
+                        {/* Purple Underline Bar */}
+                        <div className="w-14 h-[4px] bg-[#6E56CF] rounded-full mt-3 mb-4" />
 
-                    <p className="text-gray-400 text-base md:text-xl max-w-3xl mx-auto leading-relaxed mb-10">
-                        From custom AI & software engineering to global IT staffing, performance marketing, and financial advisory — explore our unified services suite designed for ambitious enterprises.
-                    </p>
+                        <p className="text-gray-600 text-sm md:text-base font-normal max-w-2xl leading-relaxed">
+                            Click on any service to explore deliverables, tech tools, and request a tailored quote.
+                        </p>
+                    </div>
 
-                    {/* Search & Category Filter Controls */}
-                    <div className="max-w-3xl mx-auto space-y-5">
-                        {/* Search Bar */}
-                        <div className="relative">
-                            <input
-                                type="text"
-                                value={searchQuery}
-                                onChange={(e) => setSearchQuery(e.target.value)}
-                                placeholder="Search by service, technology (e.g. Next.js, Python, SEO, Staffing)..."
-                                className="w-full bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-6 py-4 pl-12 text-sm text-white placeholder-gray-400 outline-none focus:border-[#30B5AA] focus:bg-white/15 transition-all duration-300 shadow-lg"
-                            />
-                            <FaSearch className="absolute left-5 top-1/2 -translate-y-1/2 text-gray-400 text-sm" />
-                            {searchQuery && (
-                                <button
-                                    onClick={() => setSearchQuery("")}
-                                    className="absolute right-5 top-1/2 -translate-y-1/2 text-xs text-gray-400 hover:text-white transition"
-                                >
-                                    Clear
-                                </button>
-                            )}
-                        </div>
+                    <div className="flex flex-wrap items-center gap-3 shrink-0">
+                        <Link
+                            href="/contact?type=custom-scope"
+                            className="inline-flex items-center gap-2 bg-white hover:bg-[#F3F0FF] text-[#6E56CF] border border-[#DDD6FE] hover:border-[#C4B5FD] px-6 py-2.5 rounded-full text-xs font-bold transition-all shadow-sm group"
+                        >
+                            <span>Need Custom Scope?</span>
+                            <FaArrowRight className="text-xs group-hover:translate-x-0.5 transition-transform" />
+                        </Link>
+                    </div>
+                </div>
 
-                        {/* Category Filter Pills */}
-                        <div className="flex flex-wrap items-center justify-center gap-2.5">
-                            {categories.map((cat) => (
-                                <button
-                                    key={cat}
-                                    onClick={() => {
-                                        setSelectedCategory(cat);
-                                        setShowAll(false);
-                                    }}
-                                    className={`px-5 py-2 rounded-full text-xs font-bold transition-all duration-300 ${
-                                        selectedCategory === cat
-                                            ? "bg-[#30B5AA] text-white shadow-md shadow-[#30B5AA]/25"
-                                            : "bg-white/10 text-gray-300 hover:bg-white/20 border border-white/10"
-                                    }`}
-                                >
-                                    {cat}
-                                </button>
-                            ))}
-                        </div>
+                {/* Filter and Search Bar Controls */}
+                <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4 pt-4 pb-2 border-t border-purple-100/60">
+                    {/* Category Filter Pills */}
+                    <div className="flex flex-wrap items-center gap-2">
+                        {categories.map((cat) => (
+                            <button
+                                key={cat.value}
+                                onClick={() => setSelectedCategory(cat.value)}
+                                className={`px-4 py-1.5 rounded-full text-xs font-bold transition-all duration-200 cursor-pointer ${
+                                    selectedCategory === cat.value
+                                        ? "bg-[#6E56CF] text-white shadow-sm"
+                                        : "bg-white text-gray-600 hover:bg-purple-50 hover:text-[#6E56CF] border border-gray-200/80"
+                                }`}
+                            >
+                                {cat.label}
+                            </button>
+                        ))}
+                    </div>
+
+                    {/* Search Input */}
+                    <div className="relative min-w-[240px] md:w-72">
+                        <input
+                            type="text"
+                            value={searchQuery}
+                            onChange={(e) => setSearchQuery(e.target.value)}
+                            placeholder="Search capability or keyword..."
+                            className="w-full bg-white border border-gray-200 rounded-full py-2 pl-9 pr-8 text-xs text-[#0B0F19] placeholder-gray-400 outline-none focus:border-[#6E56CF] focus:ring-2 focus:ring-[#6E56CF]/10 transition-all shadow-xs"
+                        />
+                        <FaSearch className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400 text-xs" />
+                        {searchQuery && (
+                            <button
+                                onClick={() => setSearchQuery("")}
+                                className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-[#0B0F19] p-1"
+                            >
+                                <FaTimes className="text-xs" />
+                            </button>
+                        )}
                     </div>
                 </div>
             </section>
 
-            {/* In-depth Services List Grid */}
-            <section className="py-20 px-6 md:px-12 max-w-7xl mx-auto">
-                <div className="mb-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                    <div>
-                        <h2 className="text-2xl sm:text-3xl font-serif font-bold text-[#111]">
-                            Available Capabilities ({filteredServices.length})
-                        </h2>
-                        <p className="text-gray-500 text-xs sm:text-sm mt-1">
-                            Click on any service to explore deliverables, tech tools, and request a tailored quote.
+            {/* 2-Column Dark Cards Grid matching screenshot */}
+            <section className="py-8 px-6 md:px-12 lg:px-16 max-w-7xl mx-auto">
+                {filteredServices.length === 0 ? (
+                    <div className="bg-white rounded-3xl p-12 text-center border border-gray-200 shadow-sm max-w-md mx-auto my-12">
+                        <p className="text-gray-500 text-sm font-medium mb-4">
+                            No capabilities matched your filter "{searchQuery}".
                         </p>
-                    </div>
-                    <Link
-                        href="/contact"
-                        className="inline-flex items-center gap-2 bg-[#111] hover:bg-[#30B5AA] text-white px-6 py-2.5 rounded-full text-xs font-bold transition-all duration-300 shadow-sm hover:shadow-md"
-                    >
-                        <span>Need Custom Scope?</span>
-                        <FaArrowRight className="text-xs" />
-                    </Link>
-                </div>
-
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-7">
-                    {visibleServices.map((srv, index) => (
-                        <div
-                            key={srv.id}
-                            id={srv.id}
-                            className="bg-white border border-gray-100 rounded-3xl p-8 sm:p-10 flex flex-col justify-between hover:border-[#30B5AA]/40 transition-all duration-500 group shadow-[0_2px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_40px_rgba(48,181,170,0.1)] relative overflow-hidden"
-                            style={{
-                                animation: `fadeSlideUp 0.5s ease-out ${index * 0.06}s both`,
-                            }}
-                        >
-                            {/* Decorative gradient blob */}
-                            <div className="absolute -top-6 -right-6 w-32 h-32 bg-[#30B5AA]/5 rounded-full blur-2xl pointer-events-none group-hover:bg-[#30B5AA]/12 group-hover:w-40 group-hover:h-40 transition-all duration-700" />
-
-                            <div>
-                                {/* Card Header */}
-                                <div className="flex items-center justify-between gap-4 mb-6">
-                                    <div className="flex items-center gap-4">
-                                        <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#30B5AA]/15 to-[#30B5AA]/5 border border-[#30B5AA]/20 text-[#30B5AA] flex items-center justify-center text-xl shrink-0 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
-                                            {srv.icon}
-                                        </div>
-                                        <div>
-                                            <span className="text-[11px] text-[#30B5AA] font-bold uppercase tracking-wider block">
-                                                {srv.category}
-                                            </span>
-                                            <h3 className="text-xl sm:text-2xl font-bold text-[#111] tracking-tight">
-                                                {srv.title}
-                                            </h3>
-                                        </div>
-                                    </div>
-
-                                    <span className="hidden sm:inline-block text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-[#f0f2f5] text-gray-600 border border-gray-100">
-                                        {srv.tag}
-                                    </span>
-                                </div>
-
-                                <p className="text-gray-700 text-xs sm:text-sm font-medium mb-3">
-                                    {srv.tagline}
-                                </p>
-
-                                <p className="text-gray-500 text-xs sm:text-sm leading-relaxed mb-6">
-                                    {srv.description}
-                                </p>
-
-                                {/* Deliverables List */}
-                                <div className="mb-6 pt-4 border-t border-gray-100">
-                                    <h4 className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-3">
-                                        What We Deliver:
-                                    </h4>
-                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                                        {srv.deliverables.map((d, i) => (
-                                            <div
-                                                key={i}
-                                                className="flex items-start gap-2 text-xs text-gray-600"
-                                            >
-                                                <FaCheck className="text-[#30B5AA] text-[10px] mt-1 shrink-0" />
-                                                <span>{d}</span>
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
-
-                                {/* Tech Stack Tags */}
-                                <div className="mb-6">
-                                    <h4 className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-2.5">
-                                        Technologies & Frameworks:
-                                    </h4>
-                                    <div className="flex flex-wrap gap-1.5">
-                                        {srv.tools.map((tool, i) => (
-                                            <span
-                                                key={i}
-                                                className="bg-[#f0f2f5] hover:bg-[#e8eaed] border border-gray-100 rounded-lg px-2.5 py-1 text-[11px] font-mono text-gray-600 transition-colors duration-200"
-                                            >
-                                                {tool}
-                                            </span>
-                                        ))}
-                                    </div>
-                                </div>
-
-                                {/* Expected ROI / Impact */}
-                                <div className="bg-gradient-to-r from-[#30B5AA]/5 to-[#30B5AA]/2 border border-[#30B5AA]/10 rounded-2xl p-4 mb-6">
-                                    <span className="text-[11px] font-bold uppercase text-[#30B5AA] block mb-1">
-                                        Measurable Impact & ROI
-                                    </span>
-                                    <p className="text-xs text-gray-600 leading-relaxed">
-                                        {srv.benefits}
-                                    </p>
-                                </div>
-                            </div>
-
-                            {/* Card CTA */}
-                            <div className="pt-6 border-t border-gray-100 flex flex-col sm:flex-row items-center justify-between gap-4">
-                                <span className="text-xs text-gray-400">
-                                    Flexible monthly retainers & fixed milestones
-                                </span>
-                                <Link
-                                    href={`/contact?service=${encodeURIComponent(srv.title)}`}
-                                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#111] hover:bg-[#30B5AA] text-white font-bold text-xs px-6 py-3 rounded-full transition-all duration-300 shadow-sm hover:shadow-md group/btn"
-                                >
-                                    <span>Inquire About {srv.title.split(" ")[0]}</span>
-                                    <FaArrowRight className="text-xs group-hover/btn:translate-x-0.5 transition-transform" />
-                                </Link>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-
-                {/* Show More / Show Less Button */}
-                {hasMore && !searchQuery && selectedCategory === "All" && (
-                    <div className="mt-12 text-center">
                         <button
-                            onClick={() => setShowAll(!showAll)}
-                            className="inline-flex items-center gap-3 bg-white hover:bg-[#111] hover:text-white text-[#111] border border-gray-200 hover:border-[#111] px-8 py-3.5 rounded-full text-sm font-semibold transition-all duration-300 shadow-sm hover:shadow-lg group"
+                            onClick={() => {
+                                setSelectedCategory("ALL");
+                                setSearchQuery("");
+                            }}
+                            className="bg-[#6E56CF] text-white text-xs font-bold px-6 py-2.5 rounded-full hover:bg-[#5B45FF] transition"
                         >
-                            <span>{showAll ? "Show Less Services" : `Show All ${filteredServices.length} Services`}</span>
-                            {showAll ? (
-                                <FaArrowUp className="text-[#30B5AA] group-hover:text-[#30B5AA] text-xs group-hover:-translate-y-0.5 transition-transform" />
-                            ) : (
-                                <FaArrowDown className="text-[#30B5AA] group-hover:text-[#30B5AA] text-xs group-hover:translate-y-0.5 transition-transform" />
-                            )}
+                            Reset Filters
                         </button>
+                    </div>
+                ) : (
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
+                        {filteredServices.map((srv) => (
+                            <div
+                                key={srv.id}
+                                id={srv.id}
+                                className="bg-[#0B0F19] border border-slate-800/80 rounded-[28px] p-7 sm:p-9 text-white shadow-2xl flex flex-col justify-between hover:border-[#6E56CF]/50 transition-all duration-300 relative group overflow-hidden"
+                            >
+                                <div>
+                                    {/* Top Header of Card */}
+                                    <div className="flex items-start justify-between gap-4 mb-5">
+                                        <div className="flex items-center gap-4">
+                                            {/* Category Icon */}
+                                            <div
+                                                className={`w-13 h-13 rounded-2xl ${srv.theme.iconBg} border ${srv.theme.iconBorder} ${srv.theme.iconColor} flex items-center justify-center text-2xl shrink-0 group-hover:scale-105 transition-transform duration-300`}
+                                            >
+                                                {srv.icon}
+                                            </div>
+
+                                            {/* Titles */}
+                                            <div>
+                                                <span className="text-[11px] font-bold tracking-widest uppercase text-[#818CF8] block mb-0.5">
+                                                    {srv.category}
+                                                </span>
+                                                <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight leading-snug">
+                                                    {srv.title}
+                                                </h2>
+                                            </div>
+                                        </div>
+
+                                        {/* Right Tag Pill */}
+                                        <span className="border border-white/15 bg-white/5 text-gray-300 text-[10px] sm:text-[11px] font-mono font-semibold tracking-wider px-3.5 py-1.5 rounded-full uppercase shrink-0 self-start text-center">
+                                            {srv.tag}
+                                        </span>
+                                    </div>
+
+                                    {/* Tagline / Subtitle */}
+                                    <p className="text-gray-200 text-sm font-semibold mb-3 leading-relaxed">
+                                        {srv.tagline}
+                                    </p>
+
+                                    {/* Description */}
+                                    <p className="text-gray-400 text-xs sm:text-sm leading-relaxed mb-6 font-normal">
+                                        {srv.description}
+                                    </p>
+
+                                    {/* Divider Line */}
+                                    <hr className="border-t border-white/10 my-6" />
+
+                                    {/* What We Deliver Section */}
+                                    <div className="mb-6">
+                                        <span className="text-[11px] font-bold tracking-widest uppercase text-[#818CF8] mb-4 block">
+                                            WHAT WE DELIVER:
+                                        </span>
+                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                            {srv.deliverables.map((item, idx) => (
+                                                <div key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-gray-300 font-medium leading-tight">
+                                                    <div className="w-4 h-4 rounded-full bg-[#1E1B4B] border border-[#6E56CF]/50 text-[#A78BFA] flex items-center justify-center text-[9px] shrink-0 mt-0.5">
+                                                        <FaCheck />
+                                                    </div>
+                                                    <span>{item}</span>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Explore Service Link CTA */}
+                                <div className="pt-4 border-t border-white/5 flex items-center justify-between">
+                                    <button
+                                        onClick={() => setSelectedModalService(srv)}
+                                        className="text-[#818CF8] hover:text-white font-semibold text-sm inline-flex items-center gap-2 transition group/link cursor-pointer"
+                                    >
+                                        <span>Explore Service</span>
+                                        <FaArrowRight className="text-xs group-hover/link:translate-x-1 transition-transform" />
+                                    </button>
+
+                                    <Link
+                                        href={`/contact?service=${encodeURIComponent(srv.title)}`}
+                                        className="text-xs text-gray-400 hover:text-gray-200 transition underline underline-offset-4"
+                                    >
+                                        Inquire Quote
+                                    </Link>
+                                </div>
+                            </div>
+                        ))}
                     </div>
                 )}
             </section>
 
-            {/* Enterprise Delivery Process */}
-            <section className="bg-[#0e1117] py-24 px-6 md:px-12 text-white">
+            {/* Structured Methodology & Process Section */}
+            <section className="bg-[#0B0F19] text-white py-20 px-6 md:px-12 lg:px-16 mt-16">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center max-w-3xl mx-auto mb-16">
-                        <p className="text-[#30B5AA] text-sm font-semibold uppercase tracking-widest mb-3">
-                            Our Methodology
-                        </p>
-                        <h2 className="text-3xl sm:text-5xl font-serif font-bold text-white leading-tight">
-                            How We Deliver Excellence <br className="hidden sm:inline" /> At Scale
+                        <span className="bg-[#6E56CF]/20 text-[#A78BFA] border border-[#6E56CF]/30 text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full inline-block mb-4">
+                            OUR METHODOLOGY
+                        </span>
+                        <h2 className="text-3xl sm:text-5xl font-bold text-white tracking-tight">
+                            How We Deliver Enterprise Excellence
                         </h2>
                         <p className="text-gray-400 text-sm sm:text-base mt-4 leading-relaxed">
-                            A structured, ISO-grade delivery lifecycle that ensures zero friction, predictable milestones, and transparent client collaboration from day one.
+                            A battle-tested 6-step engineering framework guaranteeing rapid velocity, predictable milestones, and uncompromised cybersecurity.
                         </p>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {processSteps.map((step, idx) => (
+                        {processSteps.map((p, idx) => (
                             <div
                                 key={idx}
-                                className="bg-[#181b22] border border-white/8 rounded-3xl p-8 hover:border-[#30B5AA]/40 transition-all duration-500 relative group hover:-translate-y-1"
+                                className="bg-[#121726] border border-white/10 rounded-2xl p-7 hover:border-[#6E56CF]/60 transition duration-300 relative group"
                             >
-                                <div className="flex items-center justify-between mb-6">
-                                    <div className="w-12 h-12 rounded-2xl bg-[#30B5AA]/15 text-[#30B5AA] flex items-center justify-center text-lg font-bold group-hover:scale-110 transition-transform duration-300">
-                                        {step.icon}
+                                <div className="flex items-center justify-between mb-5">
+                                    <div className="w-12 h-12 rounded-xl bg-[#6E56CF]/20 text-[#A78BFA] flex items-center justify-center text-xl font-bold group-hover:scale-110 transition-transform">
+                                        {p.icon}
                                     </div>
-                                    <span className="text-2xl font-black font-mono text-white/10 group-hover:text-[#30B5AA]/60 transition-colors duration-300">
-                                        {step.step}
+                                    <span className="text-xl font-mono font-extrabold text-white/20 group-hover:text-[#6E56CF] transition-colors">
+                                        {p.step}
                                     </span>
                                 </div>
-                                <h3 className="text-xl font-bold text-white mb-2">
-                                    {step.title}
-                                </h3>
-                                <p className="text-gray-400 text-xs sm:text-sm leading-relaxed">
-                                    {step.desc}
-                                </p>
+                                <h3 className="text-lg font-bold text-white mb-2">{p.title}</h3>
+                                <p className="text-gray-400 text-xs sm:text-sm leading-relaxed">{p.desc}</p>
                             </div>
                         ))}
                     </div>
                 </div>
             </section>
 
-            {/* Final CTA Card */}
-            <section className="py-24 px-6 md:px-12 max-w-5xl mx-auto text-center">
-                <div className="bg-gradient-to-br from-[#0e1117] via-[#151820] to-[#0e1117] border border-[#30B5AA]/20 rounded-3xl p-10 sm:p-16 shadow-[0_0_60px_rgba(48,181,170,0.06)] relative overflow-hidden">
-                    {/* Decorative elements */}
-                    <div className="absolute top-0 left-1/4 w-64 h-64 bg-[#30B5AA]/5 rounded-full blur-3xl pointer-events-none" />
-                    <div className="absolute bottom-0 right-1/4 w-48 h-48 bg-[#30B5AA]/5 rounded-full blur-3xl pointer-events-none" />
+            {/* Ready to Accelerate CTA Card */}
+            <section className="py-20 px-6 md:px-12 max-w-5xl mx-auto">
+                <div className="bg-gradient-to-br from-[#0B0F19] via-[#151928] to-[#0B0F19] border border-[#6E56CF]/30 rounded-3xl p-10 sm:p-14 text-center text-white shadow-2xl relative overflow-hidden">
+                    <div className="absolute -top-24 -left-24 w-64 h-64 bg-[#6E56CF]/20 rounded-full blur-3xl pointer-events-none" />
+                    <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-[#38BDF8]/15 rounded-full blur-3xl pointer-events-none" />
 
-                    <span className="relative inline-block bg-[#30B5AA]/15 text-[#30B5AA] text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full mb-6">
-                        Start Your Engagement Today
+                    <span className="bg-[#6E56CF]/20 text-[#A78BFA] text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full inline-block mb-4">
+                        TAILORED SOLUTIONS
                     </span>
-                    <h2 className="relative text-3xl sm:text-5xl font-serif font-bold text-white mb-6 leading-tight">
-                        Ready To Accelerate Your <br />
-                        <span className="text-[#30B5AA]">Business Transformation?</span>
+                    <h2 className="text-3xl sm:text-5xl font-bold text-white tracking-tight mb-4">
+                        Need Custom Scope or Dedicated Teams?
                     </h2>
-                    <p className="relative text-gray-400 text-sm sm:text-base max-w-2xl mx-auto mb-8 leading-relaxed">
-                        Book a complimentary 30-minute scoping call with our technical leaders. We'll assess your requirements and furnish a detailed roadmap within 48 hours.
+                    <p className="text-gray-300 text-sm sm:text-base max-w-2xl mx-auto mb-8 leading-relaxed">
+                        Speak directly with our technical leads to architect a custom solution, review tech stacks, and receive a comprehensive proposal within 48 hours.
                     </p>
-                    <div className="relative flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                         <Link
                             href="/contact"
-                            className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#30B5AA] hover:bg-white text-black font-bold px-8 py-4 rounded-full text-sm transition-all duration-300 shadow-lg hover:shadow-xl group"
+                            className="w-full sm:w-auto bg-[#6E56CF] hover:bg-[#5B45FF] text-white font-bold px-8 py-3.5 rounded-full text-sm transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2 group"
                         >
-                            <span>Book Consultation Call</span>
-                            <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
+                            <span>Book Technical Consultation</span>
+                            <FaArrowRight className="text-xs group-hover:translate-x-1 transition-transform" />
                         </Link>
                         <Link
                             href="/projects"
-                            className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-white/10 hover:bg-white hover:text-black text-white font-bold px-8 py-4 rounded-full text-sm transition-all duration-300 border border-white/10"
+                            className="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white font-bold px-8 py-3.5 rounded-full text-sm transition-all border border-white/10 flex items-center justify-center"
                         >
-                            <span>View Case Studies</span>
+                            <span>Explore Portfolio</span>
                         </Link>
                     </div>
                 </div>
             </section>
 
-            {/* Keyframe animation for card entrance */}
-            <style jsx>{`
-                @keyframes fadeSlideUp {
-                    from {
-                        opacity: 0;
-                        transform: translateY(20px);
-                    }
-                    to {
-                        opacity: 1;
-                        transform: translateY(0);
-                    }
-                }
-            `}</style>
+            {/* Floating Action Button bottom right matching screenshot */}
+            <button
+                onClick={() => setIsChatOpen(!isChatOpen)}
+                className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-[#5B45FF] hover:bg-[#4C36E0] text-white rounded-full shadow-2xl flex items-center justify-center text-xl transition-all duration-300 transform hover:scale-105 cursor-pointer focus:outline-none ring-4 ring-[#5B45FF]/20"
+                aria-label="Open Chat"
+            >
+                {isChatOpen ? <FaTimes /> : <FaComments />}
+            </button>
+
+            {/* Quick Chat Drawer / Popup */}
+            {isChatOpen && (
+                <div className="fixed bottom-24 right-6 z-50 w-80 sm:w-96 bg-[#0B0F19] border border-slate-800 rounded-3xl shadow-2xl p-6 text-white animate-in fade-in slide-in-from-bottom-5 duration-300">
+                    <div className="flex items-center justify-between border-b border-white/10 pb-4 mb-4">
+                        <div className="flex items-center gap-3">
+                            <div className="w-9 h-9 rounded-full bg-[#6E56CF] flex items-center justify-center text-white font-bold text-sm">
+                                C
+                            </div>
+                            <div>
+                                <h4 className="font-bold text-sm text-white">Canvix Advisory</h4>
+                                <span className="text-[10px] text-emerald-400 font-medium flex items-center gap-1">
+                                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                                    Online now
+                                </span>
+                            </div>
+                        </div>
+                        <button
+                            onClick={() => setIsChatOpen(false)}
+                            className="text-gray-400 hover:text-white p-1"
+                        >
+                            <FaTimes className="text-sm" />
+                        </button>
+                    </div>
+                    <p className="text-xs text-gray-300 mb-4 leading-relaxed">
+                        Hi there! Looking for specific deliverable scopes or custom engineering team pricing? Let us know what you need.
+                    </p>
+                    <div className="space-y-2 mb-4">
+                        <Link
+                            href="/contact?ref=chat-custom-quote"
+                            className="block w-full text-center bg-[#6E56CF] hover:bg-[#5B45FF] text-white text-xs font-bold py-2.5 rounded-xl transition"
+                        >
+                            Request Custom Quote
+                        </Link>
+                        <Link
+                            href="/contact?ref=chat-[#6E56CF]"
+                            className="block w-full text-center bg-white/10 hover:bg-white/20 text-white text-xs font-bold py-2.5 rounded-xl transition border border-white/10"
+                        >
+                            Schedule 1-on-1 Call
+                        </Link>
+                    </div>
+                </div>
+            )}
+
+            {/* Service Detail Modal */}
+            {selectedModalService && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/70 backdrop-blur-sm animate-in fade-in duration-200">
+                    <div className="bg-[#0B0F19] border border-slate-800 rounded-3xl max-w-2xl w-full p-6 sm:p-8 text-white relative shadow-2xl max-h-[90vh] overflow-y-auto">
+                        <button
+                            onClick={() => setSelectedModalService(null)}
+                            className="absolute top-6 right-6 w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-gray-300 hover:text-white flex items-center justify-center transition"
+                        >
+                            <FaTimes />
+                        </button>
+
+                        <div className="flex items-center gap-4 mb-4">
+                            <div className={`w-12 h-12 rounded-2xl ${selectedModalService.theme.iconBg} border ${selectedModalService.theme.iconBorder} ${selectedModalService.theme.iconColor} flex items-center justify-center text-xl shrink-0`}>
+                                {selectedModalService.icon}
+                            </div>
+                            <div>
+                                <span className="text-[10px] font-bold tracking-widest uppercase text-[#818CF8]">
+                                    {selectedModalService.category}
+                                </span>
+                                <h3 className="text-xl sm:text-2xl font-bold text-white">
+                                    {selectedModalService.title}
+                                </h3>
+                            </div>
+                        </div>
+
+                        <p className="text-gray-300 text-sm font-semibold mb-4">
+                            {selectedModalService.tagline}
+                        </p>
+                        <p className="text-gray-400 text-xs sm:text-sm leading-relaxed mb-6">
+                            {selectedModalService.description}
+                        </p>
+
+                        {/* Deliverables */}
+                        <div className="mb-6 pt-4 border-t border-white/10">
+                            <h4 className="text-xs font-bold uppercase tracking-widest text-[#818CF8] mb-3">
+                                KEY DELIVERABLES INCLUDED:
+                            </h4>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                                {selectedModalService.deliverables.map((item, idx) => (
+                                    <div key={idx} className="flex items-start gap-2 text-xs text-gray-300 font-medium">
+                                        <FaCheck className="text-[#818CF8] text-[10px] mt-0.5 shrink-0" />
+                                        <span>{item}</span>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* Technologies */}
+                        <div className="mb-6 pt-4 border-t border-white/10">
+                            <h4 className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-3 flex items-center gap-2">
+                                <FaTools className="text-xs text-[#818CF8]" />
+                                <span>TECH STACK & TOOLS USED:</span>
+                            </h4>
+                            <div className="flex flex-wrap gap-2">
+                                {selectedModalService.tools.map((t, idx) => (
+                                    <span key={idx} className="bg-white/10 border border-white/10 rounded-lg px-3 py-1 text-xs font-mono text-gray-200">
+                                        {t}
+                                    </span>
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* Expected Impact */}
+                        <div className="bg-[#6E56CF]/10 border border-[#6E56CF]/30 rounded-2xl p-4 mb-6">
+                            <span className="text-xs font-bold uppercase text-[#A78BFA] block mb-1">
+                                MEASURABLE ROI & BUSINESS BENEFIT:
+                            </span>
+                            <p className="text-xs text-gray-300 leading-relaxed">
+                                {selectedModalService.benefits}
+                            </p>
+                        </div>
+
+                        <div className="pt-4 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+                            <button
+                                onClick={() => setSelectedModalService(null)}
+                                className="w-full sm:w-auto text-xs text-gray-400 hover:text-white transition"
+                            >
+                                Close Preview
+                            </button>
+                            <Link
+                                href={`/contact?service=${encodeURIComponent(selectedModalService.title)}`}
+                                className="w-full sm:w-auto bg-[#6E56CF] hover:bg-[#5B45FF] text-white font-bold text-xs px-6 py-3 rounded-full text-center transition shadow-md"
+                            >
+                                Request Detailed Scope & Proposal
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+            )}
         </main>
     );
 }
