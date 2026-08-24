@@ -1,9 +1,15 @@
 import Contact from "@/components/contact/contact.jsx";
 import ContactMap from "@/components/contact/contactMap.jsx";
 
+export const metadata = {
+  title: "Contact Us | Canvix — Digital Product & Engineering Agency",
+  description:
+    "Get in touch with Canvix to accelerate your digital transformation. From AI engineering to custom web development, cloud solutions, and strategic staffing.",
+};
+
 export default function Page() {
   return (
-    <main className="bg-white text-black min-h-screen">
+    <main className="bg-[#0c0d0e] text-white min-h-screen">
       <Contact />
       <ContactMap />
     </main>
