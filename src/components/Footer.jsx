@@ -37,26 +37,25 @@ function Footer() {
                         <ul className="space-y-2.5 text-xs">
                             <li><Link href="/" className="hover:text-white transition">Home</Link></li>
                             <li><Link href="/services" className="hover:text-white transition">Services</Link></li>
-                            <li><Link href="/about" className="hover:text-white transition">About</Link></li>
-                            <li><Link href="/contact" className="hover:text-white transition">Contact Us</Link></li>
+                            <li><Link href="/about" className="hover:text-white transition">About Us</Link></li>
                             <li><Link href="/projects" className="hover:text-white transition">Portfolio</Link></li>
-                            <li><Link href="/projects/1" className="hover:text-white transition">Portfolio Single</Link></li>
+                            <li><Link href="/contact" className="hover:text-white transition">Contact Us</Link></li>
                         </ul>
                     </div>
 
 
                     <div className="md:col-span-2 space-y-4">
                         <h4 className="text-xs font-bold text-white uppercase tracking-wider">
-                            Utility Pages
+                            Services
                         </h4>
 
                         <ul className="space-y-2.5 text-xs">
-                            <li><a href="#style-guide" className="hover:text-white transition">Style Guide</a></li>
-                            <li><a href="#instruction" className="hover:text-white transition">Instruction</a></li>
-                            <li><a href="#license" className="hover:text-white transition">License</a></li>
-                            <li><a href="#changelog" className="hover:text-white transition">Changelog</a></li>
-                            <li><a href="#404" className="hover:text-white transition">Error 404</a></li>
-                            <li><a href="#password" className="hover:text-white transition">Password Protected</a></li>
+                            <li><Link href="/services" className="hover:text-white transition">AI & Machine Learning</Link></li>
+                            <li><Link href="/services" className="hover:text-white transition">Cloud & DevOps</Link></li>
+                            <li><Link href="/services" className="hover:text-white transition">Web Development</Link></li>
+                            <li><Link href="/services" className="hover:text-white transition">Staffing & Recruiting</Link></li>
+                            <li><Link href="/services" className="hover:text-white transition">Brand & Design</Link></li>
+                            <li><Link href="/services" className="hover:text-white transition">Digital Marketing</Link></li>
                         </ul>
                     </div>
 
