@@ -76,7 +76,6 @@ function Contact() {
                     setErrorMessage(msg);
                     return;
                 }
-                // Fallback for static host / network error
                 saveToLocalStorage(formData);
                 sentSuccessfully = true;
             }
@@ -93,8 +92,8 @@ function Contact() {
                 setTimeout(() => setSubmitted(false), 5000);
             }
         } catch (error) {
-            const fallbackMsg = error instanceof Error 
-                ? error.message 
+            const fallbackMsg = error instanceof Error
+                ? error.message
                 : (typeof error === "string" ? error : "Unable to send your message right now.");
             setErrorMessage(fallbackMsg);
         }
