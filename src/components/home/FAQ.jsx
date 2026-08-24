@@ -28,6 +28,22 @@ const faqs = [
     q: "Do you offer ongoing support after the project?",
     a: "Yes! We don't disappear after launch. We offer maintenance packages, performance monitoring, and on-demand support. Your success is our success — we're in it for the long haul.",
   },
+  {
+    q: "How does your technical staffing & recruitment process work?",
+    a: "We leverage a 5-stage vetting pipeline assessing system design, coding proficiency, and cultural fit. We match qualified candidates within 48 to 72 hours, offering flexible contract-to-hire, direct placement, or dedicated engineering squads with a 60-day replacement warranty.",
+  },
+  {
+    q: "Can Canvix build and integrate custom AI models into our existing software?",
+    a: "Yes! Our AI engineers build custom RAG knowledge bases, fine-tune open-source and proprietary LLMs (OpenAI, Anthropic, Llama), and automate complex business workflows while maintaining enterprise data privacy and SOC2 standards.",
+  },
+  {
+    q: "What accounting and fractional CFO services do you provide?",
+    a: "We manage accrual GAAP-compliant bookkeeping, financial forecasting, tax optimization, and investor reporting. Our Fractional CFOs help founders extend runway, model unit economics, and prepare for institutional funding rounds.",
+  },
+  {
+    q: "What engagement and pricing models are available?",
+    a: "We offer four transparent engagement models: Fixed-Price Turnkey Projects for defined deliverables, Monthly Dedicated Engineering Pods, Hourly On-Demand Staff Augmentation, and Monthly Strategic Retainers.",
+  },
 ];
 
 function FAQItem({ item, isOpen, onClick }) {

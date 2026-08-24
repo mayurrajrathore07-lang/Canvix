@@ -33,17 +33,27 @@ function Navbar() {
 
                 <ul className="hidden md:flex items-center gap-8 text-sm font-medium">
                     <li>
-                        <Link href="/" className={navLinkClass("/") ? "text-black font-semibold" : "text-gray-600 hover:text-black transition"}>
+                        <Link href="/" className={pathname === "/" ? "text-black font-semibold" : "text-gray-600 hover:text-black transition"}>
                             Home
                         </Link>
                     </li>
                     <li>
-                        <Link href="/about" className={navLinkClass("/about") ? "text-black font-semibold" : "text-gray-600 hover:text-black transition"}>
+                        <Link href="/services" className={pathname === "/services" ? "text-black font-semibold" : "text-gray-600 hover:text-black transition"}>
+                            Services
+                        </Link>
+                    </li>
+                    <li>
+                        <Link href="/about" className={pathname === "/about" ? "text-black font-semibold" : "text-gray-600 hover:text-black transition"}>
                             About
                         </Link>
                     </li>
                     <li>
-                        <Link href="/contact" className={navLinkClass("/contact") ? "text-black font-semibold" : "text-gray-600 hover:text-black transition"}>
+                        <Link href="/projects" className={pathname.startsWith("/projects") ? "text-black font-semibold" : "text-gray-600 hover:text-black transition"}>
+                            Portfolio
+                        </Link>
+                    </li>
+                    <li>
+                        <Link href="/contact" className={pathname === "/contact" ? "text-black font-semibold" : "text-gray-600 hover:text-black transition"}>
                             Contact Us
                         </Link>
                     </li>
@@ -72,28 +82,35 @@ function Navbar() {
                     <Link
                         href="/"
                         onClick={() => setIsOpen(false)}
-                        className={`block py-1.5 ${navLinkClass("/") ? "text-black font-semibold" : "text-gray-600 hover:text-black"}`}
+                        className={`block py-1.5 ${pathname === "/" ? "text-black font-semibold" : "text-gray-600 hover:text-black"}`}
                     >
                         Home
                     </Link>
                     <Link
+                        href="/services"
+                        onClick={() => setIsOpen(false)}
+                        className={`block py-1.5 ${pathname === "/services" ? "text-black font-semibold" : "text-gray-600 hover:text-black"}`}
+                    >
+                        Services
+                    </Link>
+                    <Link
                         href="/about"
                         onClick={() => setIsOpen(false)}
-                        className={`block py-1.5 ${navLinkClass("/about") ? "text-black font-semibold" : "text-gray-600 hover:text-black"}`}
+                        className={`block py-1.5 ${pathname === "/about" ? "text-black font-semibold" : "text-gray-600 hover:text-black"}`}
                     >
                         About
                     </Link>
                     <Link
                         href="/projects"
                         onClick={() => setIsOpen(false)}
-                        className={`block py-1.5 ${navLinkClass("/projects") ? "text-black font-semibold" : "text-gray-600 hover:text-black"}`}
+                        className={`block py-1.5 ${pathname.startsWith("/projects") ? "text-black font-semibold" : "text-gray-600 hover:text-black"}`}
                     >
                         Portfolio
                     </Link>
                     <Link
                         href="/contact"
                         onClick={() => setIsOpen(false)}
-                        className={`block py-1.5 ${navLinkClass("/contact") ? "text-black font-semibold" : "text-gray-600 hover:text-black"}`}
+                        className={`block py-1.5 ${pathname === "/contact" ? "text-black font-semibold" : "text-gray-600 hover:text-black"}`}
                     >
                         Contact Us
                     </Link>

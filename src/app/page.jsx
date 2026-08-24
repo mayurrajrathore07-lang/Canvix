@@ -1,7 +1,10 @@
 import Hero from "@/components/home/Hero.jsx";
 import Services from "@/components/home/Services.jsx";
+import BusinessSolutions from "@/components/home/BusinessSolutions.jsx";
 import TrustStats from "@/components/home/TrustStats.jsx";
 import About from "@/components/home/About.jsx";
+import Industries from "@/components/home/Industries.jsx";
+import WhyChooseUs from "@/components/home/WhyChooseUs.jsx";
 import Process from "@/components/home/process.jsx";
 import Projects from "@/components/home/Projects.jsx";
 import Testimonial from "@/components/home/Testimonial.jsx";
@@ -13,8 +16,11 @@ export default function Page() {
     <main className="bg-[#0c0d0e] text-white min-h-screen">
       <Hero />
       <Services />
+      <BusinessSolutions />
       <TrustStats />
       <About />
+      <Industries />
+      <WhyChooseUs />
       <Process />
       <Projects />
       <Testimonial />

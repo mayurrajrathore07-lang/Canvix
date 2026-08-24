@@ -25,6 +25,20 @@ const testimonialsData = [
         name: "Elena Rostova",
         role: "VP of Product at Innovate",
     },
+    {
+        id: 4,
+        profile: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=300&q=80",
+        quote: "“The dedicated engineering pod from Canvix built and integrated our custom LLM analytics engine in record time. Our enterprise clients are blown away.”",
+        name: "David Sterling",
+        role: "CTO at FinScale Global",
+    },
+    {
+        id: 5,
+        profile: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=300&q=80",
+        quote: "“Canvix’s tech staffing team helped us hire four top-tier senior backend architects in under two weeks. Their vetting process is genuinely top-tier.”",
+        name: "Sarah Jenkins",
+        role: "Head of Talent at CloudVentures",
+    },
 ];
 
 function Testimonial() {

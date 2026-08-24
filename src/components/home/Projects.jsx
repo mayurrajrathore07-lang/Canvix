@@ -17,6 +17,18 @@ function Projects() {
             category: "Web / UI UX Design",
         },
         {
+            id: "7",
+            image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
+            title: "FinTech AI Analytics & Fraud Engine",
+            category: "AI & Machine Learning / Financial Technology",
+        },
+        {
+            id: "8",
+            image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80",
+            title: "Multi-Cloud DevOps & Kubernetes",
+            category: "Cloud Architecture & Enterprise DevOps",
+        },
+        {
             id: "3",
             image: "https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?auto=format&fit=crop&w=800&q=80",
             title: "UI Design",
@@ -36,34 +48,39 @@ function Projects() {
             <div className="max-w-7xl mx-auto">
 
                 <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-14">
-                    <h2 className="text-3xl sm:text-5xl font-serif font-bold text-[#111111]">
-                        Recent Showcase
-                    </h2>
+                    <div>
+                        <p className="text-[#30B5AA] text-xs font-semibold uppercase tracking-wider mb-2">
+                            Featured Case Studies
+                        </p>
+                        <h2 className="text-3xl sm:text-5xl font-serif font-bold text-[#111111]">
+                            Recent Showcase
+                        </h2>
+                    </div>
 
                     <Link
                         href="/projects"
                         className="mt-4 sm:mt-0 inline-flex items-center gap-3 bg-[#18191c] hover:bg-black text-white px-6 py-3 rounded-full text-xs sm:text-sm font-semibold transition duration-300 shadow-md group"
                     >
-                        <span className="w-6 h-6 rounded-full bg-white text-black group-hover:bg-cyan-400 flex items-center justify-center text-[10px] transition">
+                        <span className="w-6 h-6 rounded-full bg-white text-black group-hover:bg-[#30B5AA] flex items-center justify-center text-[10px] transition">
                             <FaPlay className="ml-0.5" />
                         </span>
-                        <span>View showcase</span>
+                        <span>View all projects</span>
                     </Link>
                 </div>
 
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {projects.map((item) => (
                         <div key={item.id} className="group cursor-pointer">
                             <div className="overflow-hidden rounded-3xl bg-gray-200 mb-5 shadow-sm">
                                 <img
                                     src={item.image}
                                     alt={item.title}
-                                    className="w-full h-[320px] sm:h-[400px] object-cover transition-transform duration-700 group-hover:scale-105"
+                                    className="w-full h-[280px] sm:h-[320px] object-cover transition-transform duration-700 group-hover:scale-105"
                                 />
                             </div>
 
-                            <h3 className="text-xl sm:text-2xl font-serif font-bold text-[#111111] group-hover:text-[#30B5AA] transition-colors">
+                            <h3 className="text-xl font-serif font-bold text-[#111111] group-hover:text-[#30B5AA] transition-colors">
                                 <Link href={`/projects/${item.id}`}>{item.title}</Link>
                             </h3>
 

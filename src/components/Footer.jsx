@@ -36,6 +36,7 @@ function Footer() {
 
                         <ul className="space-y-2.5 text-xs">
                             <li><Link href="/" className="hover:text-white transition">Home</Link></li>
+                            <li><Link href="/services" className="hover:text-white transition">Services</Link></li>
                             <li><Link href="/about" className="hover:text-white transition">About</Link></li>
                             <li><Link href="/contact" className="hover:text-white transition">Contact Us</Link></li>
                             <li><Link href="/projects" className="hover:text-white transition">Portfolio</Link></li>
@@ -63,7 +64,7 @@ function Footer() {
                     <div className="md:col-span-4 space-y-4">
                         <h4 className="text-xs font-bold text-white uppercase tracking-wider">
                             Subscribe
-                        </h4>1
+                        </h4>
 
                         <form onSubmit={(e) => e.preventDefault()} className="flex items-center bg-white rounded-full p-1 max-w-md shadow-sm">
                             <input
