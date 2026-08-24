@@ -20,6 +20,8 @@ import {
     FaDatabase,
     FaCheck,
     FaArrowRight,
+    FaArrowDown,
+    FaArrowUp,
     FaTools,
     FaLayerGroup,
     FaRocket,
@@ -310,9 +312,12 @@ const processSteps = [
     },
 ];
 
+const INITIAL_SHOW_COUNT = 6;
+
 export default function ServicesPage() {
     const [selectedCategory, setSelectedCategory] = useState("All");
     const [searchQuery, setSearchQuery] = useState("");
+    const [showAll, setShowAll] = useState(false);
 
     const categories = [
         "All",
@@ -332,11 +337,17 @@ export default function ServicesPage() {
         return matchesCategory && matchesSearch;
     });
 
+    const visibleServices = showAll
+        ? filteredServices
+        : filteredServices.slice(0, INITIAL_SHOW_COUNT);
+
+    const hasMore = filteredServices.length > INITIAL_SHOW_COUNT;
+
     return (
-        <main className="bg-[#0c0d0e] text-white min-h-screen">
+        <main className="bg-[#f7f8fa] text-[#111] min-h-screen">
             {/* Hero Section */}
-            <section className="py-20 md:py-28 px-6 md:px-12 relative overflow-hidden bg-gradient-to-b from-black via-[#0c0d0e] to-[#0c0d0e] border-b border-white/10">
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full bg-[#30B5AA]/10 blur-[120px] pointer-events-none" />
+            <section className="py-20 md:py-28 px-6 md:px-12 relative overflow-hidden bg-gradient-to-b from-[#0e1117] via-[#151820] to-[#f7f8fa]">
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full bg-[#30B5AA]/8 blur-[120px] pointer-events-none" />
 
                 <div className="max-w-7xl mx-auto relative z-10 text-center">
                     <span className="inline-block bg-[#30B5AA]/10 border border-[#30B5AA]/30 text-[#30B5AA] rounded-full px-5 py-2 text-xs font-bold uppercase tracking-widest mb-6">
@@ -361,13 +372,13 @@ export default function ServicesPage() {
                                 value={searchQuery}
                                 onChange={(e) => setSearchQuery(e.target.value)}
                                 placeholder="Search by service, technology (e.g. Next.js, Python, SEO, Staffing)..."
-                                className="w-full bg-[#18191c] border border-white/15 rounded-full px-6 py-4 pl-12 text-sm text-white placeholder-gray-500 outline-none focus:border-[#30B5AA] transition shadow-lg"
+                                className="w-full bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-6 py-4 pl-12 text-sm text-white placeholder-gray-400 outline-none focus:border-[#30B5AA] focus:bg-white/15 transition-all duration-300 shadow-lg"
                             />
                             <FaSearch className="absolute left-5 top-1/2 -translate-y-1/2 text-gray-400 text-sm" />
                             {searchQuery && (
                                 <button
                                     onClick={() => setSearchQuery("")}
-                                    className="absolute right-5 top-1/2 -translate-y-1/2 text-xs text-gray-400 hover:text-white"
+                                    className="absolute right-5 top-1/2 -translate-y-1/2 text-xs text-gray-400 hover:text-white transition"
                                 >
                                     Clear
                                 </button>
@@ -379,11 +390,14 @@ export default function ServicesPage() {
                             {categories.map((cat) => (
                                 <button
                                     key={cat}
-                                    onClick={() => setSelectedCategory(cat)}
+                                    onClick={() => {
+                                        setSelectedCategory(cat);
+                                        setShowAll(false);
+                                    }}
                                     className={`px-5 py-2 rounded-full text-xs font-bold transition-all duration-300 ${
                                         selectedCategory === cat
-                                            ? "bg-[#30B5AA] text-black shadow-md"
-                                            : "bg-[#18191c] text-gray-300 hover:bg-white/10 border border-white/10"
+                                            ? "bg-[#30B5AA] text-white shadow-md shadow-[#30B5AA]/25"
+                                            : "bg-white/10 text-gray-300 hover:bg-white/20 border border-white/10"
                                     }`}
                                 >
                                     {cat}
@@ -398,63 +412,67 @@ export default function ServicesPage() {
             <section className="py-20 px-6 md:px-12 max-w-7xl mx-auto">
                 <div className="mb-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                     <div>
-                        <h2 className="text-2xl sm:text-3xl font-serif font-bold text-white">
+                        <h2 className="text-2xl sm:text-3xl font-serif font-bold text-[#111]">
                             Available Capabilities ({filteredServices.length})
                         </h2>
-                        <p className="text-gray-400 text-xs sm:text-sm mt-1">
+                        <p className="text-gray-500 text-xs sm:text-sm mt-1">
                             Click on any service to explore deliverables, tech tools, and request a tailored quote.
                         </p>
                     </div>
                     <Link
                         href="/contact"
-                        className="inline-flex items-center gap-2 bg-[#18191c] hover:bg-white hover:text-black text-white border border-white/15 px-6 py-2.5 rounded-full text-xs font-bold transition"
+                        className="inline-flex items-center gap-2 bg-[#111] hover:bg-[#30B5AA] text-white px-6 py-2.5 rounded-full text-xs font-bold transition-all duration-300 shadow-sm hover:shadow-md"
                     >
                         <span>Need Custom Scope?</span>
                         <FaArrowRight className="text-xs" />
                     </Link>
                 </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    {filteredServices.map((srv) => (
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-7">
+                    {visibleServices.map((srv, index) => (
                         <div
                             key={srv.id}
                             id={srv.id}
-                            className="bg-[#121316] border border-white/10 rounded-3xl p-8 sm:p-10 flex flex-col justify-between hover:border-[#30B5AA]/50 transition-all duration-300 group shadow-xl relative overflow-hidden"
+                            className="bg-white border border-gray-100 rounded-3xl p-8 sm:p-10 flex flex-col justify-between hover:border-[#30B5AA]/40 transition-all duration-500 group shadow-[0_2px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_40px_rgba(48,181,170,0.1)] relative overflow-hidden"
+                            style={{
+                                animation: `fadeSlideUp 0.5s ease-out ${index * 0.06}s both`,
+                            }}
                         >
-                            <div className="absolute top-0 right-0 w-32 h-32 bg-[#30B5AA]/5 rounded-full blur-2xl pointer-events-none group-hover:bg-[#30B5AA]/15 transition-all" />
+                            {/* Decorative gradient blob */}
+                            <div className="absolute -top-6 -right-6 w-32 h-32 bg-[#30B5AA]/5 rounded-full blur-2xl pointer-events-none group-hover:bg-[#30B5AA]/12 group-hover:w-40 group-hover:h-40 transition-all duration-700" />
 
                             <div>
                                 {/* Card Header */}
                                 <div className="flex items-center justify-between gap-4 mb-6">
                                     <div className="flex items-center gap-4">
-                                        <div className="w-12 h-12 rounded-2xl bg-[#30B5AA]/15 border border-[#30B5AA]/30 text-[#30B5AA] flex items-center justify-center text-xl shrink-0 group-hover:scale-110 transition-transform">
+                                        <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#30B5AA]/15 to-[#30B5AA]/5 border border-[#30B5AA]/20 text-[#30B5AA] flex items-center justify-center text-xl shrink-0 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
                                             {srv.icon}
                                         </div>
                                         <div>
                                             <span className="text-[11px] text-[#30B5AA] font-bold uppercase tracking-wider block">
                                                 {srv.category}
                                             </span>
-                                            <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+                                            <h3 className="text-xl sm:text-2xl font-bold text-[#111] tracking-tight">
                                                 {srv.title}
                                             </h3>
                                         </div>
                                     </div>
 
-                                    <span className="hidden sm:inline-block text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-white/5 text-gray-300 border border-white/5">
+                                    <span className="hidden sm:inline-block text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-[#f0f2f5] text-gray-600 border border-gray-100">
                                         {srv.tag}
                                     </span>
                                 </div>
 
-                                <p className="text-gray-300 text-xs sm:text-sm font-medium mb-3">
+                                <p className="text-gray-700 text-xs sm:text-sm font-medium mb-3">
                                     {srv.tagline}
                                 </p>
 
-                                <p className="text-gray-400 text-xs sm:text-sm leading-relaxed mb-6">
+                                <p className="text-gray-500 text-xs sm:text-sm leading-relaxed mb-6">
                                     {srv.description}
                                 </p>
 
                                 {/* Deliverables List */}
-                                <div className="mb-6 pt-4 border-t border-white/10">
+                                <div className="mb-6 pt-4 border-t border-gray-100">
                                     <h4 className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-3">
                                         What We Deliver:
                                     </h4>
@@ -462,7 +480,7 @@ export default function ServicesPage() {
                                         {srv.deliverables.map((d, i) => (
                                             <div
                                                 key={i}
-                                                className="flex items-start gap-2 text-xs text-gray-300"
+                                                className="flex items-start gap-2 text-xs text-gray-600"
                                             >
                                                 <FaCheck className="text-[#30B5AA] text-[10px] mt-1 shrink-0" />
                                                 <span>{d}</span>
@@ -480,7 +498,7 @@ export default function ServicesPage() {
                                         {srv.tools.map((tool, i) => (
                                             <span
                                                 key={i}
-                                                className="bg-white/5 hover:bg-white/10 border border-white/5 rounded-lg px-2.5 py-1 text-[11px] font-mono text-gray-300 transition"
+                                                className="bg-[#f0f2f5] hover:bg-[#e8eaed] border border-gray-100 rounded-lg px-2.5 py-1 text-[11px] font-mono text-gray-600 transition-colors duration-200"
                                             >
                                                 {tool}
                                             </span>
@@ -489,36 +507,53 @@ export default function ServicesPage() {
                                 </div>
 
                                 {/* Expected ROI / Impact */}
-                                <div className="bg-white/5 border border-white/5 rounded-2xl p-4 mb-6">
+                                <div className="bg-gradient-to-r from-[#30B5AA]/5 to-[#30B5AA]/2 border border-[#30B5AA]/10 rounded-2xl p-4 mb-6">
                                     <span className="text-[11px] font-bold uppercase text-[#30B5AA] block mb-1">
                                         Measurable Impact & ROI
                                     </span>
-                                    <p className="text-xs text-gray-300 leading-relaxed">
+                                    <p className="text-xs text-gray-600 leading-relaxed">
                                         {srv.benefits}
                                     </p>
                                 </div>
                             </div>
 
                             {/* Card CTA */}
-                            <div className="pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+                            <div className="pt-6 border-t border-gray-100 flex flex-col sm:flex-row items-center justify-between gap-4">
                                 <span className="text-xs text-gray-400">
                                     Flexible monthly retainers & fixed milestones
                                 </span>
                                 <Link
                                     href={`/contact?service=${encodeURIComponent(srv.title)}`}
-                                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#30B5AA] hover:bg-white text-black font-bold text-xs px-6 py-3 rounded-full transition shadow-md"
+                                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#111] hover:bg-[#30B5AA] text-white font-bold text-xs px-6 py-3 rounded-full transition-all duration-300 shadow-sm hover:shadow-md group/btn"
                                 >
                                     <span>Inquire About {srv.title.split(" ")[0]}</span>
-                                    <FaArrowRight className="text-xs" />
+                                    <FaArrowRight className="text-xs group-hover/btn:translate-x-0.5 transition-transform" />
                                 </Link>
                             </div>
                         </div>
                     ))}
                 </div>
+
+                {/* Show More / Show Less Button */}
+                {hasMore && !searchQuery && selectedCategory === "All" && (
+                    <div className="mt-12 text-center">
+                        <button
+                            onClick={() => setShowAll(!showAll)}
+                            className="inline-flex items-center gap-3 bg-white hover:bg-[#111] hover:text-white text-[#111] border border-gray-200 hover:border-[#111] px-8 py-3.5 rounded-full text-sm font-semibold transition-all duration-300 shadow-sm hover:shadow-lg group"
+                        >
+                            <span>{showAll ? "Show Less Services" : `Show All ${filteredServices.length} Services`}</span>
+                            {showAll ? (
+                                <FaArrowUp className="text-[#30B5AA] group-hover:text-[#30B5AA] text-xs group-hover:-translate-y-0.5 transition-transform" />
+                            ) : (
+                                <FaArrowDown className="text-[#30B5AA] group-hover:text-[#30B5AA] text-xs group-hover:translate-y-0.5 transition-transform" />
+                            )}
+                        </button>
+                    </div>
+                )}
             </section>
 
             {/* Enterprise Delivery Process */}
-            <section className="bg-[#121316] py-24 px-6 md:px-12 border-t border-white/10 text-white">
+            <section className="bg-[#0e1117] py-24 px-6 md:px-12 text-white">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center max-w-3xl mx-auto mb-16">
                         <p className="text-[#30B5AA] text-sm font-semibold uppercase tracking-widest mb-3">
@@ -536,13 +571,13 @@ export default function ServicesPage() {
                         {processSteps.map((step, idx) => (
                             <div
                                 key={idx}
-                                className="bg-[#18191c] border border-white/10 rounded-3xl p-8 hover:border-[#30B5AA]/40 transition-all duration-300 relative group"
+                                className="bg-[#181b22] border border-white/8 rounded-3xl p-8 hover:border-[#30B5AA]/40 transition-all duration-500 relative group hover:-translate-y-1"
                             >
                                 <div className="flex items-center justify-between mb-6">
-                                    <div className="w-12 h-12 rounded-2xl bg-[#30B5AA]/15 text-[#30B5AA] flex items-center justify-center text-lg font-bold">
+                                    <div className="w-12 h-12 rounded-2xl bg-[#30B5AA]/15 text-[#30B5AA] flex items-center justify-center text-lg font-bold group-hover:scale-110 transition-transform duration-300">
                                         {step.icon}
                                     </div>
-                                    <span className="text-2xl font-black font-mono text-white/20 group-hover:text-[#30B5AA] transition-colors">
+                                    <span className="text-2xl font-black font-mono text-white/10 group-hover:text-[#30B5AA]/60 transition-colors duration-300">
                                         {step.step}
                                     </span>
                                 </div>
@@ -560,34 +595,52 @@ export default function ServicesPage() {
 
             {/* Final CTA Card */}
             <section className="py-24 px-6 md:px-12 max-w-5xl mx-auto text-center">
-                <div className="bg-gradient-to-r from-[#18191c] via-[#1b1e24] to-[#18191c] border border-[#30B5AA]/30 rounded-3xl p-10 sm:p-16 shadow-[0_0_40px_rgba(48,181,170,0.1)] relative overflow-hidden">
-                    <span className="inline-block bg-[#30B5AA]/15 text-[#30B5AA] text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full mb-6">
+                <div className="bg-gradient-to-br from-[#0e1117] via-[#151820] to-[#0e1117] border border-[#30B5AA]/20 rounded-3xl p-10 sm:p-16 shadow-[0_0_60px_rgba(48,181,170,0.06)] relative overflow-hidden">
+                    {/* Decorative elements */}
+                    <div className="absolute top-0 left-1/4 w-64 h-64 bg-[#30B5AA]/5 rounded-full blur-3xl pointer-events-none" />
+                    <div className="absolute bottom-0 right-1/4 w-48 h-48 bg-[#30B5AA]/5 rounded-full blur-3xl pointer-events-none" />
+
+                    <span className="relative inline-block bg-[#30B5AA]/15 text-[#30B5AA] text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full mb-6">
                         Start Your Engagement Today
                     </span>
-                    <h2 className="text-3xl sm:text-5xl font-serif font-bold text-white mb-6 leading-tight">
+                    <h2 className="relative text-3xl sm:text-5xl font-serif font-bold text-white mb-6 leading-tight">
                         Ready To Accelerate Your <br />
                         <span className="text-[#30B5AA]">Business Transformation?</span>
                     </h2>
-                    <p className="text-gray-400 text-sm sm:text-base max-w-2xl mx-auto mb-8 leading-relaxed">
+                    <p className="relative text-gray-400 text-sm sm:text-base max-w-2xl mx-auto mb-8 leading-relaxed">
                         Book a complimentary 30-minute scoping call with our technical leaders. We'll assess your requirements and furnish a detailed roadmap within 48 hours.
                     </p>
-                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <div className="relative flex flex-col sm:flex-row items-center justify-center gap-4">
                         <Link
                             href="/contact"
-                            className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#30B5AA] hover:bg-white text-black font-bold px-8 py-4 rounded-full text-sm transition shadow-lg"
+                            className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#30B5AA] hover:bg-white text-black font-bold px-8 py-4 rounded-full text-sm transition-all duration-300 shadow-lg hover:shadow-xl group"
                         >
                             <span>Book Consultation Call</span>
-                            <FaArrowRight />
+                            <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
                         </Link>
                         <Link
                             href="/projects"
-                            className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-white/10 hover:bg-white hover:text-black text-white font-bold px-8 py-4 rounded-full text-sm transition border border-white/10"
+                            className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-white/10 hover:bg-white hover:text-black text-white font-bold px-8 py-4 rounded-full text-sm transition-all duration-300 border border-white/10"
                         >
                             <span>View Case Studies</span>
                         </Link>
                     </div>
                 </div>
             </section>
+
+            {/* Keyframe animation for card entrance */}
+            <style jsx>{`
+                @keyframes fadeSlideUp {
+                    from {
+                        opacity: 0;
+                        transform: translateY(20px);
+                    }
+                    to {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+            `}</style>
         </main>
     );
 }
