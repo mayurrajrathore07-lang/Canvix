@@ -18,3 +18,28 @@ export async function GET() {
     );
   }
 }
+
+export async function DELETE(request) {
+  try {
+    const { searchParams } = new URL(request.url);
+    const id = searchParams.get("id");
+
+    if (!id) {
+      return NextResponse.json(
+        { success: false, message: "Message ID is required" },
+        { status: 400 }
+      );
+    }
+
+    const sql = neon(process.env.DATABASE_URL);
+    await sql`DELETE FROM contact_messages WHERE id = ${id}`;
+
+    return NextResponse.json({ success: true, message: "Message deleted successfully" });
+  } catch (error) {
+    console.error("Messages DELETE error:", error);
+    return NextResponse.json(
+      { success: false, message: error.message || "Error deleting message" },
+      { status: 500 }
+    );
+  }
+}
