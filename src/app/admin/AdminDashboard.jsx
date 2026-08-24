@@ -18,6 +18,7 @@ import {
   FaChevronUp,
   FaExclamationTriangle,
   FaTimes,
+  FaSignOutAlt,
 } from "react-icons/fa";
 import { useRouter } from "next/navigation";
 
@@ -457,6 +458,18 @@ export default function AdminDashboard({ messages: initialMessages }) {
   const [confirmIds, setConfirmIds] = useState(null);
   const [deleting, setDeleting] = useState(false);
   const [toast, setToast] = useState(null);
+  const [loggingOut, setLoggingOut] = useState(false);
+
+  const handleLogout = async () => {
+    setLoggingOut(true);
+    try {
+      await fetch("/api/admin/logout", { method: "POST" });
+      router.push("/admin/login");
+      router.refresh();
+    } catch {
+      setLoggingOut(false);
+    }
+  };
 
   const filtered = messages.filter((m) => {
     const q = search.toLowerCase();
@@ -668,6 +681,43 @@ export default function AdminDashboard({ messages: initialMessages }) {
             >
               {messages.length} messages
             </span>
+
+            {/* Logout Button */}
+            <button
+              id="admin-logout-btn"
+              onClick={handleLogout}
+              disabled={loggingOut}
+              title="Logout"
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "7px",
+                background: "rgba(255,255,255,0.05)",
+                border: "1px solid rgba(255,255,255,0.1)",
+                borderRadius: "10px",
+                padding: "7px 14px",
+                color: "#9ca3af",
+                fontSize: "13px",
+                fontWeight: 600,
+                cursor: loggingOut ? "not-allowed" : "pointer",
+                transition: "all 0.2s",
+                fontFamily: "inherit",
+                opacity: loggingOut ? 0.6 : 1,
+              }}
+              onMouseEnter={(e) => {
+                if (!loggingOut) {
+                  e.currentTarget.style.background = "rgba(255,255,255,0.1)";
+                  e.currentTarget.style.color = "#fff";
+                }
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = "rgba(255,255,255,0.05)";
+                e.currentTarget.style.color = "#9ca3af";
+              }}
+            >
+              <FaSignOutAlt size={13} />
+              {loggingOut ? "Logging out…" : "Logout"}
+            </button>
           </div>
         </div>
 
