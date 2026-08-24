@@ -182,8 +182,8 @@ function ContactContent() {
                 error instanceof Error
                     ? error.message
                     : typeof error === "string"
-                    ? error
-                    : "Unable to send your message right now.";
+                        ? error
+                        : "Unable to send your message right now.";
             setErrorMessage(fallbackMsg);
         } finally {
             setIsSubmitting(false);
@@ -265,7 +265,6 @@ function ContactContent() {
                             </button>
                         </div>
 
-                        {/* Phone Row */}
                         <div className="group flex items-start justify-between gap-4 p-4 rounded-2xl bg-white/[0.03] border border-white/5 hover:border-[#30B5AA]/40 hover:bg-white/[0.05] transition-all duration-300 mb-4">
                             <div className="flex items-start gap-4">
                                 <div className="w-11 h-11 rounded-xl bg-[#30B5AA]/15 text-[#30B5AA] flex items-center justify-center text-lg shrink-0 group-hover:scale-105 transition-transform">
@@ -279,7 +278,7 @@ function ContactContent() {
                                         href="tel:+919999999999"
                                         className="text-white hover:text-[#30B5AA] font-semibold text-sm sm:text-base transition block"
                                     >
-                                        +91 99999 99999
+                                        +91 9328311556
                                     </a>
                                 </div>
                             </div>
@@ -434,7 +433,6 @@ function ContactContent() {
                         )}
 
                         <form onSubmit={handleSubmit} className="space-y-6">
-                            {/* Service Interest Pill Selector */}
                             <div>
                                 <label className="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-3">
                                     1. Select Primary Area of Interest
@@ -445,11 +443,10 @@ function ContactContent() {
                                             type="button"
                                             key={service}
                                             onClick={() => setSelectedService(service)}
-                                            className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all duration-200 border ${
-                                                selectedService === service
-                                                    ? "bg-[#30B5AA] text-black border-[#30B5AA] shadow-md shadow-[#30B5AA]/20 font-bold"
-                                                    : "bg-white/[0.04] text-gray-300 border-white/10 hover:border-white/30 hover:bg-white/[0.08]"
-                                            }`}
+                                            className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all duration-200 border ${selectedService === service
+                                                ? "bg-[#30B5AA] text-black border-[#30B5AA] shadow-md shadow-[#30B5AA]/20 font-bold"
+                                                : "bg-white/[0.04] text-gray-300 border-white/10 hover:border-white/30 hover:bg-white/[0.08]"
+                                                }`}
                                         >
                                             {service}
                                         </button>
@@ -609,9 +606,8 @@ function ContactContent() {
                             >
                                 <span>{faq.q}</span>
                                 <FaChevronDown
-                                    className={`text-xs text-gray-400 transition-transform duration-300 shrink-0 ml-4 ${
-                                        openFaqIndex === idx ? "rotate-180 text-[#30B5AA]" : ""
-                                    }`}
+                                    className={`text-xs text-gray-400 transition-transform duration-300 shrink-0 ml-4 ${openFaqIndex === idx ? "rotate-180 text-[#30B5AA]" : ""
+                                        }`}
                                 />
                             </button>
                             {openFaqIndex === idx && (
