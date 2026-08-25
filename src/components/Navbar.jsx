@@ -32,17 +32,17 @@ function Navbar() {
 
     const desktopLinkClass = (item) =>
         isActive(item)
-            ? "text-[#6E56CF] font-semibold relative py-1 after:absolute after:-bottom-2 after:left-1/2 after:-translate-x-1/2 after:w-7 after:h-[3px] after:bg-[#6E56CF] after:rounded-full"
-            : "text-gray-600 hover:text-black transition py-1";
+            ? "text-[#30B5AA] font-semibold relative py-1 after:absolute after:-bottom-2 after:left-1/2 after:-translate-x-1/2 after:w-7 after:h-[3px] after:bg-gradient-to-r after:from-[#6E56CF] after:to-[#30B5AA] after:rounded-full"
+            : "text-gray-300 hover:text-white transition py-1";
 
     const mobileLinkClass = (item) =>
-        `block py-1.5 ${isActive(item) ? "text-black font-semibold" : "text-gray-600 hover:text-black"}`;
+        `block py-2 text-sm font-medium ${isActive(item) ? "text-[#30B5AA] font-semibold" : "text-gray-300 hover:text-white"}`;
 
     return (
-        <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 text-black" role="navigation" aria-label="Main navigation">
+        <nav className="sticky top-0 z-50 bg-[#0c0d0e]/85 backdrop-blur-md border-b border-white/10 text-white transition-all duration-300" role="navigation" aria-label="Main navigation">
             <div className="max-w-6xl mx-auto px-6 sm:px-8 flex items-center justify-between py-4">
 
-                <Logo variant="light" />
+                <Logo variant="dark" />
 
                 <ul className="hidden md:flex items-center gap-8 text-sm font-medium">
                     {navItems.map((item) => (
@@ -60,7 +60,7 @@ function Navbar() {
 
                 <Link
                     href="/contact"
-                    className="hidden md:inline-flex items-center gap-2 bg-[#0B0F19] hover:bg-[#1E1B4B] text-white px-5 py-2.5 rounded-full text-xs font-semibold transition duration-300 shadow-sm group"
+                    className="hidden md:inline-flex items-center gap-2 bg-gradient-to-r from-[#6E56CF] to-[#5B45FF] hover:from-[#5B45FF] hover:to-[#6E56CF] text-white px-5 py-2.5 rounded-full text-xs font-bold transition duration-300 shadow-[0_4px_15px_rgba(110,86,207,0.35)] hover:shadow-[0_6px_20px_rgba(110,86,207,0.55)] group"
                 >
                     <span>Get in touch</span>
                     <svg className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -70,7 +70,7 @@ function Navbar() {
 
                 <button
                     onClick={toggleMenu}
-                    className="md:hidden text-xl text-black focus:outline-none"
+                    className="md:hidden text-xl text-white focus:outline-none p-1 rounded-lg hover:bg-white/10 transition"
                     aria-label={isOpen ? "Close menu" : "Open menu"}
                     aria-expanded={isOpen}
                     aria-controls="mobile-nav-menu"
@@ -79,29 +79,36 @@ function Navbar() {
                 </button>
             </div>
 
+            {/* Mobile Menu Drawer & Overlay */}
             {isOpen && (
-                <div id="mobile-nav-menu" className="md:hidden bg-white border-b border-gray-100 px-6 py-4 space-y-3 text-black" role="menu">
-                    {navItems.map((item) => (
-                        <Link
-                            key={item.href}
-                            href={item.href}
-                            onClick={() => setIsOpen(false)}
-                            className={mobileLinkClass(item)}
-                            role="menuitem"
-                            aria-current={isActive(item) ? "page" : undefined}
-                        >
-                            {item.label}
-                        </Link>
-                    ))}
-                    <Link
-                        href="/contact"
+                <>
+                    <div
+                        className="fixed inset-0 top-[73px] bg-black/60 backdrop-blur-sm z-40 md:hidden"
                         onClick={() => setIsOpen(false)}
-                        className="block text-center bg-black text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-gray-800 transition"
-                        role="menuitem"
-                    >
-                        Get in touch
-                    </Link>
-                </div>
+                    />
+                    <div id="mobile-nav-menu" className="md:hidden relative z-50 bg-[#12151e] border-b border-white/10 px-6 py-5 space-y-4 text-white animate-in slide-in-from-top-2 duration-200" role="menu">
+                        {navItems.map((item) => (
+                            <Link
+                                key={item.href}
+                                href={item.href}
+                                onClick={() => setIsOpen(false)}
+                                className={mobileLinkClass(item)}
+                                role="menuitem"
+                                aria-current={isActive(item) ? "page" : undefined}
+                            >
+                                {item.label}
+                            </Link>
+                        ))}
+                        <Link
+                            href="/contact"
+                            onClick={() => setIsOpen(false)}
+                            className="block text-center bg-gradient-to-r from-[#6E56CF] to-[#5B45FF] text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:opacity-95 transition shadow-md"
+                            role="menuitem"
+                        >
+                            Get in touch
+                        </Link>
+                    </div>
+                </>
             )}
         </nav>
     );

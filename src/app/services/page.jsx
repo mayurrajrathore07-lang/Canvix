@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import {
     FaBrain,
@@ -362,6 +362,15 @@ export default function ServicesPage() {
     const [searchQuery, setSearchQuery] = useState("");
     const [selectedModalService, setSelectedModalService] = useState(null);
     const [isChatOpen, setIsChatOpen] = useState(false);
+
+    useEffect(() => {
+        if (selectedModalService) {
+            document.body.classList.add("modal-open");
+        } else {
+            document.body.classList.remove("modal-open");
+        }
+        return () => document.body.classList.remove("modal-open");
+    }, [selectedModalService]);
 
     const categories = [
         { label: "ALL", value: "ALL" },
