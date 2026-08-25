@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FaBars, FaTimes } from "react-icons/fa";
@@ -16,12 +16,19 @@ const navItems = [
 
 function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
+    const [mounted, setMounted] = useState(false);
     const pathname = usePathname();
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
 
     const toggleMenu = () => setIsOpen(!isOpen);
 
-    const isActive = (item) =>
-        item.exact ? pathname === item.href : pathname.startsWith(item.href);
+    const isActive = (item) => {
+        if (!mounted || !pathname) return false;
+        return item.exact ? pathname === item.href : pathname.startsWith(item.href);
+    };
 
     const desktopLinkClass = (item) =>
         isActive(item)
