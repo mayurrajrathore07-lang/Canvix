@@ -191,7 +191,7 @@ function ContactContent() {
     };
 
     return (
-        <section className="relative overflow-hidden pt-12 pb-20 px-6 sm:px-8 lg:px-12 max-w-7xl mx-auto bg-white">
+        <section className="relative overflow-hidden pt-12 pb-20 px-6 sm:px-8 lg:px-12 max-w-7xl mx-auto">
             {/* Ambient Background Glows */}
             <div className="absolute top-10 left-1/4 w-96 h-96 bg-[#30B5AA]/10 rounded-full blur-[140px] pointer-events-none" />
             <div className="absolute top-1/2 right-10 w-96 h-96 bg-[#30B5AA]/5 rounded-full blur-[160px] pointer-events-none" />
