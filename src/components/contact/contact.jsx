@@ -534,7 +534,7 @@ function ContactContent() {
                                     rows={5}
                                     value={formData.message}
                                     onChange={handleChange}
-                                    placeholder="Please describe your project goals, approximate timeline, budget ballpark, or any specific technologies required..."
+                                    placeholder="Tell us about your project, goals, or any other information"
                                     className="w-full bg-[#18191c] border border-white/10 text-white placeholder-gray-500 rounded-xl p-4 text-sm outline-none focus:border-[#30B5AA] focus:ring-1 focus:ring-[#30B5AA] transition resize-y min-h-[120px] shadow-inner"
                                 />
                             </div>
