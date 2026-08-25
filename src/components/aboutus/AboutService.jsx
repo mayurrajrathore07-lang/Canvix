@@ -2,22 +2,22 @@ import React from "react";
 
 const servicesData = [
     {
-        number: "200+",
-        title: "We’re a family",
+        number: "20+",
+        title: "Projects Delivered",
         description:
-            "Speedily say has suitable disposal add boy. On fourth doubt miles of child. Exercise joy man children rejoiced.",
+            "In just 6 months, we have successfully delivered 20+ diverse digital projects — from web platforms to AI-powered solutions — for startups and growing enterprises.",
     },
     {
-        number: "99%",
-        title: "Graphic Design",
+        number: "98%",
+        title: "Client Satisfaction",
         description:
-            "Perceived end knowledge certainly day sweetness why cordially. Ask a quick six seven offer see among.",
+            "Our commitment to quality and on-time delivery has resulted in an exceptional 98% client satisfaction rate — every client, every project, every time.",
     },
     {
-        number: "1.5M+",
-        title: "Digital Marketing",
+        number: "15+",
+        title: "Happy Clients",
         description:
-            "Rooms oh fully taken by worse do. Points afraid but may end law lasted. Was out laughter raptures returned outweigh.",
+            "We are proud to have served 15+ clients across multiple industries since our launch, building long-term partnerships rooted in trust and results.",
     },
 ];
 

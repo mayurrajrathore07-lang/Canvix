@@ -6,23 +6,24 @@ import { FaProjectDiagram, FaUsers, FaClock, FaStar } from "react-icons/fa";
 const stats = [
   {
     icon: <FaProjectDiagram size={22} />,
-    value: 50,
+    value: 20,
     suffix: "+",
     label: "Projects Delivered",
     color: "#30B5AA",
   },
   {
     icon: <FaUsers size={22} />,
-    value: 30,
+    value: 15,
     suffix: "+",
     label: "Happy Clients",
     color: "#7c3aed",
   },
   {
     icon: <FaClock size={22} />,
-    value: 5,
-    suffix: "+",
-    label: "Years Experience",
+    value: null,
+    suffix: "",
+    staticDisplay: "6 Mo",
+    label: "Industry Experience",
     color: "#f59e0b",
   },
   {
@@ -59,8 +60,8 @@ function useCountUp(target, duration = 2000, start = false) {
   return count;
 }
 
-function StatItem({ icon, value, suffix, label, color, animate }) {
-  const count = useCountUp(value, 2000, animate);
+function StatItem({ icon, value, suffix, staticDisplay, label, color, animate }) {
+  const count = useCountUp(value ?? 0, 2000, animate);
 
   return (
     <div
@@ -100,8 +101,11 @@ function StatItem({ icon, value, suffix, label, color, animate }) {
             fontFamily: "'Plus Jakarta Sans', sans-serif",
           }}
         >
-          {count}
-          <span style={{ color }}>{suffix}</span>
+          {staticDisplay ? (
+            <span style={{ color }}>{staticDisplay}</span>
+          ) : (
+            <>{count}<span style={{ color }}>{suffix}</span></>
+          )}
         </p>
         <p
           style={{

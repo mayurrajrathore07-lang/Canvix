@@ -10,7 +10,7 @@ const AboutHero = () => {
 
                     <div>
                         <p className="text-gray-400 mb-5">
-                            Pleasure and so read the was hope.
+                            Launched in 2026 — a bold new agency on a mission.
                         </p>
 
                         <h1 className="text-5xl md:text-7xl font-bold leading-tight">
@@ -21,8 +21,7 @@ const AboutHero = () => {
                         </h1>
 
                         <p className="text-gray-400 mt-8 max-w-md">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                            Voluptatibus, laboriosam. Lorem ipsum dolor sit amet.
+                            In just 6 months, Canvix has delivered 20+ projects and served 15+ happy clients across design, development, marketing, and staffing — with a 98% satisfaction rate.
                         </p>
 
                         <div className="flex items-center gap-4 mt-10">

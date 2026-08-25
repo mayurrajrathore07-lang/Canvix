@@ -61,7 +61,7 @@ const advantages = [
 const stats = [
     { value: "99.8%", label: "On-Time Project Delivery Rate" },
     { value: "48 Hrs", label: "Average Talent Match Time" },
-    { value: "330+", label: "Global Clients & Enterprises" },
+    { value: "25+", label: "Global Clients & Enterprises" },
     { value: "98%", label: "Long-Term Client Retention" },
 ];
 

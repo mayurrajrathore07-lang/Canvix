@@ -59,18 +59,18 @@ function About() {
                     <div className="flex items-center gap-12 pt-4 pb-4">
                         <div>
                             <div className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-                                330 <span className="text-[#30B5AA]">+</span>
+                                25 <span className="text-[#30B5AA]">+</span>
                             </div>
-                            <p className="text-gray-400 text-xs sm:text-sm mt-1">Companies helped</p>
+                            <p className="text-gray-400 text-xs sm:text-sm mt-1">Clients Served</p>
                         </div>
 
                         <div className="h-10 w-px bg-white/10"></div>
 
                         <div>
                             <div className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-                                230 <span className="text-[#30B5AA]">+</span>
+                                20 <span className="text-[#30B5AA]">+</span>
                             </div>
-                            <p className="text-gray-400 text-xs sm:text-sm mt-1">Revenue generated</p>
+                            <p className="text-gray-400 text-xs sm:text-sm mt-1">Projects Completed</p>
                         </div>
                     </div>
 
