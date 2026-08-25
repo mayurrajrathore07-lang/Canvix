@@ -26,8 +26,7 @@ export default function AdminLoginPage() {
       const data = await res.json();
 
       if (data.success) {
-        router.push("/admin");
-        router.refresh();
+        window.location.href = "/admin";
       } else {
         setError(data.message || "Incorrect password.");
         setShake(true);
