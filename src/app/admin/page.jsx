@@ -4,6 +4,9 @@ import { redirect } from "next/navigation";
 import { validateSession } from "@/lib/auth";
 import AdminDashboard from "./AdminDashboard";
 
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 async function getMessages() {
   try {
     const sql = neon(process.env.DATABASE_URL);
@@ -27,7 +30,7 @@ export default async function AdminPage() {
   const cookieStore = await cookies();
   const session = cookieStore.get("admin_session");
 
-  if (!session || !validateSession(session.value)) {
+  if (!session || !(await validateSession(session.value))) {
     redirect("/admin/login");
   }
   // ────────────────────────────────────────────────────────────────

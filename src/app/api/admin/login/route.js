@@ -17,7 +17,7 @@ export async function POST(request) {
     }
 
     // Timing-safe password comparison
-    if (!verifyPassword(password, adminPassword)) {
+    if (!(await verifyPassword(password, adminPassword))) {
       // Small delay to further deter brute-force attacks
       await new Promise((r) => setTimeout(r, 500));
       return NextResponse.json(
@@ -27,7 +27,7 @@ export async function POST(request) {
     }
 
     // Generate a random session token (not the raw secret)
-    const sessionToken = createSession();
+    const sessionToken = await createSession();
 
     // Set an httpOnly session cookie with the random token
     const cookieStore = await cookies();

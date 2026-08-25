@@ -1,5 +1,3 @@
-import crypto from "crypto";
-
 // Session TTL: 8 hours
 const SESSION_TTL_MS = 8 * 60 * 60 * 1000;
 
@@ -15,29 +13,53 @@ function getSecretKey() {
 }
 
 /**
+ * Web Crypto HMAC-SHA256 signature generator.
+ */
+async function signHmac(secret, payload) {
+  const encoder = new TextEncoder();
+  const keyData = encoder.encode(secret);
+  const key = await crypto.subtle.importKey(
+    "raw",
+    keyData,
+    { name: "HMAC", hash: "SHA-256" },
+    false,
+    ["sign"]
+  );
+  const signature = await crypto.subtle.sign(
+    "HMAC",
+    key,
+    encoder.encode(payload)
+  );
+  return Array.from(new Uint8Array(signature))
+    .map((b) => b.toString(16).padStart(2, "0"))
+    .join("");
+}
+
+/**
  * Create a signed stateless session token.
  * Format: `<expiresAt>.<nonce>.<hmacSignature>`
- * @returns {string} Signed session token
+ * @returns {Promise<string>} Signed session token
  */
-export function createSession() {
+export async function createSession() {
   const expiresAt = Date.now() + SESSION_TTL_MS;
-  const nonce = crypto.randomBytes(16).toString("hex");
+  const randomBytes = new Uint8Array(16);
+  crypto.getRandomValues(randomBytes);
+  const nonce = Array.from(randomBytes)
+    .map((b) => b.toString(16).padStart(2, "0"))
+    .join("");
+
   const payload = `${expiresAt}.${nonce}`;
+  const signature = await signHmac(getSecretKey(), payload);
 
-  const hmac = crypto
-    .createHmac("sha256", getSecretKey())
-    .update(payload)
-    .digest("hex");
-
-  return `${payload}.${hmac}`;
+  return `${payload}.${signature}`;
 }
 
 /**
  * Validate a signed session token.
  * @param {string} token
- * @returns {boolean}
+ * @returns {Promise<boolean>}
  */
-export function validateSession(token) {
+export async function validateSession(token) {
   if (!token || typeof token !== "string") return false;
 
   const parts = token.split(".");
@@ -51,23 +73,18 @@ export function validateSession(token) {
   }
 
   const payload = `${expiresAtStr}.${nonce}`;
-  const expectedHmac = crypto
-    .createHmac("sha256", getSecretKey())
-    .update(payload)
-    .digest("hex");
+  const expectedSignature = await signHmac(getSecretKey(), payload);
 
-  try {
-    const signatureBuf = Buffer.from(signature, "hex");
-    const expectedBuf = Buffer.from(expectedHmac, "hex");
-
-    if (signatureBuf.length !== expectedBuf.length) {
-      return false;
-    }
-
-    return crypto.timingSafeEqual(signatureBuf, expectedBuf);
-  } catch (err) {
+  if (signature.length !== expectedSignature.length) {
     return false;
   }
+
+  let mismatch = 0;
+  for (let i = 0; i < signature.length; i++) {
+    mismatch |= signature.charCodeAt(i) ^ expectedSignature.charCodeAt(i);
+  }
+
+  return mismatch === 0;
 }
 
 /**
@@ -82,19 +99,23 @@ export function destroySession(token) {
  * Timing-safe password comparison.
  * @param {string} input
  * @param {string} expected
- * @returns {boolean}
+ * @returns {Promise<boolean>}
  */
-export function verifyPassword(input, expected) {
+export async function verifyPassword(input, expected) {
   if (!input || !expected) return false;
 
-  const inputBuf = Buffer.from(input);
-  const expectedBuf = Buffer.from(expected);
+  const encoder = new TextEncoder();
+  const inputBuf = encoder.encode(input);
+  const expectedBuf = encoder.encode(expected);
 
   if (inputBuf.length !== expectedBuf.length) {
-    crypto.timingSafeEqual(expectedBuf, expectedBuf);
     return false;
   }
 
-  return crypto.timingSafeEqual(inputBuf, expectedBuf);
-}
+  let mismatch = 0;
+  for (let i = 0; i < inputBuf.length; i++) {
+    mismatch |= inputBuf[i] ^ expectedBuf[i];
+  }
 
+  return mismatch === 0;
+}

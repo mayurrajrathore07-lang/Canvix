@@ -3,13 +3,15 @@ import { neon } from "@neondatabase/serverless";
 import { cookies } from "next/headers";
 import { validateSession } from "@/lib/auth";
 
+export const dynamic = "force-dynamic";
+
 /**
  * Auth guard helper — returns true if the request has a valid admin session.
  */
 async function isAuthenticated() {
   const cookieStore = await cookies();
   const session = cookieStore.get("admin_session");
-  return session && validateSession(session.value);
+  return session && (await validateSession(session.value));
 }
 
 export async function GET() {
