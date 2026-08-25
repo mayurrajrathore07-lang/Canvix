@@ -105,13 +105,14 @@ export default function AdminLoginPage() {
 
       <div
         style={{
-          minHeight: "100vh",
+          flex: 1,
+          minHeight: "calc(100vh - 160px)",
           background: "radial-gradient(ellipse 90% 70% at 50% -10%, rgba(124,58,237,0.22) 0%, #070510 55%)",
           fontFamily: "'Inter', 'Segoe UI', sans-serif",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          padding: "24px",
+          padding: "48px 24px",
           position: "relative",
           overflow: "hidden",
         }}

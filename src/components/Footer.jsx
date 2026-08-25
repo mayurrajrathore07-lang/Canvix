@@ -18,7 +18,7 @@ function Footer() {
     };
 
     return (
-        <footer className="bg-[#0c0d0e] text-gray-400 pt-16 pb-12 border-t border-white/10 font-sans relative overflow-hidden">
+        <footer className="shrink-0 bg-[#0c0d0e] text-gray-400 pt-16 pb-12 border-t border-white/10 font-sans relative overflow-hidden">
             {/* Background ambient lighting */}
             <div className="absolute bottom-0 left-1/4 w-[400px] h-[300px] bg-[#6E56CF]/5 rounded-full blur-[100px] pointer-events-none" />
 

@@ -39,7 +39,7 @@ function Navbar() {
         `block py-2 text-sm font-medium ${isActive(item) ? "text-[#30B5AA] font-semibold" : "text-gray-300 hover:text-white"}`;
 
     return (
-        <nav className="sticky top-0 z-50 bg-[#0c0d0e]/85 backdrop-blur-md border-b border-white/10 text-white transition-all duration-300" role="navigation" aria-label="Main navigation">
+        <nav className="sticky top-0 z-50 shrink-0 bg-[#0c0d0e]/85 backdrop-blur-md border-b border-white/10 text-white transition-all duration-300" role="navigation" aria-label="Main navigation">
             <div className="max-w-6xl mx-auto px-6 sm:px-8 flex items-center justify-between py-4">
 
                 <Logo variant="dark" />

@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
         </a>
         <div className="bg-white text-black min-h-screen flex flex-col justify-between selection:bg-black selection:text-white">
           <Navbar />
-          <div id="main-content" className="flex-grow">{children}</div>
+          <div id="main-content" className="flex-grow flex flex-col">{children}</div>
           <Footer />
         </div>
         <FloatingContact />
