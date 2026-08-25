@@ -87,12 +87,12 @@ export default function WhyChooseUs() {
                     {advantages.map((item, index) => (
                         <div
                             key={index}
-                            className="bg-[#f8f9fa] border border-gray-200/80 rounded-3xl p-8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group"
+                            className="bg-[#f8f9fa] border border-gray-200/80 rounded-3xl p-8 hover:bg-black hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group cursor-pointer"
                         >
                             <div>
                                 <div className="flex items-center justify-between mb-6">
                                     <div
-                                        className="w-12 h-12 rounded-2xl flex items-center justify-center text-xl transition-transform group-hover:scale-110 shadow-sm"
+                                        className="w-12 h-12 rounded-2xl flex items-center justify-center text-xl transition-all duration-300 group-hover:scale-110 shadow-sm group-hover:!bg-white group-hover:!text-black group-hover:!border-white"
                                         style={{
                                             backgroundColor: `${item.accent}15`,
                                             color: item.accent,
@@ -101,21 +101,21 @@ export default function WhyChooseUs() {
                                     >
                                         {item.icon}
                                     </div>
-                                    <span className="text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-gray-200 text-gray-800">
+                                    <span className="text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-gray-200 text-gray-800 group-hover:bg-white/20 group-hover:text-white transition-colors">
                                         {item.badge}
                                     </span>
                                 </div>
 
-                                <h3 className="text-xl font-bold text-[#111111] mb-3 group-hover:text-[#30B5AA] transition-colors">
+                                <h3 className="text-xl font-bold text-[#111111] mb-3 group-hover:text-white transition-colors">
                                     {item.title}
                                 </h3>
 
-                                <p className="text-gray-600 text-sm leading-relaxed">
+                                <p className="text-gray-600 group-hover:text-gray-300 text-sm leading-relaxed transition-colors">
                                     {item.desc}
                                 </p>
                             </div>
 
-                            <div className="mt-6 pt-4 border-t border-gray-200 flex items-center gap-2 text-xs font-semibold text-gray-500">
+                            <div className="mt-6 pt-4 border-t border-gray-200 group-hover:border-white/20 flex items-center gap-2 text-xs font-semibold text-gray-500 group-hover:text-gray-300 transition-colors">
                                 <FaCheckCircle className="text-[#30B5AA]" />
                                 <span>Guaranteed Service Level Agreement</span>
                             </div>

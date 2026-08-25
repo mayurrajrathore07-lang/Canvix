@@ -6,7 +6,6 @@ import About from "@/components/home/About.jsx";
 import Industries from "@/components/home/Industries.jsx";
 import WhyChooseUs from "@/components/home/WhyChooseUs.jsx";
 import Process from "@/components/home/Process.jsx";
-import Projects from "@/components/home/Projects.jsx";
 import Testimonial from "@/components/home/Testimonial.jsx";
 import FAQ from "@/components/home/FAQ.jsx";
 import BookConsultation from "@/components/home/BookConsultation.jsx";
@@ -22,7 +21,6 @@ export default function Page() {
       <Industries />
       <WhyChooseUs />
       <Process />
-      <Projects />
       <Testimonial />
       <FAQ />
       <BookConsultation />

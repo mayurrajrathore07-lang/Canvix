@@ -16,10 +16,13 @@ import {
     FaCloud,
     FaBriefcase,
     FaArrowRight,
+    FaChevronDown,
+    FaChevronUp,
 } from "react-icons/fa";
 
 function Services() {
     const [selectedCategory, setSelectedCategory] = useState("All");
+    const [showAll, setShowAll] = useState(false);
 
     const categories = [
         "All",
@@ -135,6 +138,15 @@ function Services() {
             ? services
             : services.filter((s) => s.category === selectedCategory);
 
+    const INITIAL_SHOW_COUNT = 6;
+    const displayedServices = showAll ? filteredServices : filteredServices.slice(0, INITIAL_SHOW_COUNT);
+    const hasMoreServices = filteredServices.length > INITIAL_SHOW_COUNT;
+
+    const handleCategorySelect = (cat) => {
+        setSelectedCategory(cat);
+        setShowAll(false);
+    };
+
     return (
         <section id="services" className="bg-[#f8f9fa] py-24 px-6 md:px-12 text-[#111111]">
             <div className="max-w-7xl mx-auto">
@@ -155,7 +167,7 @@ function Services() {
                         {categories.map((cat) => (
                             <button
                                 key={cat}
-                                onClick={() => setSelectedCategory(cat)}
+                                onClick={() => handleCategorySelect(cat)}
                                 className={`px-5 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 ${
                                     selectedCategory === cat
                                         ? "bg-[#111111] text-white shadow-md"
@@ -169,7 +181,7 @@ function Services() {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {filteredServices.map((item, index) => (
+                    {displayedServices.map((item, index) => (
                         <Link
                             href={`/services#${item.id}`}
                             key={index}
@@ -212,8 +224,21 @@ function Services() {
                     ))}
                 </div>
 
+                {/* Show More / Show Less Button */}
+                {hasMoreServices && (
+                    <div className="mt-10 text-center">
+                        <button
+                            onClick={() => setShowAll(!showAll)}
+                            className="inline-flex items-center gap-2.5 bg-white text-[#111111] hover:bg-[#111111] hover:text-white border border-gray-300 hover:border-black px-6 py-3 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 shadow-sm group"
+                        >
+                            <span>{showAll ? "Show Less Services" : `Show More Services (${filteredServices.length - INITIAL_SHOW_COUNT} More)`}</span>
+                            {showAll ? <FaChevronUp className="text-[#30B5AA] group-hover:translate-y-[-2px] transition-transform" /> : <FaChevronDown className="text-[#30B5AA] group-hover:translate-y-[2px] transition-transform" />}
+                        </button>
+                    </div>
+                )}
+
                 {/* Bottom CTA to dedicated services overview */}
-                <div className="mt-14 text-center">
+                <div className="mt-12 text-center">
                     <Link
                         href="/services"
                         className="inline-flex items-center gap-3 bg-[#18191c] hover:bg-black text-white px-8 py-3.5 rounded-full text-sm font-semibold transition duration-300 shadow-md group"
