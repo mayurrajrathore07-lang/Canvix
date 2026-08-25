@@ -51,7 +51,7 @@ function ContactMap() {
                 </div>
 
                 {/* Map Iframe Container */}
-                <div className="w-full h-[380px] sm:h-[420px] rounded-2xl overflow-hidden relative border border-white/10 shadow-inner group">
+                <div className="w-full h-[220px] sm:h-[260px] rounded-2xl overflow-hidden relative border border-white/10 shadow-inner group">
                     <iframe
                         title="Canvix Studio Location Map"
                         src="https://www.google.com/maps?q=Sindhu+Bhavan+Road+Ahmedabad&output=embed"
