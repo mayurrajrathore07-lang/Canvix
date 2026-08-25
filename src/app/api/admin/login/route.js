@@ -1,4 +1,6 @@
 import { NextResponse } from "next/server";
+import { neon } from "@neondatabase/serverless";
+import { createSession, verifyPassword } from "@/lib/auth";
 import { cookies } from "next/headers";
 
 export async function POST(request) {
@@ -6,17 +8,17 @@ export async function POST(request) {
     const { password } = await request.json();
 
     const adminPassword = process.env.ADMIN_PASSWORD;
-    const sessionSecret = process.env.ADMIN_SESSION_SECRET;
 
-    if (!adminPassword || !sessionSecret) {
+    if (!adminPassword) {
       return NextResponse.json(
         { success: false, message: "Server configuration error." },
         { status: 500 }
       );
     }
 
-    if (!password || password !== adminPassword) {
-      // Small delay to prevent brute-force timing attacks
+    // Timing-safe password comparison
+    if (!verifyPassword(password, adminPassword)) {
+      // Small delay to further deter brute-force attacks
       await new Promise((r) => setTimeout(r, 500));
       return NextResponse.json(
         { success: false, message: "Incorrect password. Please try again." },
@@ -24,9 +26,12 @@ export async function POST(request) {
       );
     }
 
-    // Set an httpOnly session cookie
+    // Generate a random session token (not the raw secret)
+    const sessionToken = createSession();
+
+    // Set an httpOnly session cookie with the random token
     const cookieStore = await cookies();
-    cookieStore.set("admin_session", sessionSecret, {
+    cookieStore.set("admin_session", sessionToken, {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
       sameSite: "lax",

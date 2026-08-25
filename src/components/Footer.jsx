@@ -1,10 +1,22 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import Logo from "@/components/Logo";
 
 function Footer() {
+    const [subscribeStatus, setSubscribeStatus] = useState("");
+
+    const handleSubscribe = (e) => {
+        e.preventDefault();
+        const email = e.target.elements.email?.value;
+        if (!email) return;
+        setSubscribeStatus("Thanks! Newsletter coming soon.");
+        e.target.reset();
+        setTimeout(() => setSubscribeStatus(""), 4000);
+    };
+
     return (
         <footer className="bg-[#0c0d0e] text-gray-400 pt-16 pb-10 border-t border-white/10 font-sans">
             <div className="max-w-6xl mx-auto px-6 sm:px-8">
@@ -14,14 +26,7 @@ function Footer() {
 
 
                     <div className="md:col-span-4 space-y-4">
-                        <Link href="/" className="text-2xl font-bold text-white flex items-center gap-2.5">
-                            <div className="w-8 h-8 rounded-full bg-white text-black flex items-center justify-center shadow-sm">
-                                <svg className="w-4 h-4 text-black fill-none stroke-current stroke-2" viewBox="0 0 24 24">
-                                    <path d="M12 3a9 9 0 0 1 9 9c0 4.97-4.03 9-9 9a9 9 0 0 1-9-9c0-3.31 2.69-6 6-6s6 2.69 6 6-2.69 4-4 4-4-1.79-4-4" strokeLinecap="round" />
-                                </svg>
-                            </div>
-                            <span className="font-semibold text-xl text-white tracking-tight">Canvix</span>
-                        </Link>
+                        <Logo variant="dark" />
 
                         <p className="text-gray-400 text-xs sm:text-sm leading-relaxed max-w-sm">
                             We're a team of strategic creator and digital innovator, united focus in our pursuit of mastery and joyful digital solutions.
@@ -65,11 +70,14 @@ function Footer() {
                             Subscribe
                         </h4>
 
-                        <form onSubmit={(e) => e.preventDefault()} className="flex items-center bg-white rounded-full p-1 max-w-md shadow-sm">
+                        <form onSubmit={handleSubscribe} className="flex items-center bg-white rounded-full p-1 max-w-md shadow-sm">
                             <input
                                 type="email"
+                                name="email"
                                 placeholder="Enter your email here"
+                                required
                                 className="flex-1 px-4 py-2 bg-transparent text-gray-900 placeholder-gray-500 outline-none text-xs"
+                                aria-label="Email address for newsletter"
                             />
                             <button
                                 type="submit"
@@ -78,6 +86,11 @@ function Footer() {
                                 Subscribe
                             </button>
                         </form>
+                        {subscribeStatus && (
+                            <p className="text-[#30B5AA] text-xs font-medium mt-2 animate-pulse">
+                                {subscribeStatus}
+                            </p>
+                        )}
                     </div>
 
                 </div>
@@ -100,13 +113,13 @@ function Footer() {
                     </div>
 
                     <div className="flex gap-2.5 sm:justify-end">
-                        <a href="https://facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook" className="w-8 h-8 rounded-full bg-white text-black flex items-center justify-center hover:bg-[#30B5AA] transition text-xs">
+                        <a href="https://facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook" className="w-8 h-8 rounded-full bg-white text-black flex items-center justify-center hover:bg-[#30B5AA] hover:text-white transition text-xs">
                             <FaFacebookF />
                         </a>
-                        <a href="https://instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram" className="w-8 h-8 rounded-full bg-white text-black flex items-center justify-center hover:bg-[#30B5AA] transition text-xs">
+                        <a href="https://instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram" className="w-8 h-8 rounded-full bg-white text-black flex items-center justify-center hover:bg-[#30B5AA] hover:text-white transition text-xs">
                             <FaInstagram />
                         </a>
-                        <a href="https://linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="w-8 h-8 rounded-full bg-white text-black flex items-center justify-center hover:bg-[#30B5AA] transition text-xs">
+                        <a href="https://linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="w-8 h-8 rounded-full bg-white text-black flex items-center justify-center hover:bg-[#30B5AA] hover:text-white transition text-xs">
                             <FaLinkedinIn />
                         </a>
                     </div>

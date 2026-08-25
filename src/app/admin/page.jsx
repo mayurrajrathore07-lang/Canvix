@@ -1,6 +1,7 @@
 import { neon } from "@neondatabase/serverless";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
+import { validateSession } from "@/lib/auth";
 import AdminDashboard from "./AdminDashboard";
 
 async function getMessages() {
@@ -25,9 +26,8 @@ export default async function AdminPage() {
   // ── Auth Guard ──────────────────────────────────────────────────
   const cookieStore = await cookies();
   const session = cookieStore.get("admin_session");
-  const sessionSecret = process.env.ADMIN_SESSION_SECRET;
 
-  if (!session || !sessionSecret || session.value !== sessionSecret) {
+  if (!session || !validateSession(session.value)) {
     redirect("/admin/login");
   }
   // ────────────────────────────────────────────────────────────────

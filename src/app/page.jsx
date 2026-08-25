@@ -5,7 +5,7 @@ import TrustStats from "@/components/home/TrustStats.jsx";
 import About from "@/components/home/About.jsx";
 import Industries from "@/components/home/Industries.jsx";
 import WhyChooseUs from "@/components/home/WhyChooseUs.jsx";
-import Process from "@/components/home/process.jsx";
+import Process from "@/components/home/Process.jsx";
 import Projects from "@/components/home/Projects.jsx";
 import Testimonial from "@/components/home/Testimonial.jsx";
 import FAQ from "@/components/home/FAQ.jsx";

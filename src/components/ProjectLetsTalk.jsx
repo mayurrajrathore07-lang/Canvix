@@ -28,7 +28,7 @@ const ProjectLetsTalk = () => {
                     {/* Content */}
                     <div className="relative z-10 flex flex-col items-center">
                         <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-medium text-white mb-8 tracking-tight">
-                            Enough talk, let’s get to work
+                            Enough talk, let's get to work
                         </h2>
 
                         <Link
@@ -45,5 +45,3 @@ const ProjectLetsTalk = () => {
 };
 
 export default ProjectLetsTalk;
-
-

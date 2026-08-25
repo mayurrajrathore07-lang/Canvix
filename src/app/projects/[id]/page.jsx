@@ -1,6 +1,6 @@
-import ProjectDetailsHero from "@/components/project details/project-details-hero.jsx";
-import ProjectDetailsDescription from "@/components/project details/project-details-discription.jsx";
-import ProjectDetailsRecent from "@/components/project details/project-details-recent.jsx";
+import ProjectDetailsHero from "@/components/project-details/project-details-hero.jsx";
+import ProjectDetailsDescription from "@/components/project-details/project-details-discription.jsx";
+import ProjectDetailsRecent from "@/components/project-details/project-details-recent.jsx";
 import { allProjectsData } from "@/components/project/project-project.jsx";
 
 export default async function Page({ params }) {

@@ -1,5 +1,16 @@
 import { NextResponse } from "next/server";
-import { neon } from "@neondatabase/serverless";
+import sql from "@/lib/db";
+
+// ── HTML sanitizer to prevent XSS ─────────────────────────────────
+function escapeHtml(str) {
+  if (!str) return "";
+  return String(str)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
 
 // ── In-memory rate limiter ────────────────────────────────────────
 // Max 3 submissions per IP per 10 minutes
@@ -33,6 +44,13 @@ async function sendEmailNotification({ firstName, lastName, email, phone, messag
 
   if (!apiKey || !toEmail) return; // gracefully skip if not configured
 
+  // Sanitize all user inputs before inserting into HTML
+  const safeFirstName = escapeHtml(firstName);
+  const safeLastName = escapeHtml(lastName);
+  const safeEmail = escapeHtml(email);
+  const safePhone = escapeHtml(phone);
+  const safeMessage = escapeHtml(message);
+
   try {
     await fetch("https://api.resend.com/emails", {
       method: "POST",
@@ -43,7 +61,7 @@ async function sendEmailNotification({ firstName, lastName, email, phone, messag
       body: JSON.stringify({
         from: "Canvix Contact <onboarding@resend.dev>",
         to: [toEmail],
-        subject: `📬 New Contact from ${firstName} ${lastName}`,
+        subject: `📬 New Contact from ${safeFirstName} ${safeLastName}`,
         html: `
           <div style="font-family: Inter, sans-serif; max-width: 540px; margin: 0 auto; background: #f9fafb; border-radius: 12px; padding: 32px; border: 1px solid #e5e7eb;">
             <h2 style="color: #111827; margin: 0 0 8px;">New Contact Form Submission</h2>
@@ -52,20 +70,20 @@ async function sendEmailNotification({ firstName, lastName, email, phone, messag
             <table style="width: 100%; border-collapse: collapse;">
               <tr>
                 <td style="padding: 10px 0; color: #9ca3af; font-size: 13px; width: 100px; font-weight: 600; vertical-align: top;">NAME</td>
-                <td style="padding: 10px 0; color: #111827; font-size: 14px; font-weight: 600;">${firstName} ${lastName}</td>
+                <td style="padding: 10px 0; color: #111827; font-size: 14px; font-weight: 600;">${safeFirstName} ${safeLastName}</td>
               </tr>
               <tr style="border-top: 1px solid #e5e7eb;">
                 <td style="padding: 10px 0; color: #9ca3af; font-size: 13px; font-weight: 600; vertical-align: top;">EMAIL</td>
-                <td style="padding: 10px 0; color: #7c3aed; font-size: 14px;"><a href="mailto:${email}" style="color: #7c3aed;">${email}</a></td>
+                <td style="padding: 10px 0; color: #7c3aed; font-size: 14px;"><a href="mailto:${safeEmail}" style="color: #7c3aed;">${safeEmail}</a></td>
               </tr>
-              ${phone ? `
+              ${safePhone ? `
               <tr style="border-top: 1px solid #e5e7eb;">
                 <td style="padding: 10px 0; color: #9ca3af; font-size: 13px; font-weight: 600; vertical-align: top;">PHONE</td>
-                <td style="padding: 10px 0; color: #111827; font-size: 14px;">${phone}</td>
+                <td style="padding: 10px 0; color: #111827; font-size: 14px;">${safePhone}</td>
               </tr>` : ""}
               <tr style="border-top: 1px solid #e5e7eb;">
                 <td style="padding: 10px 0; color: #9ca3af; font-size: 13px; font-weight: 600; vertical-align: top;">MESSAGE</td>
-                <td style="padding: 10px 0; color: #374151; font-size: 14px; line-height: 1.6;">${message}</td>
+                <td style="padding: 10px 0; color: #374151; font-size: 14px; line-height: 1.6;">${safeMessage}</td>
               </tr>
             </table>
 
@@ -112,7 +130,6 @@ export async function POST(request) {
   }
 
   try {
-    const sql = neon(process.env.DATABASE_URL);
     const body = await request.json();
     const { firstName, lastName, email, phone, message } = body || {};
 
