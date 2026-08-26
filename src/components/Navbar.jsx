@@ -79,7 +79,6 @@ function Navbar() {
                 </button>
             </div>
 
-            {/* Mobile Menu Drawer & Overlay */}
             {isOpen && (
                 <>
                     <div
