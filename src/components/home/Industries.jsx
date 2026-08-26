@@ -142,7 +142,7 @@ export default function Industries() {
     const [activeIndustry, setActiveIndustry] = useState(industries[0]);
 
     return (
-        <section className="bg-[#0c0d0e] text-white py-24 px-6 md:px-12 border-t border-white/10 relative overflow-hidden">
+        <section className="bg-[#0B0F19] text-white py-24 px-6 md:px-12 border-t border-slate-800/80 relative overflow-hidden">
             {/* Background Glow Accents */}
             <div className="absolute top-1/4 -left-32 w-96 h-96 rounded-full bg-[#30B5AA]/5 blur-3xl pointer-events-none" />
             <div className="absolute bottom-1/4 -right-32 w-96 h-96 rounded-full bg-[#7c3aed]/5 blur-3xl pointer-events-none" />

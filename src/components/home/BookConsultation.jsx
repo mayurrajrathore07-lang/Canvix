@@ -28,8 +28,8 @@ export default function BookConsultation() {
   return (
     <section
       style={{
-        background: "#0c0d0e",
-        padding: "40px 24px 100px",
+        background: "#0B0F19",
+        padding: "60px 24px 100px",
         position: "relative",
         overflow: "hidden",
       }}

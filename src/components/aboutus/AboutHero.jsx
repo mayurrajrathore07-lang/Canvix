@@ -4,8 +4,8 @@ const heroImg = "https://images.unsplash.com/photo-1522071820081-009f0129c71c?au
 
 const AboutHero = () => {
     return (
-        <section className="bg-black text-white py-16">
-            <div className="max-w-7xl mx-auto bg-[#111] rounded-3xl px-8 md:px-16 py-14">
+        <section className="bg-[#0B0F19] text-white py-16 px-4 sm:px-6">
+            <div className="max-w-7xl mx-auto bg-[#121726] border border-slate-800 rounded-3xl px-8 md:px-16 py-14 shadow-2xl relative overflow-hidden">
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
 
                     <div>

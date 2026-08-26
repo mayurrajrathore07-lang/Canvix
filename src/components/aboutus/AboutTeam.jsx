@@ -27,26 +27,25 @@ const teamMembers = [
 
 function AboutTeam() {
     return (
-        <section className="bg-black py-20 px-6 mb-20">
-            <div className="max-w-5xl mx-auto " >
+        <section className="bg-white text-slate-900 py-20 px-6 border-t border-slate-100">
+            <div className="max-w-5xl mx-auto">
                 <div className="text-center mb-16">
-                    <span className="text-cyan-400 font-semibold uppercase tracking-widest text-xs block mb-2 font-size: 5rem">
+                    <span className="text-[#6E56CF] font-bold uppercase tracking-widest text-xs block mb-2">
                         Our Leadership
                     </span>
-                    <h2 className="text-4xl font-bold text-white ">Meet the Creative Minds</h2>
+                    <h2 className="text-4xl font-bold text-slate-900 font-serif">Meet the Creative Minds</h2>
                 </div>
-
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                     {teamMembers.map((member, index) => (
-                        <div key={index} className="bg-zinc-950 border border-zinc-800 rounded-3xl overflow-hidden p-6 text-center group hover:border-cyan-400/50 transition duration-300">
+                        <div key={index} className="bg-[#F8FAFC] border border-slate-200/80 rounded-3xl overflow-hidden p-6 text-center group hover:border-[#6E56CF] hover:shadow-xl transition duration-300">
                             <img
                                 src={member.image}
                                 alt={member.name}
-                                className="w-32 h-32 rounded-full object-cover mx-auto mb-6 border-2 border-zinc-800 group-hover:border-cyan-400 transition"
+                                className="w-32 h-32 rounded-full object-cover mx-auto mb-6 border-2 border-slate-200 group-hover:border-[#6E56CF] transition"
                             />
-                            <h3 className="text-xl font-bold text-white mb-1 group-hover:text-cyan-400 transition">{member.name}</h3>
-                            <p className="text-gray-400 text-sm">{member.role}</p>
+                            <h3 className="text-xl font-bold text-slate-900 mb-1 group-hover:text-[#6E56CF] transition">{member.name}</h3>
+                            <p className="text-slate-500 text-sm font-medium">{member.role}</p>
                         </div>
                     ))}
                 </div>

@@ -9,7 +9,7 @@ export const metadata = {
 
 export default function Page() {
   return (
-    <main className="bg-white text-black min-h-screen">
+    <main className="bg-[#F8FAFC] text-slate-900 min-h-screen">
       <ProjectHero />
       <ProjectProject />
     </main>

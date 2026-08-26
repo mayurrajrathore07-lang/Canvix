@@ -12,7 +12,7 @@ export const metadata = {
 
 export default function Page() {
   return (
-    <main className="bg-black text-white">
+    <main className="bg-[#F8FAFC] text-slate-900 min-h-screen">
       <AboutHero />
       <AboutService />
       <About />

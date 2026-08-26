@@ -50,7 +50,7 @@ function FAQItem({ item, isOpen, onClick, isLast }) {
   return (
     <div
       style={{
-        borderBottom: isLast ? "none" : "1px solid rgba(255,255,255,0.07)",
+        borderBottom: isLast ? "none" : "1px solid rgba(226, 232, 240, 0.8)",
         overflow: "hidden",
       }}
     >
@@ -73,8 +73,8 @@ function FAQItem({ item, isOpen, onClick, isLast }) {
       >
         <span
           style={{
-            color: isOpen ? "#30B5AA" : "#fff",
-            fontWeight: 600,
+            color: isOpen ? "#6E56CF" : "#0F172A",
+            fontWeight: 700,
             fontSize: "clamp(14px, 1.8vw, 16px)",
             lineHeight: 1.45,
             transition: "color 0.2s",
@@ -88,16 +88,16 @@ function FAQItem({ item, isOpen, onClick, isLast }) {
             height: "32px",
             borderRadius: "50%",
             background: isOpen
-              ? "rgba(48,181,170,0.15)"
-              : "rgba(255,255,255,0.06)",
+              ? "rgba(110,86,207,0.12)"
+              : "#F1F5F9",
             border: isOpen
-              ? "1px solid rgba(48,181,170,0.3)"
-              : "1px solid rgba(255,255,255,0.1)",
+              ? "1px solid rgba(110,86,207,0.3)"
+              : "1px solid #E2E8F0",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
             flexShrink: 0,
-            color: isOpen ? "#30B5AA" : "#6b7280",
+            color: isOpen ? "#6E56CF" : "#64748B",
             transition: "all 0.25s",
           }}
         >
@@ -115,7 +115,7 @@ function FAQItem({ item, isOpen, onClick, isLast }) {
       >
         <p
           style={{
-            color: "#9ca3af",
+            color: "#475569",
             fontSize: "14px",
             lineHeight: 1.7,
             margin: 0,
@@ -140,8 +140,9 @@ export default function FAQ() {
   return (
     <section
       style={{
-        background: "#0c0d0e",
-        padding: "70px 24px",
+        background: "#F8FAFC",
+        padding: "80px 24px",
+        borderTop: "1px solid rgba(226, 232, 240, 0.8)",
       }}
     >
       <div
@@ -155,9 +156,9 @@ export default function FAQ() {
           <span
             style={{
               display: "inline-block",
-              background: "rgba(48,181,170,0.1)",
-              border: "1px solid rgba(48,181,170,0.25)",
-              color: "#30B5AA",
+              background: "rgba(110,86,207,0.08)",
+              border: "1px solid rgba(110,86,207,0.2)",
+              color: "#6E56CF",
               borderRadius: "50px",
               padding: "6px 18px",
               fontSize: "12px",
@@ -173,7 +174,7 @@ export default function FAQ() {
             style={{
               fontSize: "clamp(28px, 4vw, 40px)",
               fontWeight: 800,
-              color: "#fff",
+              color: "#0F172A",
               margin: "0 0 12px",
               letterSpacing: "-0.8px",
               lineHeight: 1.15,
@@ -184,7 +185,7 @@ export default function FAQ() {
           </h2>
           <p
             style={{
-              color: "#6b7280",
+              color: "#475569",
               fontSize: "15px",
               maxWidth: "540px",
               margin: "0 auto",
@@ -207,8 +208,9 @@ export default function FAQ() {
         >
           <div
             style={{
-              background: "rgba(255,255,255,0.02)",
-              border: "1px solid rgba(255,255,255,0.06)",
+              background: "#ffffff",
+              border: "1px solid rgba(226, 232, 240, 0.9)",
+              boxShadow: "0 4px 20px -2px rgba(0, 0, 0, 0.03)",
               borderRadius: "20px",
               padding: "6px 28px",
             }}
@@ -226,8 +228,9 @@ export default function FAQ() {
 
           <div
             style={{
-              background: "rgba(255,255,255,0.02)",
-              border: "1px solid rgba(255,255,255,0.06)",
+              background: "#ffffff",
+              border: "1px solid rgba(226, 232, 240, 0.9)",
+              boxShadow: "0 4px 20px -2px rgba(0, 0, 0, 0.03)",
               borderRadius: "20px",
               padding: "6px 28px",
             }}

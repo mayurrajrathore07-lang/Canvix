@@ -94,7 +94,7 @@ function StatItem({ icon, value, suffix, staticDisplay, label, color, animate })
           style={{
             fontSize: "clamp(28px, 4vw, 40px)",
             fontWeight: 900,
-            color: "#fff",
+            color: "#0F172A",
             margin: 0,
             letterSpacing: "-1px",
             lineHeight: 1,
@@ -109,9 +109,9 @@ function StatItem({ icon, value, suffix, staticDisplay, label, color, animate })
         </p>
         <p
           style={{
-            color: "#9ca3af",
+            color: "#475569",
             fontSize: "13px",
-            fontWeight: 500,
+            fontWeight: 600,
             margin: "8px 0 0",
             letterSpacing: "0.02em",
           }}
@@ -147,17 +147,17 @@ export default function TrustStats() {
     <section
       ref={ref}
       style={{
-        background: "#0c0d0e",
-        padding: "20px 24px 40px",
+        background: "#F8FAFC",
+        padding: "30px 24px 50px",
       }}
     >
       <div
         style={{
           maxWidth: "1100px",
           margin: "0 auto",
-          background:
-            "linear-gradient(135deg, rgba(48,181,170,0.06) 0%, rgba(124,58,237,0.06) 100%)",
-          border: "1px solid rgba(255,255,255,0.07)",
+          background: "#ffffff",
+          border: "1px solid rgba(226, 232, 240, 0.9)",
+          boxShadow: "0 10px 30px -5px rgba(0,0,0,0.04)",
           borderRadius: "24px",
           display: "grid",
           gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",

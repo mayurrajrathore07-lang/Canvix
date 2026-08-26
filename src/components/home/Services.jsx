@@ -185,38 +185,28 @@ function Services() {
                         <Link
                             href={`/services#${item.id}`}
                             key={index}
-                            className={`rounded-2xl p-8 lg:p-10 transition-all duration-300 hover:bg-black group cursor-pointer flex flex-col justify-between ${
-                                item.dark
-                                    ? "bg-[#0c0d0e] text-white shadow-xl hover:bg-white hover:text-black"
-                                    : "bg-[#f0f2f5] text-[#111111] hover:shadow-lg hover:-translate-y-1 hover:text-white"
-                            }`}
+                            className="bg-white rounded-2xl p-8 lg:p-10 border border-slate-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group cursor-pointer flex flex-col justify-between"
                         >
                             <div>
                                 <div className="flex items-center justify-between mb-8">
-                                    <div
-                                        className={`w-12 h-12 rounded-full flex items-center justify-center text-lg ${
-                                            item.dark
-                                                ? "bg-black text-black group-hover:text-white group-hover:bg-black"
-                                                : "bg-black text-white shadow-sm group-hover:text-black group-hover:bg-white transition-colors"
-                                        }`}
-                                    >
+                                    <div className="w-12 h-12 rounded-2xl bg-indigo-50 border border-indigo-100 text-[#6E56CF] flex items-center justify-center text-xl shadow-xs group-hover:bg-[#6E56CF] group-hover:text-white transition-all duration-300 group-hover:scale-105">
                                         {item.icon}
                                     </div>
-                                    <span className="text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-white/70 text-gray-800 group-hover:bg-white/20 group-hover:text-white transition">
+                                    <span className="text-[11px] font-bold uppercase tracking-wider px-3.5 py-1 rounded-full bg-slate-100 text-slate-700 border border-slate-200/60 group-hover:bg-purple-50 group-hover:text-[#6E56CF] transition-colors">
                                         {item.tag}
                                     </span>
                                 </div>
 
-                                <h3 className="text-xl font-bold mb-3 text-[#111111] group-hover:text-white transition">
+                                <h3 className="text-xl font-bold mb-3 text-slate-900 group-hover:text-[#6E56CF] transition-colors">
                                     {item.title}
                                 </h3>
 
-                                <p className="text-sm leading-relaxed text-gray-600 group-hover:text-gray-300 transition">
+                                <p className="text-sm leading-relaxed text-slate-600 font-normal">
                                     {item.desc}
                                 </p>
                             </div>
 
-                            <div className="mt-6 pt-4 border-t border-gray-200/50 group-hover:border-white/20 flex items-center justify-between text-xs font-semibold text-[#30B5AA]">
+                            <div className="mt-8 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-[#30B5AA] group-hover:text-[#6E56CF] transition-colors">
                                 <span>Explore Capability</span>
                                 <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
                             </div>

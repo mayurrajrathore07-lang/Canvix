@@ -12,7 +12,7 @@ import BookConsultation from "@/components/home/BookConsultation.jsx";
 
 export default function Page() {
   return (
-    <main className="bg-[#0c0d0e] text-white min-h-screen">
+    <main className="min-h-screen font-sans antialiased bg-white text-slate-900">
       <Hero />
       <Services />
       <BusinessSolutions />

@@ -6,7 +6,10 @@ const heroImg = "https://images.unsplash.com/photo-1522071820081-009f0129c71c?au
 
 function Hero() {
     return (
-        <section className="bg-[#0c0d0e] text-white py-16 md:py-24 px-6 md:px-12 relative overflow-hidden">
+        <section className="bg-[#0B0F19] text-white py-16 md:py-24 px-6 md:px-12 relative overflow-hidden">
+            {/* Ambient Background Glows */}
+            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#6E56CF]/15 rounded-full blur-[140px] pointer-events-none" />
+            <div className="absolute bottom-10 right-10 w-96 h-96 bg-[#30B5AA]/10 rounded-full blur-[160px] pointer-events-none" />
 
 
             <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">

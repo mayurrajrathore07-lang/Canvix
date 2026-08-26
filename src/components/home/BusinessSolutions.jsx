@@ -76,7 +76,7 @@ const models = [
 
 export default function BusinessSolutions() {
     return (
-        <section className="bg-[#0c0d0e] text-white py-16 px-6 md:px-12 border-t border-white/10 relative overflow-hidden">
+        <section className="bg-[#0B0F19] text-white py-20 px-6 md:px-12 border-t border-slate-800/80 relative overflow-hidden">
             <div className="max-w-7xl mx-auto relative z-10">
                 {/* Header */}
                 <div className="text-center max-w-3xl mx-auto mb-10">
