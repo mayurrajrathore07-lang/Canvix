@@ -46,11 +46,11 @@ const faqs = [
   },
 ];
 
-function FAQItem({ item, isOpen, onClick }) {
+function FAQItem({ item, isOpen, onClick, isLast }) {
   return (
     <div
       style={{
-        borderBottom: "1px solid rgba(255,255,255,0.07)",
+        borderBottom: isLast ? "none" : "1px solid rgba(255,255,255,0.07)",
         overflow: "hidden",
       }}
     >
@@ -62,7 +62,7 @@ function FAQItem({ item, isOpen, onClick }) {
           alignItems: "center",
           justifyContent: "space-between",
           gap: "16px",
-          padding: "22px 0",
+          padding: "18px 0",
           background: "none",
           border: "none",
           cursor: "pointer",
@@ -74,9 +74,9 @@ function FAQItem({ item, isOpen, onClick }) {
         <span
           style={{
             color: isOpen ? "#30B5AA" : "#fff",
-            fontWeight: 700,
-            fontSize: "clamp(15px, 2vw, 17px)",
-            lineHeight: 1.4,
+            fontWeight: 600,
+            fontSize: "clamp(14px, 1.8vw, 16px)",
+            lineHeight: 1.45,
             transition: "color 0.2s",
           }}
         >
@@ -84,8 +84,8 @@ function FAQItem({ item, isOpen, onClick }) {
         </span>
         <span
           style={{
-            width: "36px",
-            height: "36px",
+            width: "32px",
+            height: "32px",
             borderRadius: "50%",
             background: isOpen
               ? "rgba(48,181,170,0.15)"
@@ -101,7 +101,7 @@ function FAQItem({ item, isOpen, onClick }) {
             transition: "all 0.25s",
           }}
         >
-          {isOpen ? <FaMinus size={11} /> : <FaPlus size={11} />}
+          {isOpen ? <FaMinus size={10} /> : <FaPlus size={10} />}
         </span>
       </button>
 
@@ -109,7 +109,7 @@ function FAQItem({ item, isOpen, onClick }) {
         style={{
           maxHeight: isOpen ? "300px" : "0px",
           opacity: isOpen ? 1 : 0,
-          transition: "max-height 0.4s cubic-bezier(.4,0,.2,1), opacity 0.3s ease",
+          transition: "max-height 0.35s cubic-bezier(.4,0,.2,1), opacity 0.25s ease",
           overflow: "hidden",
         }}
       >
@@ -117,10 +117,10 @@ function FAQItem({ item, isOpen, onClick }) {
           style={{
             color: "#9ca3af",
             fontSize: "14px",
-            lineHeight: 1.8,
+            lineHeight: 1.7,
             margin: 0,
-            paddingBottom: "22px",
-            paddingRight: "52px",
+            paddingBottom: "18px",
+            paddingRight: "24px",
           }}
         >
           {item.a}
@@ -133,21 +133,25 @@ function FAQItem({ item, isOpen, onClick }) {
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(0); // first one open by default
 
+  const midPoint = Math.ceil(faqs.length / 2);
+  const leftFaqs = faqs.slice(0, midPoint);
+  const rightFaqs = faqs.slice(midPoint);
+
   return (
     <section
       style={{
         background: "#0c0d0e",
-        padding: "80px 24px",
+        padding: "70px 24px",
       }}
     >
       <div
         style={{
-          maxWidth: "800px",
+          maxWidth: "1140px",
           margin: "0 auto",
         }}
       >
         {/* Header */}
-        <div style={{ textAlign: "center", marginBottom: "56px" }}>
+        <div style={{ textAlign: "center", marginBottom: "44px" }}>
           <span
             style={{
               display: "inline-block",
@@ -160,17 +164,17 @@ export default function FAQ() {
               fontWeight: 700,
               letterSpacing: "0.08em",
               textTransform: "uppercase",
-              marginBottom: "18px",
+              marginBottom: "16px",
             }}
           >
             FAQ
           </span>
           <h2
             style={{
-              fontSize: "clamp(28px, 4vw, 42px)",
+              fontSize: "clamp(28px, 4vw, 40px)",
               fontWeight: 800,
               color: "#fff",
-              margin: "0 0 14px",
+              margin: "0 0 12px",
               letterSpacing: "-0.8px",
               lineHeight: 1.15,
               fontFamily: "'DM Serif Display', serif",
@@ -182,7 +186,7 @@ export default function FAQ() {
             style={{
               color: "#6b7280",
               fontSize: "15px",
-              maxWidth: "500px",
+              maxWidth: "540px",
               margin: "0 auto",
               lineHeight: 1.6,
             }}
@@ -192,23 +196,57 @@ export default function FAQ() {
           </p>
         </div>
 
-        {/* FAQ Items */}
+        {/* FAQ Items Grid */}
         <div
           style={{
-            background: "rgba(255,255,255,0.02)",
-            border: "1px solid rgba(255,255,255,0.06)",
-            borderRadius: "20px",
-            padding: "8px 32px",
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 480px), 1fr))",
+            gap: "24px",
+            alignItems: "start",
           }}
         >
-          {faqs.map((item, i) => (
-            <FAQItem
-              key={i}
-              item={item}
-              isOpen={openIndex === i}
-              onClick={() => setOpenIndex(openIndex === i ? -1 : i)}
-            />
-          ))}
+          <div
+            style={{
+              background: "rgba(255,255,255,0.02)",
+              border: "1px solid rgba(255,255,255,0.06)",
+              borderRadius: "20px",
+              padding: "6px 28px",
+            }}
+          >
+            {leftFaqs.map((item, i) => (
+              <FAQItem
+                key={i}
+                item={item}
+                isOpen={openIndex === i}
+                onClick={() => setOpenIndex(openIndex === i ? -1 : i)}
+                isLast={i === leftFaqs.length - 1}
+              />
+            ))}
+          </div>
+
+          <div
+            style={{
+              background: "rgba(255,255,255,0.02)",
+              border: "1px solid rgba(255,255,255,0.06)",
+              borderRadius: "20px",
+              padding: "6px 28px",
+            }}
+          >
+            {rightFaqs.map((item, i) => {
+              const actualIndex = i + midPoint;
+              return (
+                <FAQItem
+                  key={actualIndex}
+                  item={item}
+                  isOpen={openIndex === actualIndex}
+                  onClick={() =>
+                    setOpenIndex(openIndex === actualIndex ? -1 : actualIndex)
+                  }
+                  isLast={i === rightFaqs.length - 1}
+                />
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>
