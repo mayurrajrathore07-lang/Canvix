@@ -297,7 +297,7 @@ function ContactContent() {
                             </button>
                         </div>
 
-                        {/* Office HQ Row */}
+                        {/* Office HQ Row - Ahmedabad */}
                         <div className="group flex items-start justify-between gap-4 p-4 rounded-2xl bg-white/[0.03] border border-white/5 hover:border-[#30B5AA]/40 hover:bg-white/[0.05] transition-all duration-300 mb-4">
                             <div className="flex items-start gap-4">
                                 <div className="w-11 h-11 rounded-xl bg-[#30B5AA]/15 text-[#30B5AA] flex items-center justify-center text-lg shrink-0 group-hover:scale-105 transition-transform">
@@ -305,16 +305,42 @@ function ContactContent() {
                                 </div>
                                 <div>
                                     <span className="text-[11px] font-bold uppercase tracking-wider text-gray-400 block mb-0.5">
-                                        Studio Location
+                                        India Studio (HQ)
                                     </span>
                                     <p className="text-white font-semibold text-sm leading-snug">
-                                        SBR (Sindhu Bhavan Marg), <br />
-                                        Ahmedabad, Gujarat, India
+                                        701, Time Square Grand, <br />
+                                        Sindhu Bhavan Road, Ahmedabad, Gujarat
                                     </p>
                                 </div>
                             </div>
                             <a
-                                href="https://maps.google.com/?q=Sindhu+Bhavan+Road+Ahmedabad"
+                                href="https://maps.google.com/?q=701+Time+Square+Grand+Sindhu+Bhavan+Road+Ahmedabad"
+                                target="_blank"
+                                rel="noreferrer"
+                                className="text-[#30B5AA] hover:text-white text-xs font-semibold underline p-2 shrink-0 self-center"
+                            >
+                                Map
+                            </a>
+                        </div>
+
+                        {/* Office Row - New York */}
+                        <div className="group flex items-start justify-between gap-4 p-4 rounded-2xl bg-white/[0.03] border border-white/5 hover:border-[#30B5AA]/40 hover:bg-white/[0.05] transition-all duration-300 mb-4">
+                            <div className="flex items-start gap-4">
+                                <div className="w-11 h-11 rounded-xl bg-[#30B5AA]/15 text-[#30B5AA] flex items-center justify-center text-lg shrink-0 group-hover:scale-105 transition-transform">
+                                    <FaMapMarkerAlt />
+                                </div>
+                                <div>
+                                    <span className="text-[11px] font-bold uppercase tracking-wider text-gray-400 block mb-0.5">
+                                        US Studio (New York)
+                                    </span>
+                                    <p className="text-white font-semibold text-sm leading-snug">
+                                        580 Broadway, Suite 904, <br />
+                                        SoHo, New York, NY 10012
+                                    </p>
+                                </div>
+                            </div>
+                            <a
+                                href="https://maps.google.com/?q=580+Broadway+Suite+904+SoHo+New+York+NY+10012"
                                 target="_blank"
                                 rel="noreferrer"
                                 className="text-[#30B5AA] hover:text-white text-xs font-semibold underline p-2 shrink-0 self-center"

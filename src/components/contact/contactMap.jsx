@@ -23,14 +23,14 @@ function ContactMap() {
                                 Canvix Studio — Ahmedabad, India
                             </h3>
                             <p className="text-gray-400 text-xs sm:text-sm mt-1">
-                                Sindhu Bhavan Marg (SBR), Bodakdev, Ahmedabad, Gujarat 380054
+                                701, Time Square Grand, Sindhu Bhavan Road, Ahmedabad, Gujarat
                             </p>
                         </div>
                     </div>
 
                     <div className="flex items-center gap-3">
                         <a
-                            href="https://www.google.com/maps/dir/?api=1&destination=Sindhu+Bhavan+Road+Ahmedabad"
+                            href="https://www.google.com/maps/dir/?api=1&destination=701+Time+Square+Grand+Sindhu+Bhavan+Road+Ahmedabad"
                             target="_blank"
                             rel="noreferrer"
                             className="inline-flex items-center gap-2 bg-[#30B5AA] hover:bg-white text-black font-bold text-xs px-5 py-3 rounded-full transition shadow-md"
@@ -39,7 +39,7 @@ function ContactMap() {
                             <span>Get Directions</span>
                         </a>
                         <a
-                            href="https://www.google.com/maps?q=Sindhu+Bhavan+Road+Ahmedabad"
+                            href="https://www.google.com/maps?q=701+Time+Square+Grand+Sindhu+Bhavan+Road+Ahmedabad"
                             target="_blank"
                             rel="noreferrer"
                             className="inline-flex items-center gap-2 bg-white/5 hover:bg-white/10 text-gray-300 hover:text-white border border-white/10 font-semibold text-xs px-4 py-3 rounded-full transition"
@@ -54,7 +54,7 @@ function ContactMap() {
                 <div className="w-full h-[220px] sm:h-[260px] rounded-2xl overflow-hidden relative border border-white/10 shadow-inner group">
                     <iframe
                         title="Canvix Studio Location Map"
-                        src="https://www.google.com/maps?q=Sindhu+Bhavan+Road+Ahmedabad&output=embed"
+                        src="https://www.google.com/maps?q=701+Time+Square+Grand+Sindhu+Bhavan+Road+Ahmedabad&output=embed"
                         className="w-full h-full border-0 grayscale contrast-125 opacity-90 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700"
                         loading="lazy"
                         allowFullScreen

@@ -105,8 +105,9 @@ function Footer() {
                     </div>
 
                     <div>
-                        <span className="font-bold text-white block mb-0.5">Address</span>
-                        <span>SBR Ahmedabad</span>
+                        <span className="font-bold text-white block mb-0.5">Addresses</span>
+                        <span className="block text-[11px]"><strong>HQ:</strong> 701, Time Square Grand, Sindhu Bhavan Road, Ahmedabad</span>
+                        <span className="block text-[11px] mt-0.5"><strong>NY:</strong> 580 Broadway, Suite 904, New York, NY 10012</span>
                     </div>
 
                     <div className="flex gap-3 sm:justify-end">
