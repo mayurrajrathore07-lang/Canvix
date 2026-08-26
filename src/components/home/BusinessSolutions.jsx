@@ -15,15 +15,14 @@ const models = [
     {
         id: "dedicated-teams",
         title: "Dedicated Engineering Pods",
-        tagline: "Your autonomous, full-cycle tech team",
-        desc: "A fully dedicated squad of senior software engineers, UI/UX designers, QA specialists, and a project manager aligned 100% with your company culture and sprint rituals.",
+        tagline: "Autonomous full-cycle tech team",
+        desc: "Dedicated squad of senior engineers, designers & PMs aligned with your sprint rituals.",
         features: [
             "100% Dedicated Full-Time Talent",
-            "Direct Slack/Jira Integration",
+            "Direct Slack & Jira Integration",
             "Zero Overhead & Full IP Ownership",
-            "Flexible Scaling Up or Down",
         ],
-        idealFor: "Ideal for Series A+ scaleups and enterprise product engineering.",
+        idealFor: "Ideal for Series A+ & enterprises",
         badge: "Most Popular",
         highlight: true,
         icon: <FaUserFriends />,
@@ -31,15 +30,14 @@ const models = [
     {
         id: "turnkey-projects",
         title: "End-to-End Turnkey Delivery",
-        tagline: "Fixed scope, guaranteed milestones & timeline",
-        desc: "We take your product concept or business requirements from architectural blueprint and design to full deployment, testing, and production launch.",
+        tagline: "Fixed scope & guaranteed timeline",
+        desc: "Full product delivery from initial architecture to final production launch.",
         features: [
-            "Fixed-Price or Milestones Model",
-            "Guaranteed Timeline & Deliverables",
-            "Complete Architecture & UI/UX Included",
+            "Fixed-Price / Milestone Model",
+            "Guaranteed SLA & Deliverables",
             "Post-Launch Warranty & Support",
         ],
-        idealFor: "Ideal for new product launches, MVP rollouts, and major platform overhauls.",
+        idealFor: "Ideal for MVPs & new launches",
         badge: "Guaranteed SLA",
         highlight: false,
         icon: <FaCogs />,
@@ -47,15 +45,14 @@ const models = [
     {
         id: "staff-augmentation",
         title: "Staff Augmentation",
-        tagline: "Fill critical skill gaps in 48 hours",
-        desc: "Embed battle-tested individual contributors (React, Node, Python, AWS, AI, DevOps) directly into your existing engineering hierarchy to speed up feature delivery.",
+        tagline: "Fill critical tech gaps in 48h",
+        desc: "Embed vetted individual developers directly into your team to boost velocity.",
         features: [
-            "Rapid Onboarding (48h Turnaround)",
-            "Timezone-Aligned Work Hours",
-            "Strict Technical & English Vetting",
-            "Monthly Flexible Billing",
+            "Rapid 48h Onboarding",
+            "Timezone-Aligned Developers",
+            "Strict Technical Vetting",
         ],
-        idealFor: "Ideal for teams needing immediate capacity or niche technical expertise.",
+        idealFor: "Ideal for immediate capacity",
         badge: "On-Demand",
         highlight: false,
         icon: <FaUserCheck />,
@@ -63,15 +60,14 @@ const models = [
     {
         id: "fractional-advisory",
         title: "Fractional Executive Advisory",
-        tagline: "C-level guidance without full-time overhead",
-        desc: "On-demand Fractional CTO, Fractional CFO, and AI Strategy Partners who guide your technological roadmaps, cloud budget optimization, and investor audits.",
+        tagline: "C-level tech leadership on demand",
+        desc: "Fractional CTO & CFO guidance for roadmap scaling, cloud costs, and audits.",
         features: [
-            "Fractional CTO & Tech Due Diligence",
-            "Fractional CFO & Financial Forecasts",
-            "AI/ML Enterprise Transformation",
+            "Fractional CTO & Architecture",
+            "Cloud & Cost Optimization",
             "Strategic Weekly Advisory Hours",
         ],
-        idealFor: "Ideal for growing startups and established SMBs seeking executive expertise.",
+        idealFor: "Ideal for startups & scaling SMBs",
         badge: "Strategic",
         highlight: false,
         icon: <FaChessKing />,
@@ -80,42 +76,42 @@ const models = [
 
 export default function BusinessSolutions() {
     return (
-        <section className="bg-[#0c0d0e] text-white py-24 px-6 md:px-12 border-t border-white/10 relative overflow-hidden">
+        <section className="bg-[#0c0d0e] text-white py-16 px-6 md:px-12 border-t border-white/10 relative overflow-hidden">
             <div className="max-w-7xl mx-auto relative z-10">
                 {/* Header */}
-                <div className="text-center max-w-3xl mx-auto mb-16">
-                    <p className="text-[#30B5AA] text-sm font-semibold uppercase tracking-widest mb-3">
+                <div className="text-center max-w-3xl mx-auto mb-10">
+                    <p className="text-[#30B5AA] text-xs sm:text-sm font-semibold uppercase tracking-widest mb-2">
                         Flexible Engagement Models
                     </p>
-                    <h2 className="text-3xl sm:text-5xl font-serif font-bold text-white leading-tight">
-                        Business Solutions Tailored <br className="hidden sm:inline" /> to Your Scale
+                    <h2 className="text-3xl sm:text-4xl font-serif font-bold text-white leading-tight">
+                        Business Solutions Tailored to Your Scale
                     </h2>
-                    <p className="text-gray-400 text-sm sm:text-base mt-4 leading-relaxed">
-                        Whether you need a full turnkey team, specialized staff augmentation, or strategic fractional executive leadership — we have the right partnership model for you.
+                    <p className="text-gray-400 text-xs sm:text-sm mt-3 leading-relaxed">
+                        Full turnkey teams, specialized staff augmentation, or strategic executive leadership.
                     </p>
                 </div>
 
                 {/* Models Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch">
                     {models.map((model) => (
                         <div
                             key={model.id}
-                            className={`rounded-3xl p-7 flex flex-col justify-between transition-all duration-300 relative border ${
+                            className={`rounded-2xl p-5 flex flex-col justify-between transition-all duration-300 relative border ${
                                 model.highlight
-                                    ? "bg-gradient-to-b from-[#18191c] via-[#141518] to-[#0f1012] border-[#30B5AA] shadow-[0_0_30px_rgba(48,181,170,0.15)]"
+                                    ? "bg-gradient-to-b from-[#18191c] via-[#141518] to-[#0f1012] border-[#30B5AA] shadow-[0_0_25px_rgba(48,181,170,0.15)]"
                                     : "bg-[#111215] border-white/10 hover:border-white/20 hover:bg-[#18191c]"
                             }`}
                         >
                             {model.highlight && (
-                                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#30B5AA] text-black text-[10px] font-extrabold uppercase px-3 py-1 rounded-full shadow-md">
+                                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#30B5AA] text-black text-[9px] font-extrabold uppercase px-2.5 py-0.5 rounded-full shadow-md">
                                     {model.badge}
                                 </div>
                             )}
 
                             <div>
-                                <div className="flex items-center justify-between mb-6">
+                                <div className="flex items-center justify-between mb-3">
                                     <div
-                                        className={`w-12 h-12 rounded-2xl flex items-center justify-center text-xl ${
+                                        className={`w-10 h-10 rounded-xl flex items-center justify-center text-lg ${
                                             model.highlight
                                                 ? "bg-[#30B5AA] text-black"
                                                 : "bg-white/10 text-[#30B5AA]"
@@ -124,29 +120,29 @@ export default function BusinessSolutions() {
                                         {model.icon}
                                     </div>
                                     {!model.highlight && (
-                                        <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-white/5 text-gray-400 border border-white/5">
+                                        <span className="text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-white/5 text-gray-400 border border-white/5">
                                             {model.badge}
                                         </span>
                                     )}
                                 </div>
 
-                                <h3 className="text-lg font-bold text-white mb-1">
+                                <h3 className="text-base font-bold text-white mb-0.5">
                                     {model.title}
                                 </h3>
-                                <p className="text-xs text-[#30B5AA] font-medium mb-4">
+                                <p className="text-[11px] text-[#30B5AA] font-medium mb-2">
                                     {model.tagline}
                                 </p>
-                                <p className="text-gray-400 text-xs leading-relaxed mb-6">
+                                <p className="text-gray-400 text-xs leading-relaxed mb-3">
                                     {model.desc}
                                 </p>
 
-                                <div className="space-y-2.5 mb-6 pt-4 border-t border-white/10">
+                                <div className="space-y-1.5 mb-4 pt-3 border-t border-white/10">
                                     {model.features.map((feat, i) => (
                                         <div
                                             key={i}
-                                            className="flex items-start gap-2.5 text-xs text-gray-300"
+                                            className="flex items-start gap-2 text-xs text-gray-300"
                                         >
-                                            <FaCheck className="text-[#30B5AA] text-[10px] mt-1 shrink-0" />
+                                            <FaCheck className="text-[#30B5AA] text-[10px] mt-0.5 shrink-0" />
                                             <span>{feat}</span>
                                         </div>
                                     ))}
@@ -154,12 +150,12 @@ export default function BusinessSolutions() {
                             </div>
 
                             <div>
-                                <p className="text-[11px] text-gray-500 italic mb-5">
+                                <p className="text-[10px] text-gray-500 italic mb-3">
                                     {model.idealFor}
                                 </p>
                                 <Link
                                     href="/contact"
-                                    className={`w-full inline-flex items-center justify-center gap-2 py-3 rounded-full text-xs font-bold transition duration-300 ${
+                                    className={`w-full inline-flex items-center justify-center gap-2 py-2.5 rounded-full text-xs font-bold transition duration-300 ${
                                         model.highlight
                                             ? "bg-[#30B5AA] hover:bg-white text-black shadow-md"
                                             : "bg-white/10 hover:bg-white hover:text-black text-white"
@@ -174,9 +170,9 @@ export default function BusinessSolutions() {
                 </div>
 
                 {/* Consultation callout banner */}
-                <div className="mt-14 bg-gradient-to-r from-[#18191c] via-[#1a1c22] to-[#18191c] border border-white/10 rounded-3xl p-8 sm:p-10 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
+                <div className="mt-10 bg-gradient-to-r from-[#18191c] via-[#1a1c22] to-[#18191c] border border-white/10 rounded-2xl p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-4 shadow-xl">
                     <div>
-                        <h4 className="text-xl sm:text-2xl font-serif font-bold text-white mb-2">
+                        <h4 className="text-lg sm:text-xl font-serif font-bold text-white mb-1">
                             Unsure which engagement model suits your project best?
                         </h4>
                         <p className="text-gray-400 text-xs sm:text-sm">
@@ -185,7 +181,7 @@ export default function BusinessSolutions() {
                     </div>
                     <Link
                         href="/contact"
-                        className="inline-flex items-center gap-2.5 bg-white text-black hover:bg-[#30B5AA] px-7 py-3.5 rounded-full text-xs sm:text-sm font-bold transition shrink-0 shadow-lg"
+                        className="inline-flex items-center gap-2 bg-white text-black hover:bg-[#30B5AA] px-6 py-2.5 rounded-full text-xs sm:text-sm font-bold transition shrink-0 shadow-lg"
                     >
                         <span>Book Free Scoping Call</span>
                         <FaArrowRight />
@@ -195,3 +191,4 @@ export default function BusinessSolutions() {
         </section>
     );
 }
+
