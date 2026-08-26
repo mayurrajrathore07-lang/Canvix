@@ -26,9 +26,12 @@ function Footer() {
 
     return (
         <footer className="shrink-0 bg-[#0b0e14] text-gray-400 pt-16 pb-12 border-t border-white/10 font-sans relative overflow-hidden">
+            {/* Background Ambient Lighting Glow */}
+            <div className="absolute bottom-0 left-1/4 w-[500px] h-[350px] bg-[#6E56CF]/10 rounded-full blur-[120px] pointer-events-none" />
+
             {/* Background Wave Graphic Accent on Right */}
-            <div className="absolute right-0 top-0 w-1/2 h-full opacity-20 pointer-events-none overflow-hidden hidden md:block">
-                <svg className="w-full h-full text-[#2ed5a3]" viewBox="0 0 600 400" fill="none">
+            <div className="absolute right-0 top-0 w-1/2 h-full opacity-15 pointer-events-none overflow-hidden hidden md:block">
+                <svg className="w-full h-full text-[#6E56CF]" viewBox="0 0 600 400" fill="none">
                     <g stroke="currentColor" strokeWidth="1" strokeDasharray="2 6">
                         <path d="M100 400 C 200 300, 300 350, 400 200 C 500 50, 550 150, 600 0" />
                         <path d="M150 400 C 250 300, 350 350, 450 200 C 550 50, 600 150, 650 0" />
@@ -46,7 +49,7 @@ function Footer() {
                     {/* Column 1: Brand & Socials */}
                     <div className="lg:col-span-4 space-y-4">
                         <Link href="/" className="inline-flex items-center gap-3">
-                            <div className="w-10 h-10 rounded-full bg-[#132c2a] border border-[#2ed5a3]/40 text-[#2ed5a3] flex items-center justify-center shadow-md">
+                            <div className="w-10 h-10 rounded-full bg-[#6E56CF]/15 border border-[#6E56CF]/40 text-[#a78bfa] flex items-center justify-center shadow-md shadow-[#6E56CF]/10">
                                 <svg className="w-5 h-5 fill-none stroke-current stroke-2" viewBox="0 0 24 24">
                                     <path d="M12 3a9 9 0 0 1 9 9c0 4.97-4.03 9-9 9a9 9 0 0 1-9-9c0-3.31 2.69-6 6-6s6 2.69 6 6-2.69 4-4 4-4-1.79-4-4" strokeLinecap="round" />
                                 </svg>
@@ -58,7 +61,7 @@ function Footer() {
                             We're a team of strategic creators and digital innovators, united in our pursuit of tech mastery and joyful digital solutions.
                         </p>
 
-                        <div className="w-12 h-[3px] bg-[#2ed5a3] rounded-full my-4" />
+                        <div className="w-12 h-[3px] bg-gradient-to-r from-[#6E56CF] to-[#5B45FF] rounded-full my-4" />
 
                         <div className="flex items-center gap-3 pt-1">
                             <a
@@ -66,7 +69,7 @@ function Footer() {
                                 target="_blank"
                                 rel="noreferrer"
                                 aria-label="Facebook"
-                                className="w-9 h-9 rounded-full bg-[#171b26] text-gray-300 flex items-center justify-center border border-white/5 hover:bg-[#2ed5a3] hover:text-[#0b0e14] transition-all duration-300 hover:scale-105"
+                                className="w-9 h-9 rounded-full bg-[#171b26] text-gray-300 flex items-center justify-center border border-white/5 hover:bg-[#6E56CF] hover:text-white transition-all duration-300 hover:scale-105"
                             >
                                 <FaFacebookF className="text-xs" />
                             </a>
@@ -75,7 +78,7 @@ function Footer() {
                                 target="_blank"
                                 rel="noreferrer"
                                 aria-label="Instagram"
-                                className="w-9 h-9 rounded-full bg-[#171b26] text-gray-300 flex items-center justify-center border border-white/5 hover:bg-[#2ed5a3] hover:text-[#0b0e14] transition-all duration-300 hover:scale-105"
+                                className="w-9 h-9 rounded-full bg-[#171b26] text-gray-300 flex items-center justify-center border border-white/5 hover:bg-[#6E56CF] hover:text-white transition-all duration-300 hover:scale-105"
                             >
                                 <FaInstagram className="text-xs" />
                             </a>
@@ -84,7 +87,7 @@ function Footer() {
                                 target="_blank"
                                 rel="noreferrer"
                                 aria-label="LinkedIn"
-                                className="w-9 h-9 rounded-full bg-[#171b26] text-gray-300 flex items-center justify-center border border-white/5 hover:bg-[#2ed5a3] hover:text-[#0b0e14] transition-all duration-300 hover:scale-105"
+                                className="w-9 h-9 rounded-full bg-[#171b26] text-gray-300 flex items-center justify-center border border-white/5 hover:bg-[#6E56CF] hover:text-white transition-all duration-300 hover:scale-105"
                             >
                                 <FaLinkedinIn className="text-xs" />
                             </a>
@@ -93,7 +96,7 @@ function Footer() {
                                 target="_blank"
                                 rel="noreferrer"
                                 aria-label="Twitter"
-                                className="w-9 h-9 rounded-full bg-[#171b26] text-gray-300 flex items-center justify-center border border-white/5 hover:bg-[#2ed5a3] hover:text-[#0b0e14] transition-all duration-300 hover:scale-105"
+                                className="w-9 h-9 rounded-full bg-[#171b26] text-gray-300 flex items-center justify-center border border-white/5 hover:bg-[#6E56CF] hover:text-white transition-all duration-300 hover:scale-105"
                             >
                                 <FaTwitter className="text-xs" />
                             </a>
@@ -116,7 +119,7 @@ function Footer() {
                             ].map((item) => (
                                 <li key={item.name}>
                                     <Link href={item.href} className="group flex items-center gap-2 text-gray-400 hover:text-white transition">
-                                        <span className="text-[#2ed5a3] font-bold text-xs transition-transform group-hover:translate-x-0.5">&gt;</span>
+                                        <span className="text-[#a78bfa] font-bold text-xs transition-transform group-hover:translate-x-0.5">&gt;</span>
                                         <span>{item.name}</span>
                                     </Link>
                                 </li>
@@ -130,7 +133,7 @@ function Footer() {
                             <h4 className="text-xs font-bold text-white uppercase tracking-wider">
                                 SERVICES
                             </h4>
-                            <div className="absolute bottom-0 left-0 w-6 h-[2px] bg-[#2ed5a3]" />
+                            <div className="absolute bottom-0 left-0 w-6 h-[2px] bg-[#6E56CF]" />
                         </div>
 
                         <ul className="space-y-3 text-xs sm:text-sm font-medium">
@@ -144,7 +147,7 @@ function Footer() {
                             ].map((service) => (
                                 <li key={service}>
                                     <Link href="/services" className="group flex items-center gap-2 text-gray-400 hover:text-white transition">
-                                        <span className="text-[#2ed5a3] font-bold text-xs transition-transform group-hover:translate-x-0.5">&gt;</span>
+                                        <span className="text-[#a78bfa] font-bold text-xs transition-transform group-hover:translate-x-0.5">&gt;</span>
                                         <span>{service}</span>
                                     </Link>
                                 </li>
@@ -158,28 +161,28 @@ function Footer() {
                             <h4 className="text-xs font-bold text-white uppercase tracking-wider">
                                 GET IN TOUCH
                             </h4>
-                            <div className="absolute bottom-0 left-0 w-6 h-[2px] bg-[#2ed5a3]" />
+                            <div className="absolute bottom-0 left-0 w-6 h-[2px] bg-[#6E56CF]" />
                         </div>
 
                         <div className="space-y-3.5 text-xs sm:text-sm font-medium">
                             <div className="flex items-center gap-3 text-gray-300">
-                                <FaPhoneAlt className="text-[#2ed5a3] text-xs shrink-0" />
+                                <FaPhoneAlt className="text-[#a78bfa] text-xs shrink-0" />
                                 <a href="tel:+919328311556" className="hover:text-white transition">+91 9328311556</a>
                             </div>
                             <div className="flex items-center gap-3 text-gray-300">
-                                <FaEnvelope className="text-[#2ed5a3] text-xs shrink-0" />
+                                <FaEnvelope className="text-[#a78bfa] text-xs shrink-0" />
                                 <a href="mailto:hello@canvix.agency.com" className="hover:text-white transition">hello@canvix.agency.com</a>
                             </div>
                             <div className="flex items-start gap-3 text-gray-300">
-                                <FaMapMarkerAlt className="text-[#2ed5a3] text-xs shrink-0 mt-1" />
+                                <FaMapMarkerAlt className="text-[#a78bfa] text-xs shrink-0 mt-1" />
                                 <span className="leading-tight">Let's build something amazing together.</span>
                             </div>
                         </div>
 
                         <div className="pt-2">
-                            <Link href="/contact" className="inline-flex items-center gap-4 border border-[#2ed5a3] rounded-full pl-5 pr-1.5 py-1.5 text-white font-semibold text-xs sm:text-sm hover:bg-[#2ed5a3]/10 transition-all duration-300 group cursor-pointer">
+                            <Link href="/contact" className="inline-flex items-center gap-4 border border-[#6E56CF]/80 rounded-full pl-5 pr-1.5 py-1.5 text-white font-semibold text-xs sm:text-sm hover:bg-[#6E56CF]/15 transition-all duration-300 group cursor-pointer">
                                 <span>Let's Talk</span>
-                                <div className="w-7 h-7 rounded-full bg-[#2ed5a3] text-[#0b0e14] flex items-center justify-center font-bold group-hover:translate-x-0.5 transition-transform">
+                                <div className="w-7 h-7 rounded-full bg-gradient-to-r from-[#6E56CF] to-[#5B45FF] text-white flex items-center justify-center font-bold group-hover:translate-x-0.5 transition-transform shadow-sm">
                                     <FaArrowRight className="text-[10px]" />
                                 </div>
                             </Link>
@@ -192,8 +195,8 @@ function Footer() {
                 <div className="py-10 border-t border-white/10">
                     <div className="flex items-center justify-center gap-4 mb-8">
                         <div className="h-[1px] flex-1 bg-gradient-to-r from-transparent to-white/15" />
-                        <h4 className="text-xs font-bold text-[#2ed5a3] uppercase tracking-widest flex items-center gap-2 px-2 shrink-0">
-                            <FaMapMarkerAlt className="text-xs" />
+                        <h4 className="text-xs font-bold text-[#a78bfa] uppercase tracking-widest flex items-center gap-2 px-2 shrink-0">
+                            <FaMapMarkerAlt className="text-xs text-[#6E56CF]" />
                             <span>OUR GLOBAL OFFICES & ADDRESSES</span>
                         </h4>
                         <div className="h-[1px] flex-1 bg-gradient-to-l from-transparent to-white/15" />
@@ -201,7 +204,7 @@ function Footer() {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         {/* India HQ Address Card */}
-                        <div className="relative overflow-hidden p-6 rounded-2xl bg-[#121622]/80 border border-white/10 hover:border-[#2ed5a3]/40 transition-all duration-300 flex justify-between items-start group shadow-lg">
+                        <div className="relative overflow-hidden p-6 rounded-2xl bg-[#121622]/80 border border-white/10 hover:border-[#6E56CF]/40 transition-all duration-300 flex justify-between items-start group shadow-lg">
                             <div className="relative z-10 max-w-[280px] sm:max-w-sm">
                                 <div className="flex items-start gap-3 mb-2">
                                     <div className="p-2 bg-white/5 rounded-xl border border-white/10 shrink-0">
@@ -210,7 +213,7 @@ function Footer() {
                                     <div>
                                         <div className="flex items-center gap-2">
                                             <span className="text-sm font-bold text-white">India Studio</span>
-                                            <span className="text-[9px] font-extrabold uppercase px-2 py-0.5 rounded bg-[#163a35] text-[#2ed5a3] border border-[#2ed5a3]/30 tracking-wide">
+                                            <span className="text-[9px] font-extrabold uppercase px-2 py-0.5 rounded bg-[#6E56CF]/20 text-[#a78bfa] border border-[#6E56CF]/30 tracking-wide">
                                                 GLOBAL HQ
                                             </span>
                                         </div>
@@ -223,7 +226,7 @@ function Footer() {
                                     href="https://maps.google.com/?q=701+Time+Square+Grand+Sindhu+Bhavan+Road+Ahmedabad"
                                     target="_blank"
                                     rel="noreferrer"
-                                    className="inline-flex items-center gap-1.5 text-xs text-[#2ed5a3] hover:text-white font-medium mt-3 transition group-hover:underline"
+                                    className="inline-flex items-center gap-1.5 text-xs text-[#a78bfa] hover:text-white font-medium mt-3 transition group-hover:underline"
                                 >
                                     <span>View on Map</span> &rarr;
                                 </a>
@@ -236,7 +239,7 @@ function Footer() {
                         </div>
 
                         {/* US NY Address Card */}
-                        <div className="relative overflow-hidden p-6 rounded-2xl bg-[#121622]/80 border border-white/10 hover:border-[#2ed5a3]/40 transition-all duration-300 flex justify-between items-start group shadow-lg">
+                        <div className="relative overflow-hidden p-6 rounded-2xl bg-[#121622]/80 border border-white/10 hover:border-[#6E56CF]/40 transition-all duration-300 flex justify-between items-start group shadow-lg">
                             <div className="relative z-10 max-w-[280px] sm:max-w-sm">
                                 <div className="flex items-start gap-3 mb-2">
                                     <div className="p-2 bg-white/5 rounded-xl border border-white/10 shrink-0">
@@ -245,7 +248,7 @@ function Footer() {
                                     <div>
                                         <div className="flex items-center gap-2">
                                             <span className="text-sm font-bold text-white">US Studio</span>
-                                            <span className="text-[9px] font-extrabold uppercase px-2 py-0.5 rounded bg-[#202344] text-[#818cf8] border border-[#818cf8]/30 tracking-wide">
+                                            <span className="text-[9px] font-extrabold uppercase px-2 py-0.5 rounded bg-[#5B45FF]/20 text-[#818cf8] border border-[#5B45FF]/30 tracking-wide">
                                                 NEW YORK
                                             </span>
                                         </div>
@@ -258,7 +261,7 @@ function Footer() {
                                     href="https://maps.google.com/?q=580+Broadway+Suite+904+SoHo+New+York+NY+10012"
                                     target="_blank"
                                     rel="noreferrer"
-                                    className="inline-flex items-center gap-1.5 text-xs text-[#2ed5a3] hover:text-white font-medium mt-3 transition group-hover:underline"
+                                    className="inline-flex items-center gap-1.5 text-xs text-[#a78bfa] hover:text-white font-medium mt-3 transition group-hover:underline"
                                 >
                                     <span>View on Map</span> &rarr;
                                 </a>
@@ -278,7 +281,7 @@ function Footer() {
                     {/* Left: Copyright & Links */}
                     <div className="space-y-2 text-xs text-gray-400 text-center xl:text-left">
                         <div>
-                            <span className="font-bold text-[#2ed5a3]">© 2025 Canvix Agency. </span>
+                            <span className="font-bold text-[#a78bfa]">© 2025 Canvix Agency. </span>
                             <span>Designed by Identity hub. All rights reserved.</span>
                         </div>
                         <div className="flex items-center justify-center xl:justify-start gap-3 text-gray-400 text-xs font-normal">
@@ -293,7 +296,7 @@ function Footer() {
                     {/* Right: Newsletter Subscribe */}
                     <div className="flex flex-col sm:flex-row items-center gap-4">
                         <div className="flex items-center gap-3">
-                            <div className="w-11 h-11 rounded-2xl bg-[#142d2a] border border-[#2ed5a3]/30 text-[#2ed5a3] flex items-center justify-center text-lg shrink-0 shadow-inner">
+                            <div className="w-11 h-11 rounded-2xl bg-[#6E56CF]/15 border border-[#6E56CF]/30 text-[#a78bfa] flex items-center justify-center text-lg shrink-0 shadow-inner">
                                 <FaEnvelope />
                             </div>
                             <div>
@@ -304,7 +307,7 @@ function Footer() {
                             </div>
                         </div>
 
-                        <form onSubmit={handleSubscribe} className="flex items-center bg-[#151924] border border-white/10 rounded-full p-1 focus-within:border-[#2ed5a3]/60 transition-all">
+                        <form onSubmit={handleSubscribe} className="flex items-center bg-[#151924] border border-white/10 rounded-full p-1 focus-within:border-[#6E56CF]/60 transition-all">
                             <input
                                 type="email"
                                 value={email}
@@ -314,7 +317,7 @@ function Footer() {
                             />
                             <button
                                 type="submit"
-                                className="bg-[#2ed5a3] hover:bg-[#26bf91] text-[#0b0e14] text-xs font-bold px-5 py-2.5 rounded-full transition cursor-pointer shadow-md shrink-0"
+                                className="bg-gradient-to-r from-[#6E56CF] to-[#5B45FF] hover:from-[#5B45FF] hover:to-[#6E56CF] text-white text-xs font-bold px-5 py-2.5 rounded-full transition cursor-pointer shadow-[0_4px_15px_rgba(110,86,207,0.35)] shrink-0"
                             >
                                 Subscribe
                             </button>
