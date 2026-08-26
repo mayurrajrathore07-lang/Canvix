@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
+import { IndiaFlag, USAFlag } from "@/components/Flags";
 import {
     FaEnvelope,
     FaPhoneAlt,
@@ -298,18 +299,23 @@ function ContactContent() {
                         </div>
 
                         {/* Office HQ Row - Ahmedabad */}
-                        <div className="group flex items-start justify-between gap-4 p-4 rounded-2xl bg-white/[0.03] border border-white/5 hover:border-[#30B5AA]/40 hover:bg-white/[0.05] transition-all duration-300 mb-4">
+                        <div className="group flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-4 sm:p-5 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-[#30B5AA]/50 hover:bg-white/[0.06] transition-all duration-300 mb-4 shadow-md">
                             <div className="flex items-start gap-4">
-                                <div className="w-11 h-11 rounded-xl bg-[#30B5AA]/15 text-[#30B5AA] flex items-center justify-center text-lg shrink-0 group-hover:scale-105 transition-transform">
-                                    <FaMapMarkerAlt />
+                                <div className="p-2.5 rounded-xl bg-white/5 border border-white/10 text-[#30B5AA] flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+                                    <IndiaFlag className="w-7 h-5 rounded-[2px]" alt="India Flag" />
                                 </div>
                                 <div>
-                                    <span className="text-[11px] font-bold uppercase tracking-wider text-gray-400 block mb-0.5">
-                                        India Studio (HQ)
-                                    </span>
-                                    <p className="text-white font-semibold text-sm leading-snug">
-                                        701, Time Square Grand, <br />
-                                        Sindhu Bhavan Road, Ahmedabad, Gujarat
+                                    <div className="flex items-center gap-2 mb-1">
+                                        <span className="text-xs font-bold uppercase tracking-wider text-[#30B5AA]">
+                                            India Studio (HQ)
+                                        </span>
+                                        <span className="text-[10px] font-extrabold uppercase px-2 py-0.5 rounded bg-[#30B5AA]/20 text-[#30B5AA] border border-[#30B5AA]/30">
+                                            Global HQ
+                                        </span>
+                                    </div>
+                                    <p className="text-white font-semibold text-sm sm:text-base leading-snug">
+                                        701, Time Square Grand, <br className="hidden sm:inline" />
+                                        Sindhu Bhavan Road, Ahmedabad, Gujarat 380059
                                     </p>
                                 </div>
                             </div>
@@ -317,24 +323,30 @@ function ContactContent() {
                                 href="https://maps.google.com/?q=701+Time+Square+Grand+Sindhu+Bhavan+Road+Ahmedabad"
                                 target="_blank"
                                 rel="noreferrer"
-                                className="text-[#30B5AA] hover:text-white text-xs font-semibold underline p-2 shrink-0 self-center"
+                                className="inline-flex items-center justify-center gap-1.5 bg-[#30B5AA]/15 hover:bg-[#30B5AA] text-[#30B5AA] hover:text-black border border-[#30B5AA]/30 font-bold text-xs px-4 py-2 rounded-full transition-all shrink-0 self-start sm:self-center"
                             >
-                                Map
+                                <FaMapMarkerAlt className="text-xs" />
+                                <span>Directions</span>
                             </a>
                         </div>
 
                         {/* Office Row - New York */}
-                        <div className="group flex items-start justify-between gap-4 p-4 rounded-2xl bg-white/[0.03] border border-white/5 hover:border-[#30B5AA]/40 hover:bg-white/[0.05] transition-all duration-300 mb-4">
+                        <div className="group flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-4 sm:p-5 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-[#30B5AA]/50 hover:bg-white/[0.06] transition-all duration-300 mb-4 shadow-md">
                             <div className="flex items-start gap-4">
-                                <div className="w-11 h-11 rounded-xl bg-[#30B5AA]/15 text-[#30B5AA] flex items-center justify-center text-lg shrink-0 group-hover:scale-105 transition-transform">
-                                    <FaMapMarkerAlt />
+                                <div className="p-2.5 rounded-xl bg-white/5 border border-white/10 text-indigo-400 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+                                    <USAFlag className="w-7 h-5 rounded-[2px]" alt="USA Flag" />
                                 </div>
                                 <div>
-                                    <span className="text-[11px] font-bold uppercase tracking-wider text-gray-400 block mb-0.5">
-                                        US Studio (New York)
-                                    </span>
-                                    <p className="text-white font-semibold text-sm leading-snug">
-                                        580 Broadway, Suite 904, <br />
+                                    <div className="flex items-center gap-2 mb-1">
+                                        <span className="text-xs font-bold uppercase tracking-wider text-indigo-400">
+                                            US Studio (New York)
+                                        </span>
+                                        <span className="text-[10px] font-extrabold uppercase px-2 py-0.5 rounded bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">
+                                            New York
+                                        </span>
+                                    </div>
+                                    <p className="text-white font-semibold text-sm sm:text-base leading-snug">
+                                        580 Broadway, Suite 904, <br className="hidden sm:inline" />
                                         SoHo, New York, NY 10012
                                     </p>
                                 </div>
@@ -343,9 +355,10 @@ function ContactContent() {
                                 href="https://maps.google.com/?q=580+Broadway+Suite+904+SoHo+New+York+NY+10012"
                                 target="_blank"
                                 rel="noreferrer"
-                                className="text-[#30B5AA] hover:text-white text-xs font-semibold underline p-2 shrink-0 self-center"
+                                className="inline-flex items-center justify-center gap-1.5 bg-indigo-500/15 hover:bg-indigo-500 text-indigo-300 hover:text-white border border-indigo-500/30 font-bold text-xs px-4 py-2 rounded-full transition-all shrink-0 self-start sm:self-center"
                             >
-                                Map
+                                <FaMapMarkerAlt className="text-xs" />
+                                <span>Directions</span>
                             </a>
                         </div>
 
