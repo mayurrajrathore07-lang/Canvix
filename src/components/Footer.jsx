@@ -188,11 +188,11 @@ function Footer() {
               </div>
               <div className="flex items-center gap-3 text-gray-300">
                 <FaEnvelope className="text-[#a78bfa] text-xs shrink-0" />
-                <a href="mailto:hello@canvix.agency.com" className="hover:text-white transition">hello@canvix.agency.com</a>
+                <a href="mailto:hello@canvix.com" className="hover:text-white transition">hello@canvix.com</a>
               </div>
               <div className="flex items-start gap-3 text-gray-300">
                 <FaMapMarkerAlt className="text-[#a78bfa] text-xs shrink-0 mt-1" />
-                <span className="leading-tight">Let's build something amazing together.</span>
+                <span className="leading-tight">Serving clients across India, the US & globally.</span>
               </div>
             </div>
 
@@ -247,8 +247,8 @@ function Footer() {
           {/* Left: Copyright & Links */}
           <div className="space-y-2 text-xs text-gray-400 text-center xl:text-left">
             <div>
-              <span className="font-bold text-[#a78bfa]">© 2025 Canvix Agency. </span>
-              <span>Designed by Identity hub. All rights reserved.</span>
+              <span className="font-bold text-[#a78bfa]">© {new Date().getFullYear()} Canvix Agency. </span>
+              <span>All rights reserved.</span>
             </div>
             <div className="flex items-center justify-center xl:justify-start gap-3 text-gray-400 text-xs font-normal">
               <Link href="/privacy" className="hover:text-white transition">Privacy Policy</Link>

@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { FaPlay, FaChrome, FaCloud, FaBolt, FaLayerGroup } from "react-icons/fa";
+import { FaPlay, FaProjectDiagram, FaUsers, FaStar } from "react-icons/fa";
 
 const heroImg = "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80";
 
@@ -35,26 +35,23 @@ function Hero() {
                             <span className="w-8 h-8 rounded-full bg-white text-black group-hover:bg-black group-hover:text-white flex items-center justify-center text-xs transition duration-300">
                                 <FaPlay className="ml-0.5" />
                             </span>
-                            <span className="font-medium text-sm sm:text-base">Start your Free Trial</span>
+                            <span className="font-medium text-sm sm:text-base">Book a Free Consultation</span>
                         </Link>
                     </div>
 
                     <div className="pt-6 border-t border-white/10 space-y-4">
                         <p className="text-[#30B5AA] text-xs font-semibold uppercase tracking-wider">
-                            Trusted by leading companies
+                            Trusted by growing businesses
                         </p>
                         <div className="flex flex-wrap items-center gap-8 text-gray-400">
-                            <div className="flex items-center gap-2 font-bold text-sm text-gray-300 hover:text-white transition">
-                                <FaCloud className="text-lg text-cyan-400" /> Overcast
+                            <div className="flex items-center gap-2 font-bold text-sm text-gray-300">
+                                <FaProjectDiagram className="text-lg text-accent-teal" /> 20+ Projects Delivered
                             </div>
-                            <div className="flex items-center gap-2 font-bold text-sm text-gray-300 hover:text-white transition">
-                                <FaChrome className="text-lg text-red-400" /> Chrome
+                            <div className="flex items-center gap-2 font-bold text-sm text-gray-300">
+                                <FaUsers className="text-lg text-accent-purple" /> 15+ Happy Clients
                             </div>
-                            <div className="flex items-center gap-2 font-bold text-sm text-gray-300 hover:text-white transition">
-                                <FaBolt className="text-lg text-yellow-400" /> Leadfeeder
-                            </div>
-                            <div className="flex items-center gap-2 font-bold text-sm text-gray-300 hover:text-white transition">
-                                <FaLayerGroup className="text-lg text-blue-400" /> Airtable
+                            <div className="flex items-center gap-2 font-bold text-sm text-gray-300">
+                                <FaStar className="text-lg text-yellow-400" /> 98% Satisfaction Rate
                             </div>
                         </div>
                     </div>

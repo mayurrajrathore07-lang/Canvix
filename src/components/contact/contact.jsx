@@ -242,16 +242,16 @@ function ContactContent() {
                                         Email Inquiries
                                     </span>
                                     <a
-                                        href="mailto:hello@canvix.agency.com"
+                                        href="mailto:hello@canvix.com"
                                         className="text-white hover:text-[#30B5AA] font-semibold text-sm sm:text-base transition block break-all"
                                     >
-                                        hello@canvix.agency.com
+                                        hello@canvix.com
                                     </a>
                                 </div>
                             </div>
                             <button
                                 type="button"
-                                onClick={() => handleCopy("hello@canvix.agency.com", "email")}
+                                onClick={() => handleCopy("hello@canvix.com", "email")}
                                 title="Copy Email"
                                 className="text-gray-400 hover:text-white p-2 rounded-lg hover:bg-white/10 transition shrink-0"
                             >

@@ -83,7 +83,7 @@ function IndustryShowcaseCard({ activeIndustry }) {
 
         {/* Core Deliverables / Highlights */}
         <h4 className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-4">
-          Key Engineering & Business Capabilities:
+          What We Deliver:
         </h4>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
           {activeIndustry.highlights.map((h, i) => (
