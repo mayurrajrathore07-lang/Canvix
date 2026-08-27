@@ -5,11 +5,13 @@ const SESSION_TTL_MS = 8 * 60 * 60 * 1000;
  * Get secret key for signing sessions.
  */
 function getSecretKey() {
-  return (
-    process.env.ADMIN_SESSION_SECRET ||
-    process.env.ADMIN_PASSWORD ||
-    "canvix-default-admin-session-secret-key-2024"
-  );
+  const secret = process.env.ADMIN_SESSION_SECRET || process.env.ADMIN_PASSWORD;
+  if (!secret) {
+    throw new Error(
+      "Server configuration error: ADMIN_SESSION_SECRET or ADMIN_PASSWORD environment variable is not set."
+    );
+  }
+  return secret;
 }
 
 /**

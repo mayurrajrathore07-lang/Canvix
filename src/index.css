@@ -1,6 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 @import "tailwindcss";
 
+@theme {
+  --color-accent-purple: #6E56CF;
+  --color-accent-teal: #30B5AA;
+  --color-bg-dark: #0c0d0e;
+  --color-card-dark: #12151e;
+  --font-serif: 'DM Serif Display', serif;
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+}
+
 :root {
   font-family: 'Plus Jakarta Sans', sans-serif;
   --accent-purple: #6E56CF;
