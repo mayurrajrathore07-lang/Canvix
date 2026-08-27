@@ -253,9 +253,8 @@ function Footer() {
 
               {message && (
                 <p
-                  className={`text-[11px] px-3 font-medium ${
-                    status === "success" ? "text-emerald-400" : "text-rose-400"
-                  }`}
+                  className={`text-[11px] px-3 font-medium ${status === "success" ? "text-emerald-400" : "text-rose-400"
+                    }`}
                 >
                   {message}
                 </p>
