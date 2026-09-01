@@ -23,7 +23,6 @@ function Navbar() {
         setMounted(true);
     }, []);
 
-    // Close mobile menu on route change
     useEffect(() => {
         setIsOpen(false);
     }, [pathname]);
