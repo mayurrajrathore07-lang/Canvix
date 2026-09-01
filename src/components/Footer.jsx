@@ -41,6 +41,7 @@ function Footer() {
   const [status, setStatus] = useState("idle");
   const [message, setMessage] = useState("");
 
+
   const handleSubscribe = async (e) => {
     e.preventDefault();
     if (!email || !email.trim()) return;
