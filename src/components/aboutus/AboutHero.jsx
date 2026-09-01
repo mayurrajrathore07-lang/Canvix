@@ -14,7 +14,7 @@ const AboutHero = () => {
                         </p>
 
                         <h1 className="text-5xl md:text-7xl font-bold leading-tight">
-                            Ready to take <br />
+                            Ready to take
                             <span className="text-cyan-400">your business</span>
                             <br />
                             to the next level?
