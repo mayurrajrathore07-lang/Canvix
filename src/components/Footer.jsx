@@ -38,7 +38,7 @@ const SOCIAL_LINKS = [
 
 function Footer() {
   const [email, setEmail] = useState("");
-  const [status, setStatus] = useState("idle"); // idle | loading | success | error
+  const [status, setStatus] = useState("idle");
   const [message, setMessage] = useState("");
 
   const handleSubscribe = async (e) => {
