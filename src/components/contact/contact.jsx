@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { IndiaFlag, USAFlag } from "@/components/Flags";
 import {
@@ -275,7 +275,7 @@ function ContactContent() {
                                         Direct Phone
                                     </span>
                                     <a
-                                        href="tel:+919999999999"
+                                        href="tel:+919328311556"
                                         className="text-white hover:text-[#30B5AA] font-semibold text-sm sm:text-base transition block"
                                     >
                                         +91 9328311556
@@ -284,7 +284,7 @@ function ContactContent() {
                             </div>
                             <button
                                 type="button"
-                                onClick={() => handleCopy("+919999999999", "phone")}
+                                onClick={() => handleCopy("+919328311556", "phone")}
                                 title="Copy Phone Number"
                                 className="text-gray-400 hover:text-white p-2 rounded-lg hover:bg-white/10 transition shrink-0"
                             >
@@ -663,8 +663,8 @@ function ContactContent() {
 
 export default function Contact() {
     return (
-        <React.Suspense fallback={<div className="py-20 text-center text-gray-400">Loading contact form...</div>}>
+        <Suspense fallback={<div className="py-20 text-center text-gray-400">Loading contact form...</div>}>
             <ContactContent />
-        </React.Suspense>
+        </Suspense>
     );
 }

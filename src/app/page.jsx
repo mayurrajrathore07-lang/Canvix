@@ -12,7 +12,7 @@ import BookConsultation from "@/components/home/BookConsultation.jsx";
 
 export default function Page() {
   return (
-    <main className="min-h-screen font-sans antialiased bg-white text-slate-900">
+    <div className="min-h-screen font-sans antialiased bg-white text-slate-900">
       <Hero />
       <Services />
       <BusinessSolutions />
@@ -24,6 +24,6 @@ export default function Page() {
       <Testimonial />
       <FAQ />
       <BookConsultation />
-    </main>
+    </div>
   );
 }

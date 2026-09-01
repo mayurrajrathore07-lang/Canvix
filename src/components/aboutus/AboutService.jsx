@@ -1,5 +1,3 @@
-import React from "react";
-
 const servicesData = [
     {
         number: "20+",
@@ -26,8 +24,8 @@ function AboutService() {
         <section className="bg-white text-black py-16 md:py-24 px-6">
             <div className="max-w-7xl mx-auto">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 text-center">
-                    {servicesData.map((item, index) => (
-                        <div key={index} className="flex flex-col items-center">
+                    {servicesData.map((item) => (
+                        <div key={item.title} className="flex flex-col items-center">
                             <h2 className="text-4xl md:text-5xl font-black text-black mb-3 tracking-tight">
                                 {item.number}
                             </h2>
@@ -46,4 +44,3 @@ function AboutService() {
 }
 
 export default AboutService;
-

@@ -5,18 +5,21 @@ import { FaCalendarCheck, FaHandshake, FaRocket, FaArrowRight } from "react-icon
 
 const trustPoints = [
   {
+    id: "free-consultation",
     icon: <FaCalendarCheck size={20} />,
     title: "Free Consultation",
     desc: "30-minute call to understand your goals",
     color: "#30B5AA",
   },
   {
+    id: "no-obligations",
     icon: <FaHandshake size={20} />,
     title: "No Obligations",
     desc: "No contracts, no pressure — just honest advice",
     color: "#7c3aed",
   },
   {
+    id: "quick-turnaround",
     icon: <FaRocket size={20} />,
     title: "Quick Turnaround",
     desc: "Proposal within 48 hours of our call",
@@ -26,193 +29,57 @@ const trustPoints = [
 
 export default function BookConsultation() {
   return (
-    <section
-      style={{
-        background: "#0B0F19",
-        padding: "60px 24px 100px",
-        position: "relative",
-        overflow: "hidden",
-      }}
-    >
+    <section className="bg-[#0B0F19] relative overflow-hidden py-[60px] px-6 pb-[100px]">
       {/* Background glow */}
-      <div
-        style={{
-          position: "absolute",
-          top: "50%",
-          left: "50%",
-          transform: "translate(-50%, -50%)",
-          width: "700px",
-          height: "500px",
-          borderRadius: "50%",
-          background:
-            "radial-gradient(ellipse, rgba(48,181,170,0.08) 0%, transparent 60%)",
-          pointerEvents: "none",
-        }}
-      />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] rounded-full bg-[radial-gradient(ellipse,rgba(48,181,170,0.08)_0%,transparent_60%)] pointer-events-none" />
 
-      <div
-        style={{
-          maxWidth: "900px",
-          margin: "0 auto",
-          position: "relative",
-          zIndex: 1,
-        }}
-      >
+      <div className="max-w-[900px] mx-auto relative z-[1]">
         {/* Main card */}
-        <div
-          style={{
-            background:
-              "linear-gradient(135deg, rgba(48,181,170,0.08) 0%, rgba(124,58,237,0.06) 50%, rgba(48,181,170,0.04) 100%)",
-            border: "1px solid rgba(48,181,170,0.15)",
-            borderRadius: "28px",
-            padding: "clamp(40px, 6vw, 64px) clamp(24px, 5vw, 56px)",
-            textAlign: "center",
-            position: "relative",
-            overflow: "hidden",
-          }}
-        >
+        <div className="bg-[linear-gradient(135deg,rgba(48,181,170,0.08)_0%,rgba(124,58,237,0.06)_50%,rgba(48,181,170,0.04)_100%)] border border-[#30B5AA]/15 rounded-[28px] p-[clamp(40px,6vw,64px)] text-center relative overflow-hidden">
           {/* Corner accents */}
-          <div
-            style={{
-              position: "absolute",
-              top: "-40px",
-              right: "-40px",
-              width: "160px",
-              height: "160px",
-              borderRadius: "50%",
-              background:
-                "radial-gradient(circle, rgba(48,181,170,0.15) 0%, transparent 70%)",
-              pointerEvents: "none",
-            }}
-          />
-          <div
-            style={{
-              position: "absolute",
-              bottom: "-40px",
-              left: "-40px",
-              width: "140px",
-              height: "140px",
-              borderRadius: "50%",
-              background:
-                "radial-gradient(circle, rgba(124,58,237,0.12) 0%, transparent 70%)",
-              pointerEvents: "none",
-            }}
-          />
+          <div className="absolute -top-10 -right-10 w-40 h-40 rounded-full bg-[radial-gradient(circle,rgba(48,181,170,0.15)_0%,transparent_70%)] pointer-events-none" />
+          <div className="absolute -bottom-10 -left-10 w-[140px] h-[140px] rounded-full bg-[radial-gradient(circle,rgba(124,58,237,0.12)_0%,transparent_70%)] pointer-events-none" />
 
           {/* Badge */}
-          <span
-            style={{
-              display: "inline-block",
-              background: "rgba(48,181,170,0.12)",
-              border: "1px solid rgba(48,181,170,0.3)",
-              color: "#30B5AA",
-              borderRadius: "50px",
-              padding: "6px 18px",
-              fontSize: "12px",
-              fontWeight: 700,
-              letterSpacing: "0.08em",
-              textTransform: "uppercase",
-              marginBottom: "24px",
-            }}
-          >
-            Let's Work Together
+          <span className="inline-block bg-[#30B5AA]/12 border border-[#30B5AA]/30 text-[#30B5AA] rounded-full px-[18px] py-1.5 text-xs font-bold tracking-wider uppercase mb-6">
+            Let&apos;s Work Together
           </span>
 
           {/* Heading */}
-          <h2
-            style={{
-              fontSize: "clamp(28px, 5vw, 48px)",
-              fontWeight: 800,
-              color: "#fff",
-              margin: "0 0 16px",
-              letterSpacing: "-1px",
-              lineHeight: 1.15,
-              fontFamily: "'DM Serif Display', serif",
-            }}
-          >
+          <h2 className="text-[clamp(28px,5vw,48px)] font-extrabold text-white mb-4 tracking-tight leading-[1.15] font-serif">
             Ready to Grow Your{" "}
-            <span
-              style={{
-                background: "linear-gradient(135deg, #30B5AA, #2dd4bf)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-              }}
-            >
+            <span className="bg-gradient-to-br from-[#30B5AA] to-[#2dd4bf] bg-clip-text text-transparent">
               Business
             </span>
             ?
           </h2>
 
-          <p
-            style={{
-              color: "#9ca3af",
-              fontSize: "16px",
-              lineHeight: 1.7,
-              maxWidth: "520px",
-              margin: "0 auto 40px",
-            }}
-          >
-            Book a free consultation — no commitments. Let's discuss your project
+          <p className="text-[#9ca3af] text-base leading-[1.7] max-w-[520px] mx-auto mb-10">
+            Book a free consultation — no commitments. Let&apos;s discuss your project
             and see how we can help you achieve your goals.
           </p>
 
           {/* Trust points */}
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
-              gap: "16px",
-              marginBottom: "40px",
-            }}
-          >
-            {trustPoints.map((point, i) => (
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
+            {trustPoints.map((point) => (
               <div
-                key={i}
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  gap: "10px",
-                  padding: "20px 16px",
-                  background: "rgba(255,255,255,0.03)",
-                  border: "1px solid rgba(255,255,255,0.06)",
-                  borderRadius: "16px",
-                  transition: "border 0.2s, background 0.2s",
-                }}
+                key={point.id}
+                className="flex flex-col items-center gap-2.5 p-5 bg-white/[0.03] border border-white/[0.06] rounded-2xl transition-all duration-200 hover:border-white/15"
               >
                 <div
+                  className="w-11 h-11 rounded-xl flex items-center justify-center"
                   style={{
-                    width: "44px",
-                    height: "44px",
-                    borderRadius: "12px",
-                    background: `${point.color}15`,
+                    backgroundColor: `${point.color}15`,
                     border: `1px solid ${point.color}30`,
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
                     color: point.color,
                   }}
                 >
                   {point.icon}
                 </div>
-                <p
-                  style={{
-                    color: "#fff",
-                    fontWeight: 700,
-                    fontSize: "14px",
-                    margin: 0,
-                  }}
-                >
+                <p className="text-white font-bold text-sm m-0">
                   {point.title}
                 </p>
-                <p
-                  style={{
-                    color: "#6b7280",
-                    fontSize: "12px",
-                    margin: 0,
-                    lineHeight: 1.5,
-                  }}
-                >
+                <p className="text-[#6b7280] text-xs m-0 leading-snug">
                   {point.desc}
                 </p>
               </div>
@@ -223,44 +90,13 @@ export default function BookConsultation() {
           <Link
             href="/contact"
             id="book-consultation-cta"
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "10px",
-              background: "linear-gradient(135deg, #30B5AA 0%, #2dd4bf 100%)",
-              color: "#000",
-              padding: "16px 36px",
-              borderRadius: "50px",
-              fontWeight: 800,
-              fontSize: "15px",
-              textDecoration: "none",
-              fontFamily: "'Plus Jakarta Sans', sans-serif",
-              boxShadow: "0 8px 32px rgba(48,181,170,0.3)",
-              transition: "transform 0.2s, box-shadow 0.2s",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = "translateY(-2px)";
-              e.currentTarget.style.boxShadow =
-                "0 14px 40px rgba(48,181,170,0.4)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = "translateY(0)";
-              e.currentTarget.style.boxShadow =
-                "0 8px 32px rgba(48,181,170,0.3)";
-            }}
+            className="inline-flex items-center gap-2.5 bg-gradient-to-br from-[#30B5AA] to-[#2dd4bf] text-black px-9 py-4 rounded-full font-extrabold text-[15px] no-underline font-sans shadow-[0_8px_32px_rgba(48,181,170,0.3)] hover:-translate-y-0.5 hover:shadow-[0_14px_40px_rgba(48,181,170,0.4)] transition-all duration-200"
           >
             Book Free Consultation
             <FaArrowRight size={14} />
           </Link>
 
-          <p
-            style={{
-              color: "#4b5563",
-              fontSize: "12px",
-              marginTop: "18px",
-              fontWeight: 500,
-            }}
-          >
+          <p className="text-[#4b5563] text-xs mt-[18px] font-medium">
             ✓ No credit card required &nbsp; ✓ Response within 24 hours
           </p>
         </div>

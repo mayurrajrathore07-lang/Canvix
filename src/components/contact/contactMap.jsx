@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import { FaMapMarkerAlt, FaExternalLinkAlt, FaDirections, FaBuilding } from "react-icons/fa";
 import { IndiaFlag, USAFlag } from "@/components/Flags";
 
@@ -92,7 +92,7 @@ function ContactMap() {
                         <a
                             href={activeOffice.directionsUrl}
                             target="_blank"
-                            rel="noreferrer"
+                            rel="noopener noreferrer"
                             className="inline-flex items-center gap-2 bg-[#30B5AA] hover:bg-white text-black font-bold text-xs sm:text-sm px-5 py-3 rounded-full transition shadow-md"
                         >
                             <FaDirections className="text-base" />
@@ -101,7 +101,7 @@ function ContactMap() {
                         <a
                             href={activeOffice.mapsUrl}
                             target="_blank"
-                            rel="noreferrer"
+                            rel="noopener noreferrer"
                             className="inline-flex items-center gap-2 bg-white/5 hover:bg-white/10 text-gray-300 hover:text-white border border-white/10 font-semibold text-xs sm:text-sm px-4 py-3 rounded-full transition"
                         >
                             <span>Open Maps</span>

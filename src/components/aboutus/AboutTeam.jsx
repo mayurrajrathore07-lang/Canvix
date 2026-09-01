@@ -1,4 +1,4 @@
-import React from "react";
+import Image from "next/image";
 
 const teamMembers = [
     {
@@ -21,8 +21,6 @@ const teamMembers = [
         role: "Brand Marketing Lead",
         image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80",
     },
-
-
 ];
 
 function AboutTeam() {
@@ -37,13 +35,17 @@ function AboutTeam() {
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                    {teamMembers.map((member, index) => (
-                        <div key={index} className="bg-[#F8FAFC] border border-slate-200/80 rounded-3xl overflow-hidden p-6 text-center group hover:border-[#6E56CF] hover:shadow-xl transition duration-300">
-                            <img
-                                src={member.image}
-                                alt={member.name}
-                                className="w-32 h-32 rounded-full object-cover mx-auto mb-6 border-2 border-slate-200 group-hover:border-[#6E56CF] transition"
-                            />
+                    {teamMembers.map((member) => (
+                        <div key={member.name} className="bg-[#F8FAFC] border border-slate-200/80 rounded-3xl overflow-hidden p-6 text-center group hover:border-[#6E56CF] hover:shadow-xl transition duration-300">
+                            <div className="w-32 h-32 rounded-full overflow-hidden mx-auto mb-6 border-2 border-slate-200 group-hover:border-[#6E56CF] transition relative">
+                                <Image
+                                    src={member.image}
+                                    alt={`Photo of ${member.name}, ${member.role}`}
+                                    fill
+                                    sizes="128px"
+                                    className="object-cover"
+                                />
+                            </div>
                             <h3 className="text-xl font-bold text-slate-900 mb-1 group-hover:text-[#6E56CF] transition">{member.name}</h3>
                             <p className="text-slate-500 text-sm font-medium">{member.role}</p>
                         </div>

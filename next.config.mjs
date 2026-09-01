@@ -10,6 +10,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "mir-s3-cdn-cf.behance.net",
       },
+      {
+        protocol: "https",
+        hostname: "i.pravatar.cc",
+      },
     ],
   },
 };

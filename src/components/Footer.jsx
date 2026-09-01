@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import {
   FaFacebookF,
@@ -35,6 +35,8 @@ const SOCIAL_LINKS = [
   { icon: <FaLinkedinIn className="text-xs" />, label: "LinkedIn", href: "https://linkedin.com" },
   { icon: <FaTwitter className="text-xs" />, label: "Twitter", href: "https://twitter.com" },
 ];
+
+const CURRENT_YEAR = new Date().getFullYear();
 
 function Footer() {
   const [email, setEmail] = useState("");
@@ -82,11 +84,11 @@ function Footer() {
   return (
     <footer className="shrink-0 bg-[#0b0e14] text-gray-400 pt-16 pb-12 border-t border-white/10 font-sans relative overflow-hidden">
       {/* Background Ambient Lighting Glow */}
-      <div className="absolute bottom-0 left-1/4 w-[500px] h-[350px] bg-[#2CD1B2]/10 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-0 left-1/4 w-[500px] h-[350px] bg-[#30B5AA]/10 rounded-full blur-[120px] pointer-events-none" />
 
       {/* Background Wave Graphic Accent on Right */}
       <div className="absolute right-0 top-0 w-1/2 h-full opacity-15 pointer-events-none overflow-hidden hidden md:block">
-        <svg className="w-full h-full text-[#2CD1B2]" viewBox="0 0 600 400" fill="none">
+        <svg className="w-full h-full text-[#30B5AA]" viewBox="0 0 600 400" fill="none">
           <g stroke="currentColor" strokeWidth="1" strokeDasharray="2 6">
             <path d="M100 400 C 200 300, 300 350, 400 200 C 500 50, 550 150, 600 0" />
             <path d="M150 400 C 250 300, 350 350, 450 200 C 550 50, 600 150, 650 0" />
@@ -102,7 +104,7 @@ function Footer() {
           {/* Column 1: Brand & Socials */}
           <div className="lg:col-span-4 space-y-4">
             <Link href="/" className="inline-flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-[#2CD1B2]/15 border border-[#2CD1B2]/40 text-[#2CD1B2] flex items-center justify-center shadow-md shadow-[#2CD1B2]/10">
+              <div className="w-10 h-10 rounded-full bg-[#30B5AA]/15 border border-[#30B5AA]/40 text-[#30B5AA] flex items-center justify-center shadow-md shadow-[#30B5AA]/10">
                 <svg className="w-5 h-5 fill-none stroke-current stroke-2" viewBox="0 0 24 24">
                   <path d="M12 3a9 9 0 0 1 9 9c0 4.97-4.03 9-9 9a9 9 0 0 1-9-9c0-3.31 2.69-6 6-6s6 2.69 6 6-2.69 4-4 4-4-1.79-4-4" strokeLinecap="round" />
                 </svg>
@@ -114,7 +116,7 @@ function Footer() {
               We're a team of strategic creators and digital innovators, united in our pursuit of tech mastery and joyful digital solutions.
             </p>
 
-            <div className="w-12 h-[3px] bg-gradient-to-r from-[#2CD1B2] to-[#1eb59b] rounded-full my-4" />
+            <div className="w-12 h-[3px] bg-gradient-to-r from-[#30B5AA] to-[#289e94] rounded-full my-4" />
 
             <div className="flex items-center gap-3 pt-1">
               {SOCIAL_LINKS.map((s) => (
@@ -122,9 +124,9 @@ function Footer() {
                   key={s.label}
                   href={s.href}
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   aria-label={s.label}
-                  className="w-9 h-9 rounded-full bg-[#171b26] text-gray-300 flex items-center justify-center border border-white/5 hover:bg-[#2CD1B2] hover:text-[#0b0e14] transition-all duration-300 hover:scale-105"
+                  className="w-9 h-9 rounded-full bg-[#171b26] text-gray-300 flex items-center justify-center border border-white/5 hover:bg-[#30B5AA] hover:text-[#0b0e14] transition-all duration-300 hover:scale-105"
                 >
                   {s.icon}
                 </a>
@@ -141,7 +143,7 @@ function Footer() {
               {FOOTER_PAGES.map((item) => (
                 <li key={item.name}>
                   <Link href={item.href} className="group flex items-center gap-2 text-gray-400 hover:text-white transition">
-                    <span className="text-[#2CD1B2] font-bold text-xs transition-transform group-hover:translate-x-0.5">&gt;</span>
+                    <span className="text-[#30B5AA] font-bold text-xs transition-transform group-hover:translate-x-0.5">&gt;</span>
                     <span>{item.name}</span>
                   </Link>
                 </li>
@@ -155,14 +157,14 @@ function Footer() {
               <h4 className="text-xs font-bold text-white uppercase tracking-wider">
                 SERVICES
               </h4>
-              <div className="absolute bottom-0 left-0 w-6 h-[2px] bg-[#2CD1B2]" />
+              <div className="absolute bottom-0 left-0 w-6 h-[2px] bg-[#30B5AA]" />
             </div>
 
             <ul className="space-y-3 text-xs sm:text-sm font-medium">
               {FOOTER_SERVICES.map((service) => (
                 <li key={service}>
                   <Link href="/services" className="group flex items-center gap-2 text-gray-400 hover:text-white transition">
-                    <span className="text-[#2CD1B2] font-bold text-xs transition-transform group-hover:translate-x-0.5">&gt;</span>
+                    <span className="text-[#30B5AA] font-bold text-xs transition-transform group-hover:translate-x-0.5">&gt;</span>
                     <span>{service}</span>
                   </Link>
                 </li>
@@ -176,24 +178,24 @@ function Footer() {
               <h4 className="text-xs font-bold text-white uppercase tracking-wider">
                 GET IN TOUCH
               </h4>
-              <div className="absolute bottom-0 left-0 w-6 h-[2px] bg-[#2CD1B2]" />
+              <div className="absolute bottom-0 left-0 w-6 h-[2px] bg-[#30B5AA]" />
             </div>
 
             <div className="space-y-3.5 text-xs sm:text-sm font-medium">
               <div className="flex items-center gap-3 text-gray-300">
-                <FaPhoneAlt className="text-[#2CD1B2] text-xs shrink-0" />
+                <FaPhoneAlt className="text-[#30B5AA] text-xs shrink-0" />
                 <a href="tel:+919328311556" className="hover:text-white transition">+91 9328311556</a>
               </div>
               <div className="flex items-center gap-3 text-gray-300">
-                <FaEnvelope className="text-[#2CD1B2] text-xs shrink-0" />
+                <FaEnvelope className="text-[#30B5AA] text-xs shrink-0" />
                 <a href="mailto:hello@canvix.com" className="hover:text-white transition">hello@canvix.com</a>
               </div>
             </div>
 
             <div className="pt-2">
-              <Link href="/contact" className="inline-flex items-center gap-4 border border-[#2CD1B2]/80 rounded-full pl-5 pr-1.5 py-1.5 text-white font-semibold text-xs sm:text-sm hover:bg-[#2CD1B2]/15 transition-all duration-300 group cursor-pointer">
-                <span>Let's Talk</span>
-                <div className="w-7 h-7 rounded-full bg-[#2CD1B2] text-[#0b0e14] flex items-center justify-center font-bold group-hover:translate-x-0.5 transition-transform shadow-sm">
+              <Link href="/contact" className="inline-flex items-center gap-4 border border-[#30B5AA]/80 rounded-full pl-5 pr-1.5 py-1.5 text-white font-semibold text-xs sm:text-sm hover:bg-[#30B5AA]/15 transition-all duration-300 group cursor-pointer">
+                <span>Let&apos;s Talk</span>
+                <div className="w-7 h-7 rounded-full bg-[#30B5AA] text-[#0b0e14] flex items-center justify-center font-bold group-hover:translate-x-0.5 transition-transform shadow-sm">
                   <FaArrowRight className="text-[10px]" />
                 </div>
               </Link>
@@ -206,7 +208,7 @@ function Footer() {
           {/* Left: Copyright & Links */}
           <div className="space-y-2 text-xs text-gray-400 text-center xl:text-left">
             <div>
-              <span className="font-bold text-[#2CD1B2]">© {new Date().getFullYear()} Canvix Agency. </span>
+              <span className="font-bold text-[#30B5AA]">© {CURRENT_YEAR} Canvix Agency. </span>
               <span>All rights reserved.</span>
             </div>
             <div className="flex items-center justify-center xl:justify-start gap-3 text-gray-400 text-xs font-normal">
@@ -221,7 +223,7 @@ function Footer() {
           {/* Right: Newsletter Subscribe Form with API Integration */}
           <div className="flex flex-col sm:flex-row items-center gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-11 h-11 rounded-2xl bg-[#2CD1B2]/15 border border-[#2CD1B2]/30 text-[#2CD1B2] flex items-center justify-center text-lg shrink-0 shadow-inner">
+              <div className="w-11 h-11 rounded-2xl bg-[#30B5AA]/15 border border-[#30B5AA]/30 text-[#30B5AA] flex items-center justify-center text-lg shrink-0 shadow-inner">
                 <FaEnvelope />
               </div>
               <div>
@@ -233,7 +235,7 @@ function Footer() {
             </div>
 
             <div className="flex flex-col gap-1">
-              <form onSubmit={handleSubscribe} className="flex items-center bg-[#151924] border border-white/10 rounded-full p-1 focus-within:border-[#2CD1B2]/60 transition-all">
+              <form onSubmit={handleSubscribe} className="flex items-center bg-[#151924] border border-white/10 rounded-full p-1 focus-within:border-[#30B5AA]/60 transition-all">
                 <input
                   type="email"
                   value={email}
@@ -246,7 +248,7 @@ function Footer() {
                 <button
                   type="submit"
                   disabled={status === "loading"}
-                  className="bg-[#2CD1B2] hover:bg-[#25bea2] text-[#0b0e14] text-xs font-bold px-5 py-2.5 rounded-full transition cursor-pointer shadow-[0_4px_15px_rgba(44,209,178,0.35)] shrink-0 disabled:opacity-50"
+                  className="bg-[#30B5AA] hover:bg-[#289e94] text-[#0b0e14] text-xs font-bold px-5 py-2.5 rounded-full transition cursor-pointer shadow-[0_4px_15px_rgba(48,181,170,0.35)] shrink-0 disabled:opacity-50"
                 >
                   {status === "loading" ? "Subscribing..." : "Subscribe"}
                 </button>

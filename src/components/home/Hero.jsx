@@ -1,5 +1,5 @@
-import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { FaPlay, FaProjectDiagram, FaUsers, FaStar } from "react-icons/fa";
 
 const heroImg = "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80";
@@ -67,10 +67,13 @@ function Hero() {
                         <div className="absolute top-3 right-12 w-3 h-3 bg-[#30B5AA] rounded-full shadow-[0_0_12px_#30B5AA]"></div>
 
                         <div className="w-[260px] h-[260px] sm:w-[350px] sm:h-[350px] md:w-[380px] md:h-[380px] rounded-full overflow-hidden border-4 border-white/10 shadow-2xl relative group">
-                            <img
+                            <Image
                                 src={heroImg}
-                                alt="Business Growth Team"
-                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                alt="Business Growth Team collaborating on strategy"
+                                fill
+                                sizes="(max-width: 640px) 260px, (max-width: 768px) 350px, 380px"
+                                className="object-cover group-hover:scale-105 transition-transform duration-700"
+                                priority
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
                         </div>

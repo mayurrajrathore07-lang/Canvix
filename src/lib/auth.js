@@ -11,6 +11,15 @@ function getSecretKey() {
       "Server configuration error: ADMIN_SESSION_SECRET or ADMIN_PASSWORD environment variable is not set."
     );
   }
+  if (
+    secret === "change-me-to-a-strong-password" ||
+    secret === "change-me-generate-with-openssl-rand-hex-32" ||
+    secret.length < 8
+  ) {
+    throw new Error(
+      "Server configuration error: ADMIN_SESSION_SECRET / ADMIN_PASSWORD is set to an insecure default. Please change it to a strong, unique value."
+    );
+  }
   return secret;
 }
 
@@ -98,7 +107,9 @@ export function destroySession(token) {
 }
 
 /**
- * Timing-safe password comparison.
+ * Timing-safe password comparison using HMAC to normalize lengths.
+ * Both inputs are HMAC-hashed to produce fixed-length digests before comparison,
+ * preventing length-leaking early returns.
  * @param {string} input
  * @param {string} expected
  * @returns {Promise<boolean>}
@@ -106,17 +117,19 @@ export function destroySession(token) {
 export async function verifyPassword(input, expected) {
   if (!input || !expected) return false;
 
-  const encoder = new TextEncoder();
-  const inputBuf = encoder.encode(input);
-  const expectedBuf = encoder.encode(expected);
+  // HMAC both values with a fixed key to produce fixed-length digests,
+  // eliminating length-based timing leaks
+  const hmacKey = "canvix-password-comparison-key";
+  const inputHash = await signHmac(hmacKey, input);
+  const expectedHash = await signHmac(hmacKey, expected);
 
-  if (inputBuf.length !== expectedBuf.length) {
+  if (inputHash.length !== expectedHash.length) {
     return false;
   }
 
   let mismatch = 0;
-  for (let i = 0; i < inputBuf.length; i++) {
-    mismatch |= inputBuf[i] ^ expectedBuf[i];
+  for (let i = 0; i < inputHash.length; i++) {
+    mismatch |= inputHash.charCodeAt(i) ^ expectedHash.charCodeAt(i);
   }
 
   return mismatch === 0;

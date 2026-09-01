@@ -48,81 +48,35 @@ const faqs = [
 
 function FAQItem({ item, isOpen, onClick, isLast }) {
   return (
-    <div
-      style={{
-        borderBottom: isLast ? "none" : "1px solid rgba(226, 232, 240, 0.8)",
-        overflow: "hidden",
-      }}
-    >
+    <div className={`overflow-hidden ${isLast ? "" : "border-b border-slate-200/80"}`}>
       <button
         onClick={onClick}
-        style={{
-          width: "100%",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          gap: "16px",
-          padding: "18px 0",
-          background: "none",
-          border: "none",
-          cursor: "pointer",
-          textAlign: "left",
-          fontFamily: "inherit",
-          transition: "color 0.2s",
-        }}
+        className="w-full flex items-center justify-between gap-4 py-[18px] bg-transparent border-none cursor-pointer text-left transition-colors duration-200"
       >
         <span
-          style={{
-            color: isOpen ? "#6E56CF" : "#0F172A",
-            fontWeight: 700,
-            fontSize: "clamp(14px, 1.8vw, 16px)",
-            lineHeight: 1.45,
-            transition: "color 0.2s",
-          }}
+          className={`font-bold text-[clamp(14px,1.8vw,16px)] leading-[1.45] transition-colors duration-200 ${
+            isOpen ? "text-[#6E56CF]" : "text-[#0F172A]"
+          }`}
         >
           {item.q}
         </span>
         <span
-          style={{
-            width: "32px",
-            height: "32px",
-            borderRadius: "50%",
-            background: isOpen
-              ? "rgba(110,86,207,0.12)"
-              : "#F1F5F9",
-            border: isOpen
-              ? "1px solid rgba(110,86,207,0.3)"
-              : "1px solid #E2E8F0",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            flexShrink: 0,
-            color: isOpen ? "#6E56CF" : "#64748B",
-            transition: "all 0.25s",
-          }}
+          className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-all duration-250 ${
+            isOpen
+              ? "bg-[#6E56CF]/12 border border-[#6E56CF]/30 text-[#6E56CF]"
+              : "bg-[#F1F5F9] border border-[#E2E8F0] text-[#64748B]"
+          }`}
         >
           {isOpen ? <FaMinus size={10} /> : <FaPlus size={10} />}
         </span>
       </button>
 
       <div
-        style={{
-          maxHeight: isOpen ? "300px" : "0px",
-          opacity: isOpen ? 1 : 0,
-          transition: "max-height 0.35s cubic-bezier(.4,0,.2,1), opacity 0.25s ease",
-          overflow: "hidden",
-        }}
+        className={`overflow-hidden transition-all duration-350 ease-[cubic-bezier(.4,0,.2,1)] ${
+          isOpen ? "max-h-[300px] opacity-100" : "max-h-0 opacity-0"
+        }`}
       >
-        <p
-          style={{
-            color: "#475569",
-            fontSize: "14px",
-            lineHeight: 1.7,
-            margin: 0,
-            paddingBottom: "18px",
-            paddingRight: "24px",
-          }}
-        >
+        <p className="text-[#475569] text-sm leading-[1.7] m-0 pb-[18px] pr-6">
           {item.a}
         </p>
       </div>
@@ -131,93 +85,35 @@ function FAQItem({ item, isOpen, onClick, isLast }) {
 }
 
 export default function FAQ() {
-  const [openIndex, setOpenIndex] = useState(0); // first one open by default
+  const [openIndex, setOpenIndex] = useState(0);
 
   const midPoint = Math.ceil(faqs.length / 2);
   const leftFaqs = faqs.slice(0, midPoint);
   const rightFaqs = faqs.slice(midPoint);
 
   return (
-    <section
-      style={{
-        background: "#F8FAFC",
-        padding: "80px 24px",
-        borderTop: "1px solid rgba(226, 232, 240, 0.8)",
-      }}
-    >
-      <div
-        style={{
-          maxWidth: "1140px",
-          margin: "0 auto",
-        }}
-      >
+    <section className="bg-[#F8FAFC] py-20 px-6 border-t border-slate-200/80">
+      <div className="max-w-[1140px] mx-auto">
         {/* Header */}
-        <div style={{ textAlign: "center", marginBottom: "44px" }}>
-          <span
-            style={{
-              display: "inline-block",
-              background: "rgba(110,86,207,0.08)",
-              border: "1px solid rgba(110,86,207,0.2)",
-              color: "#6E56CF",
-              borderRadius: "50px",
-              padding: "6px 18px",
-              fontSize: "12px",
-              fontWeight: 700,
-              letterSpacing: "0.08em",
-              textTransform: "uppercase",
-              marginBottom: "16px",
-            }}
-          >
+        <div className="text-center mb-11">
+          <span className="inline-block bg-[#6E56CF]/8 border border-[#6E56CF]/20 text-[#6E56CF] rounded-full px-[18px] py-1.5 text-xs font-bold tracking-wider uppercase mb-4">
             FAQ
           </span>
-          <h2
-            style={{
-              fontSize: "clamp(28px, 4vw, 40px)",
-              fontWeight: 800,
-              color: "#0F172A",
-              margin: "0 0 12px",
-              letterSpacing: "-0.8px",
-              lineHeight: 1.15,
-              fontFamily: "'DM Serif Display', serif",
-            }}
-          >
+          <h2 className="text-[clamp(28px,4vw,40px)] font-extrabold text-[#0F172A] mb-3 tracking-tight leading-[1.15] font-serif">
             Frequently Asked Questions
           </h2>
-          <p
-            style={{
-              color: "#475569",
-              fontSize: "15px",
-              maxWidth: "540px",
-              margin: "0 auto",
-              lineHeight: 1.6,
-            }}
-          >
-            Got questions? We've got answers. If you don't find what you're
+          <p className="text-[#475569] text-[15px] max-w-[540px] mx-auto leading-relaxed">
+            Got questions? We&apos;ve got answers. If you don&apos;t find what you&apos;re
             looking for, feel free to contact us.
           </p>
         </div>
 
         {/* FAQ Items Grid */}
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 480px), 1fr))",
-            gap: "24px",
-            alignItems: "start",
-          }}
-        >
-          <div
-            style={{
-              background: "#ffffff",
-              border: "1px solid rgba(226, 232, 240, 0.9)",
-              boxShadow: "0 4px 20px -2px rgba(0, 0, 0, 0.03)",
-              borderRadius: "20px",
-              padding: "6px 28px",
-            }}
-          >
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+          <div className="bg-white border border-slate-200/90 shadow-[0_4px_20px_-2px_rgba(0,0,0,0.03)] rounded-[20px] px-7 py-1.5">
             {leftFaqs.map((item, i) => (
               <FAQItem
-                key={i}
+                key={item.q}
                 item={item}
                 isOpen={openIndex === i}
                 onClick={() => setOpenIndex(openIndex === i ? -1 : i)}
@@ -226,20 +122,12 @@ export default function FAQ() {
             ))}
           </div>
 
-          <div
-            style={{
-              background: "#ffffff",
-              border: "1px solid rgba(226, 232, 240, 0.9)",
-              boxShadow: "0 4px 20px -2px rgba(0, 0, 0, 0.03)",
-              borderRadius: "20px",
-              padding: "6px 28px",
-            }}
-          >
+          <div className="bg-white border border-slate-200/90 shadow-[0_4px_20px_-2px_rgba(0,0,0,0.03)] rounded-[20px] px-7 py-1.5">
             {rightFaqs.map((item, i) => {
               const actualIndex = i + midPoint;
               return (
                 <FAQItem
-                  key={actualIndex}
+                  key={item.q}
                   item={item}
                   isOpen={openIndex === actualIndex}
                   onClick={() =>

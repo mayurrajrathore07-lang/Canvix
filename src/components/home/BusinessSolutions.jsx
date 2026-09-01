@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import Link from "next/link";
 import {
     FaUserFriends,
@@ -137,9 +136,9 @@ export default function BusinessSolutions() {
                                 </p>
 
                                 <div className="space-y-1.5 mb-4 pt-3 border-t border-white/10">
-                                    {model.features.map((feat, i) => (
+                                    {model.features.map((feat) => (
                                         <div
-                                            key={i}
+                                            key={feat}
                                             className="flex items-start gap-2 text-xs text-gray-300"
                                         >
                                             <FaCheck className="text-[#30B5AA] text-[10px] mt-0.5 shrink-0" />
@@ -191,4 +190,3 @@ export default function BusinessSolutions() {
         </section>
     );
 }
-

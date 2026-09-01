@@ -1,5 +1,6 @@
-import React from "react";
+import { Fragment } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { FaPlay } from "react-icons/fa";
 
 // Image assets used in the stacked cards preview
@@ -22,29 +23,35 @@ export default function About() {
         {/* Left Column: Stacked Image Cards */}
         <div className="lg:col-span-6 relative flex justify-center items-center min-h-[380px] sm:min-h-[460px]">
           {/* Back Card (Grayscale background) */}
-          <div className="absolute top-0 left-2 sm:left-6 w-60 sm:w-72 h-[340px] sm:h-[400px] rounded-2xl overflow-hidden opacity-40 border border-slate-200 shadow-md scale-90 -translate-x-8">
-            <img
+          <div className="absolute top-0 left-2 sm:left-6 w-60 sm:w-72 h-[340px] sm:h-[400px] rounded-2xl overflow-hidden opacity-40 border border-slate-200 shadow-md scale-90 -translate-x-8 relative">
+            <Image
               src={IMAGES.layer3}
               alt="Team working together in office"
-              className="w-full h-full object-cover filter grayscale"
+              fill
+              sizes="(max-width: 640px) 240px, 288px"
+              className="object-cover grayscale"
             />
           </div>
 
           {/* Middle Card */}
-          <div className="absolute top-4 left-6 sm:left-12 w-64 sm:w-80 h-[350px] sm:h-[420px] rounded-2xl overflow-hidden opacity-75 border border-slate-200 shadow-lg scale-95 -translate-x-4">
-            <img
+          <div className="absolute top-4 left-6 sm:left-12 w-64 sm:w-80 h-[350px] sm:h-[420px] rounded-2xl overflow-hidden opacity-75 border border-slate-200 shadow-lg scale-95 -translate-x-4 relative">
+            <Image
               src={IMAGES.layer2}
               alt="Design and strategy discussion"
-              className="w-full h-full object-cover"
+              fill
+              sizes="(max-width: 640px) 256px, 320px"
+              className="object-cover"
             />
           </div>
 
           {/* Front Primary Card */}
           <div className="relative z-10 w-72 sm:w-96 h-[360px] sm:h-[440px] rounded-2xl overflow-hidden border-4 border-white shadow-2xl">
-            <img
+            <Image
               src={IMAGES.main}
-              alt="Our core mission"
-              className="w-full h-full object-cover"
+              alt="Our core mission — team collaboration"
+              fill
+              sizes="(max-width: 640px) 288px, 384px"
+              className="object-cover"
             />
           </div>
         </div>
@@ -68,7 +75,7 @@ export default function About() {
           {/* Key Statistics */}
           <div className="flex items-center gap-12 pt-4 pb-4">
             {STATS.map((stat, index) => (
-              <React.Fragment key={stat.label}>
+              <Fragment key={stat.label}>
                 {index > 0 && <div className="h-10 w-px bg-slate-200" />}
                 <div>
                   <div className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
@@ -79,7 +86,7 @@ export default function About() {
                     {stat.label}
                   </p>
                 </div>
-              </React.Fragment>
+              </Fragment>
             ))}
           </div>
 

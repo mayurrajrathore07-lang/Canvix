@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { FaArrowRight, FaCheck } from "react-icons/fa";
 import { industries } from "@/data/industriesData";
@@ -86,9 +86,9 @@ function IndustryShowcaseCard({ activeIndustry }) {
           What We Deliver:
         </h4>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
-          {activeIndustry.highlights.map((h, i) => (
+          {activeIndustry.highlights.map((h) => (
             <div
-              key={i}
+              key={h}
               className="flex items-center gap-3 bg-white/5 border border-white/5 rounded-xl p-3 text-xs font-medium text-gray-200"
             >
               <span className="w-5 h-5 rounded-full bg-accent-teal/20 text-accent-teal flex items-center justify-center text-[10px] shrink-0">

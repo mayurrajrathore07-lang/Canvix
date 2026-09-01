@@ -64,58 +64,26 @@ function StatItem({ icon, value, suffix, staticDisplay, label, color, animate })
   const count = useCountUp(value ?? 0, 2000, animate);
 
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        gap: "12px",
-        padding: "28px 16px",
-      }}
-    >
+    <div className="flex flex-col items-center gap-3 py-7 px-4">
       <div
+        className="w-14 h-14 rounded-2xl flex items-center justify-center transition-transform duration-300 hover:scale-105"
         style={{
-          width: "56px",
-          height: "56px",
-          borderRadius: "16px",
-          background: `${color}15`,
+          backgroundColor: `${color}15`,
           border: `1px solid ${color}30`,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
           color,
-          transition: "transform 0.3s, background 0.3s",
         }}
       >
         {icon}
       </div>
-      <div style={{ textAlign: "center" }}>
-        <p
-          style={{
-            fontSize: "clamp(28px, 4vw, 40px)",
-            fontWeight: 900,
-            color: "#0F172A",
-            margin: 0,
-            letterSpacing: "-1px",
-            lineHeight: 1,
-            fontFamily: "'Plus Jakarta Sans', sans-serif",
-          }}
-        >
+      <div className="text-center">
+        <p className="text-[clamp(28px,4vw,40px)] font-black text-[#0F172A] m-0 tracking-tight leading-none font-sans">
           {staticDisplay ? (
             <span style={{ color }}>{staticDisplay}</span>
           ) : (
             <>{count}<span style={{ color }}>{suffix}</span></>
           )}
         </p>
-        <p
-          style={{
-            color: "#475569",
-            fontSize: "13px",
-            fontWeight: 600,
-            margin: "8px 0 0",
-            letterSpacing: "0.02em",
-          }}
-        >
+        <p className="text-[#475569] text-[13px] font-semibold mt-2 tracking-wide">
           {label}
         </p>
       </div>
@@ -144,55 +112,14 @@ export default function TrustStats() {
   }, []);
 
   return (
-    <section
-      ref={ref}
-      style={{
-        background: "#F8FAFC",
-        padding: "30px 24px 50px",
-      }}
-    >
-      <div
-        style={{
-          maxWidth: "1100px",
-          margin: "0 auto",
-          background: "#ffffff",
-          border: "1px solid rgba(226, 232, 240, 0.9)",
-          boxShadow: "0 10px 30px -5px rgba(0,0,0,0.04)",
-          borderRadius: "24px",
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
-          position: "relative",
-          overflow: "hidden",
-        }}
-      >
+    <section ref={ref} className="bg-[#F8FAFC] py-8 px-6 pb-12">
+      <div className="max-w-[1100px] mx-auto bg-white border border-slate-200/90 shadow-[0_10px_30px_-5px_rgba(0,0,0,0.04)] rounded-3xl grid grid-cols-2 sm:grid-cols-4 relative overflow-hidden">
         {/* Subtle corner glow */}
-        <div
-          style={{
-            position: "absolute",
-            top: "-60px",
-            left: "-60px",
-            width: "200px",
-            height: "200px",
-            borderRadius: "50%",
-            background: "radial-gradient(circle, rgba(48,181,170,0.12) 0%, transparent 70%)",
-            pointerEvents: "none",
-          }}
-        />
-        <div
-          style={{
-            position: "absolute",
-            bottom: "-60px",
-            right: "-60px",
-            width: "200px",
-            height: "200px",
-            borderRadius: "50%",
-            background: "radial-gradient(circle, rgba(124,58,237,0.1) 0%, transparent 70%)",
-            pointerEvents: "none",
-          }}
-        />
+        <div className="absolute -top-[60px] -left-[60px] w-[200px] h-[200px] rounded-full bg-[radial-gradient(circle,rgba(48,181,170,0.12)_0%,transparent_70%)] pointer-events-none" />
+        <div className="absolute -bottom-[60px] -right-[60px] w-[200px] h-[200px] rounded-full bg-[radial-gradient(circle,rgba(124,58,237,0.1)_0%,transparent_70%)] pointer-events-none" />
 
-        {stats.map((stat, i) => (
-          <StatItem key={i} {...stat} animate={visible} />
+        {stats.map((stat) => (
+          <StatItem key={stat.label} {...stat} animate={visible} />
         ))}
       </div>
     </section>

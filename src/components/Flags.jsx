@@ -1,7 +1,5 @@
 "use client";
 
-import React from "react";
-
 /**
  * High quality vector SVG flag for India 🇮🇳
  */

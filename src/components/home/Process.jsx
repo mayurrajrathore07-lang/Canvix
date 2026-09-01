@@ -1,4 +1,3 @@
-import React from "react";
 import { FaLightbulb, FaSearch, FaPalette, FaCheckCircle } from "react-icons/fa";
 
 function Process() {

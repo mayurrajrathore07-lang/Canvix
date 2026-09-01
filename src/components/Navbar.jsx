@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FaBars, FaTimes } from "react-icons/fa";
@@ -22,6 +22,11 @@ function Navbar() {
     useEffect(() => {
         setMounted(true);
     }, []);
+
+    // Close mobile menu on route change
+    useEffect(() => {
+        setIsOpen(false);
+    }, [pathname]);
 
     const toggleMenu = () => setIsOpen(!isOpen);
 
@@ -90,7 +95,6 @@ function Navbar() {
                             <Link
                                 key={item.href}
                                 href={item.href}
-                                onClick={() => setIsOpen(false)}
                                 className={mobileLinkClass(item)}
                                 role="menuitem"
                                 aria-current={isActive(item) ? "page" : undefined}
@@ -100,7 +104,6 @@ function Navbar() {
                         ))}
                         <Link
                             href="/contact"
-                            onClick={() => setIsOpen(false)}
                             className="block text-center bg-gradient-to-r from-[#6E56CF] to-[#5B45FF] text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:opacity-95 transition shadow-md"
                             role="menuitem"
                         >

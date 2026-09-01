@@ -1,6 +1,11 @@
 import { neon } from "@neondatabase/serverless";
 
-const databaseUrl = process.env.DATABASE_URL || "postgres://dummy:dummy@localhost:5432/dummy";
-const sql = neon(databaseUrl);
+if (!process.env.DATABASE_URL) {
+  throw new Error(
+    "DATABASE_URL environment variable is not set. Please configure it in your .env file."
+  );
+}
+
+const sql = neon(process.env.DATABASE_URL);
 
 export default sql;

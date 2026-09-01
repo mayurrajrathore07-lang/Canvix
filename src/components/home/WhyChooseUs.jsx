@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import Link from "next/link";
 import {
     FaShieldAlt,
@@ -78,15 +77,15 @@ export default function WhyChooseUs() {
                         Why High-Growth Companies <br className="hidden sm:inline" /> Choose Canvix
                     </h2>
                     <p className="text-gray-600 text-sm sm:text-base mt-4 leading-relaxed">
-                        We don't just deliver deliverables; we build strategic partnerships that empower tech leaders, founders, and enterprises to scale faster and outpace competition.
+                        We don&apos;t just deliver deliverables; we build strategic partnerships that empower tech leaders, founders, and enterprises to scale faster and outpace competition.
                     </p>
                 </div>
 
                 {/* Key Advantage Cards Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-                    {advantages.map((item, index) => (
+                    {advantages.map((item) => (
                         <div
-                            key={index}
+                            key={item.title}
                             className="bg-[#f8f9fa] border border-gray-200/80 rounded-3xl p-8 hover:bg-black hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group cursor-pointer"
                         >
                             <div>
@@ -125,8 +124,8 @@ export default function WhyChooseUs() {
 
                 {/* Stats Bar */}
                 <div className="bg-[#111111] text-white rounded-3xl p-8 sm:p-12 shadow-xl grid grid-cols-2 lg:grid-cols-4 gap-8 text-center items-center">
-                    {stats.map((stat, i) => (
-                        <div key={i} className="space-y-1">
+                    {stats.map((stat) => (
+                        <div key={stat.label} className="space-y-1">
                             <p className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#30B5AA] tracking-tight">
                                 {stat.value}
                             </p>

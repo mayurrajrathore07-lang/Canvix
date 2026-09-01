@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import {
     FaPenNib,
@@ -33,7 +33,6 @@ function Services() {
     ];
 
     const services = [
-        // Original 6 services preserved exactly
         {
             id: "content-marketing",
             title: "Content Marketing",
@@ -82,7 +81,6 @@ function Services() {
             category: "Marketing & Creative",
             tag: "Identity",
         },
-        // Expanded IT, Staffing, Career, Finance, AI/ML and Consulting services
         {
             id: "ai-machine-learning",
             title: "AI & Machine Learning",
@@ -181,10 +179,10 @@ function Services() {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {displayedServices.map((item, index) => (
+                    {displayedServices.map((item) => (
                         <Link
                             href={`/services#${item.id}`}
-                            key={index}
+                            key={item.id}
                             className="bg-white rounded-2xl p-8 lg:p-10 border border-slate-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group cursor-pointer flex flex-col justify-between"
                         >
                             <div>
